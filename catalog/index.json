@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -68,17 +68,12 @@
       "title": "weBoost support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official support. UMRT: weBoost Authorized Installer. Outdoor RF required; AGC \u2014 no invent-from-zero; we do not tune gain.",
+      "summary": "Official support. UMRT: weBoost Authorized Installer. Outdoor RF required; AGC manages gain \u2014 no invent-from-zero; we do not tune gain like a volume knob.",
       "links": {
         "support": "https://www.weboost.com/support",
         "site": "https://www.weboost.com/",
-        "parent": "https://www.wilsonconnectivity.com/",
         "app_page": "https://www.weboost.com/app",
-        "rv_category": "https://www.weboost.com/boosters/vehicle-rv",
-        "drive_reach_rv": "https://www.weboost.com/products/drive-reach-rv",
-        "rv20": "https://www.weboost.com/products/drive-reach-rv-2",
-        "rv35": "https://www.weboost.com/products/weboost-rv-35",
-        "rv50": "https://www.weboost.com/products/weboost-rv-50"
+        "drive_reach_rv": "https://www.weboost.com/products/drive-reach-rv"
       }
     },
     {
@@ -113,12 +108,11 @@
       "title": "SureCall support & manuals",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Vehicle/RV boosters \u2014 manufacturer only. Outdoor RF + separation. No UMRT SureCall cert title.",
+      "summary": "Vehicle/building boosters \u2014 manufacturer only. Outdoor RF + antenna separation honesty still applies. No UMRT SureCall cert title.",
       "links": {
         "support": "https://surecall.com/support/",
         "manuals": "https://surecall.com/user-manuals/",
         "vehicle": "https://surecall.com/car-boosters/",
-        "fusion2go_xr": "https://surecall.com/car-boosters/fusion2go-xr/",
         "site": "https://surecall.com/"
       }
     },
@@ -128,7 +122,7 @@
       "title": "SureCall app",
       "kind": "app",
       "policy": "link",
-      "summary": "Antenna aiming / separation on compatible boosters. Does not invent coverage from zero outdoor RF.",
+      "summary": "Antenna aiming / separation feedback on compatible boosters. Does not invent coverage from zero outdoor RF.",
       "links": {
         "ios": "https://apps.apple.com/us/app/surecall/id6449509462",
         "android": "https://play.google.com/store/apps/details?id=com.surecall.surecall"
@@ -140,14 +134,12 @@
       "title": "Cel-Fi / Nextivity support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official Nextivity/Cel-Fi support. Often one operator at a time (WAVE switch) \u2014 not simultaneous multi-carrier like weBoost. No UMRT Cel-Fi cert.",
+      "summary": "Nextivity Cel-Fi coverage systems. Official support only. Some models are operator-locked \u2014 confirm carrier fit before promising multi-carrier boost. No UMRT Cel-Fi cert title.",
       "links": {
         "support": "https://nextivityinc.com/support/",
         "cel_fi_support": "https://support.cel-fi.com/hc/en-us",
         "site": "https://nextivityinc.com/",
-        "cel_fi_site": "https://cel-fi.com/",
-        "software": "https://nextivityinc.com/software/",
-        "go_g32": "https://nextivityinc.com/go-g32/"
+        "cel_fi_site": "https://cel-fi.com/"
       }
     },
     {
@@ -156,36 +148,34 @@
       "title": "CEL-FI WAVE app",
       "kind": "app",
       "policy": "link",
-      "summary": "Register, configure, monitor, update Cel-Fi (Bluetooth). Primary setup path \u2014 not a substitute for outdoor RF.",
+      "summary": "Register, configure, monitor, and update Cel-Fi boosters (Bluetooth). Use WAVE for setup honesty \u2014 not a substitute for outdoor RF / donor path.",
       "links": {
         "software": "https://nextivityinc.com/software/wave/",
-        "wave_portal": "https://wave.nextivityinc.com/",
+        "overview": "https://support.cel-fi.com/hc/en-us/articles/14324851714971-WAVE-App-Overview",
         "ios": "https://apps.apple.com/us/app/cel-fi-wave/id980050278",
         "android": "https://play.google.com/store/apps/details?id=com.NxtyWave"
       }
     },
     {
-      "id": "celfi-mywave-app",
-      "brand": "Cel-Fi",
-      "title": "CEL-FI MyWAVE app",
-      "kind": "app",
+      "id": "king-connect",
+      "brand": "KING",
+      "title": "KING Connect hub",
+      "kind": "software",
       "policy": "link",
-      "summary": "Optional Follow-my-Phone utility for GO/ROAM Mobile Mode. Do not confuse with WAVE.",
+      "summary": "KING RV antenna / connectivity hub. As of 2026-09-10 only kingconnect.com homepage verified 200; deep /support and /product-manuals returned 404 \u2014 do not invent dead deep links. Cellular Extend honesty = outdoor RF / separation (same physics as weBoost-class boosters). No UMRT KING cert title.",
       "links": {
-        "ios": "https://apps.apple.com/us/app/cel-fi-mywave/id1560705133",
-        "android": "https://play.google.com/store/apps/details?id=com.nextivityinc.MyWave"
+        "site": "https://kingconnect.com/"
       }
     },
     {
-      "id": "king-connect",
+      "id": "king-wifi-app",
       "brand": "KING",
-      "title": "KING Connect (legacy)",
-      "kind": "software",
+      "title": "King Wi-Fi app (Falcon / WiFiMax)",
+      "kind": "app",
       "policy": "link",
-      "summary": "Do not sell new. Site returns 200 but is empty Shopify placeholder; deep support/manuals 404. Existing Extend \u2192 weBoost RV path. No KING cert title.",
+      "summary": "Self-aiming KING Falcon Wi-Fi antenna app \u2014 not a cellular booster app. Android listing verified 200; iOS store URL returned 404 on check date (omit iOS until re-verified).",
       "links": {
-        "site": "https://kingconnect.com/",
-        "migrate_weboost_rv": "https://www.weboost.com/boosters/vehicle-rv"
+        "android": "https://play.google.com/store/apps/details?id=com.punchthrough.kingselfaimingwifi"
       }
     },
     {
@@ -194,12 +184,11 @@
       "title": "Winegard support",
       "kind": "software",
       "policy": "link",
-      "summary": "ConnecT / ConnecT 5G = RV Wi-Fi + LTE router/hotspot (SIM), not a weBoost-class RF amp. Official Winegard only.",
+      "summary": "RV antenna / ConnecT / ConnecT 5G \u2014 official Winegard only. ConnecT is a connectivity hub (Wi-Fi + cellular paths), not a weBoost-class RF amp; set expectations honestly.",
       "links": {
         "support": "https://winegard.com/support/",
         "connect": "https://winegard.com/connect",
         "connect_5g": "https://winegard.com/connect-5g",
-        "rv_halo": "https://winegard.com/smart/rv-halo",
         "site": "https://winegard.com/"
       }
     },
@@ -209,7 +198,7 @@
       "title": "Winegard RV Halo app",
       "kind": "app",
       "policy": "link",
-      "summary": "Official app for ConnecT / Halo (replaces ConnecTed). Setup/updates \u2014 not a cell-booster AGC tuner.",
+      "summary": "Official app for Winegard ConnecT / Halo products (replaces discontinued ConnecTed). Setup, updates, manuals \u2014 not a cell-booster AGC tuner.",
       "links": {
         "ios": "https://apps.apple.com/us/app/rv-halo/id1563032659",
         "android": "https://play.google.com/store/apps/details?id=com.winegard.halo"
@@ -221,7 +210,7 @@
       "title": "Starlink app",
       "kind": "app",
       "policy": "link",
-      "summary": "Official app. Clear-sky installs; no Starlink Certified title.",
+      "summary": "Official Starlink app (obstruction / setup / account). Installs-only \u2014 no Starlink Certified title.",
       "links": {
         "ios": "https://apps.apple.com/us/app/starlink/id1537177988",
         "android": "https://play.google.com/store/apps/details?id=com.starlink.mobile",
@@ -383,11 +372,11 @@
       "title": "Starlink support",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official Starlink support hub. Clear-sky installs; no invented Starlink Certified title.",
+      "summary": "Official Starlink support hub + coverage map. Clear-sky installs; no invented Starlink Certified title.",
       "links": {
         "support": "https://www.starlink.com/support",
-        "app_ios": "https://apps.apple.com/us/app/starlink/id1537177988",
-        "app_android": "https://play.google.com/store/apps/details?id=com.starlink.mobile"
+        "map": "https://www.starlink.com/map",
+        "updates": "https://www.starlink.com/updates"
       }
     },
     {
@@ -501,37 +490,54 @@
     {
       "id": "starlink-plans",
       "brand": "Starlink",
-      "title": "Starlink plans (Residential / Roam)",
+      "title": "Starlink plans (Residential vs Roam)",
       "kind": "docs",
       "policy": "link",
-      "summary": "Residential \u2260 travel. Roam = RV/nomad; don't oversell nationwide in-motion. Install capability only \u2014 never Starlink Certified.",
+      "summary": "Honesty for RV travel: Residential is fixed-address (no roam / no in-motion). Roam is the travel plan (pause/standby; in-motion in select areas). /rv redirects to Roam \u2014 not a separate SKU. Install capability only \u2014 never Starlink Certified.",
       "links": {
-        "plans": "https://www.starlink.com/service-plans",
+        "service_plans": "https://www.starlink.com/service-plans",
         "residential": "https://www.starlink.com/residential",
-        "roam": "https://www.starlink.com/roam"
+        "roam": "https://www.starlink.com/roam",
+        "roam_alt": "https://starlink.com/sl/roam"
       }
     },
     {
       "id": "starlink-bypass",
       "brand": "Starlink",
-      "title": "Starlink bypass mode",
+      "title": "Starlink bypass mode (third-party router)",
       "kind": "docs",
       "policy": "link",
-      "summary": "Third-party router / Peplink path \u2014 official bypass docs only. No proprietary firmware hacks.",
+      "summary": "Official bypass-mode guidance for Peplink / third-party routers. Pair with Peplink firmware for bonding and/or failover (SpeedFusion). No proprietary firmware hacks.",
       "links": {
-        "bypass": "https://www.starlink.com/bypass-mode",
+        "bypass_mode": "https://www.starlink.com/bypass-mode",
+        "peplink_firmware": "https://www.peplink.com/support/downloads/firmware/",
         "support": "https://www.starlink.com/support"
       }
     },
     {
       "id": "starlink-specs",
       "brand": "Starlink",
-      "title": "Starlink specifications",
+      "title": "Starlink hardware specs (official PDFs)",
       "kind": "docs",
       "policy": "link",
-      "summary": "Hardware specs for power sizing honesty (Mini vs Flat/HP draw). Official Starlink only.",
+      "summary": "Official specs hub + Mini / Flat High Performance / High Performance PDFs for power sizing honesty. Link only \u2014 we do not re-host binaries.",
       "links": {
-        "specs": "https://www.starlink.com/specifications",
+        "specifications": "https://www.starlink.com/specifications",
+        "mini_pdf": "https://starlink.com/public-files/specification_sheet_mini.pdf",
+        "flat_hp_pdf": "https://api.starlink.com/public-files/specification_sheet_flat_high_performance.pdf",
+        "hp_pdf": "https://api.starlink.com/public-files/Starlink%20Product%20Specifications_HighPerformance.pdf",
+        "flat_hp_install_pdf": "https://starlink.com/public-files/installation_guide_flat_high_performance_kit.pdf",
+        "flat_hp_accessories_pdf": "https://starlink.com/public-files/accessories_guide_flat_high_performance.pdf"
+      }
+    },
+    {
+      "id": "starlink-accessories",
+      "brand": "Starlink",
+      "title": "Starlink accessories & shop",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Official mounts, cables, and shop. Prefer Starlink accessories pages over third-party clones when advising customers.",
+      "links": {
         "accessories": "https://www.starlink.com/accessories",
         "shop": "https://www.starlink.com/shop"
       }
