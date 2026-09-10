@@ -1,7 +1,8 @@
 {
-  "version": 3,
+  "version": 4,
   "updated": "2026-09-10",
-  "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official links only.",
+  "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
+  "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
   "entries": [
     {
       "id": "victron-connect",
@@ -23,10 +24,11 @@
       "title": "Venus OS / GX",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official Venus OS / GX images and source \u2014 use Victron-published builds for field installs.",
+      "summary": "Official Venus OS / GX images \u2014 use Victron-published builds for field installs.",
       "links": {
         "github": "https://github.com/victronenergy/venus",
-        "docs": "https://www.victronenergy.com/live/ccgx:start"
+        "docs": "https://www.victronenergy.com/live/ccgx:start",
+        "software_hub": "https://www.victronenergy.com/support-and-downloads/software"
       }
     },
     {
@@ -42,27 +44,14 @@
       }
     },
     {
-      "id": "dometic-app",
-      "brand": "Dometic",
-      "title": "Dometic mobile apps",
-      "kind": "app",
-      "policy": "link",
-      "summary": "Official Dometic apps \u2014 store listings only.",
-      "links": {
-        "site": "https://www.dometic.com/",
-        "play_search": "https://play.google.com/store/search?q=Dometic&c=apps",
-        "apps_info": "https://www.dometic.com/"
-      }
-    },
-    {
-      "id": "peplink-downloads",
+      "id": "peplink-firmware",
       "brand": "Peplink",
-      "title": "Peplink firmware & InControl",
+      "title": "Peplink / Pepwave firmware & InControl",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official firmware and InControl. Field: bonding and/or failover (SpeedFusion) with Starlink + cellular.",
+      "summary": "Official firmware + InControl. Field speak: bonding and/or failover (SpeedFusion) with Starlink + cellular.",
       "links": {
-        "firmware": "https://www.peplink.com/support/downloads/",
+        "firmware": "https://www.peplink.com/support/downloads/firmware/",
         "incontrol": "https://incontrol.peplink.com/",
         "support": "https://www.peplink.com/support/"
       }
@@ -73,7 +62,7 @@
       "title": "weBoost support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Support portal. Authorized Installer: outdoor RF required; AGC; no invent-from-zero.",
+      "summary": "Support portal. Authorized Installer: outdoor RF required; AGC; no invent-from-zero signal.",
       "links": {
         "support": "https://www.weboost.com/support",
         "site": "https://www.weboost.com/"
@@ -85,11 +74,95 @@
       "title": "Starlink app",
       "kind": "app",
       "policy": "link",
-      "summary": "Official app. Clear-sky installs; no Starlink certified title.",
+      "summary": "Official app. Clear-sky installs; no Starlink Certified title.",
       "links": {
         "ios": "https://apps.apple.com/us/app/starlink/id1537177988",
         "android": "https://play.google.com/store/apps/details?id=com.starlink.mobile",
         "support": "https://www.starlink.com/support"
+      }
+    },
+    {
+      "id": "winegard-support",
+      "brand": "Winegard",
+      "title": "Winegard support",
+      "kind": "software",
+      "policy": "link",
+      "summary": "RV antenna / ConnecT support \u2014 official Winegard only.",
+      "links": {
+        "support": "https://winegard.com/support/",
+        "site": "https://winegard.com/"
+      }
+    },
+    {
+      "id": "king-connect",
+      "brand": "KING",
+      "title": "KING Connect",
+      "kind": "software",
+      "policy": "link",
+      "summary": "KING RV antenna / connectivity products \u2014 manufacturer hub links only.",
+      "links": {
+        "site": "https://kingconnect.com/"
+      }
+    },
+    {
+      "id": "surecall-support",
+      "brand": "SureCall",
+      "title": "SureCall support",
+      "kind": "firmware",
+      "policy": "link",
+      "summary": "Cellular boosters for vehicles / buildings \u2014 official support only. Outdoor RF honesty still applies on installs.",
+      "links": {
+        "support": "https://surecall.com/support/",
+        "site": "https://surecall.com/"
+      }
+    },
+    {
+      "id": "celfi-nextivity",
+      "brand": "Cel-Fi",
+      "title": "Cel-Fi / Nextivity support",
+      "kind": "firmware",
+      "policy": "link",
+      "summary": "Cel-Fi cellular coverage solutions (Nextivity). Official support portal only.",
+      "links": {
+        "support": "https://nextivityinc.com/support/",
+        "site": "https://nextivityinc.com/"
+      }
+    },
+    {
+      "id": "glinet-firmware",
+      "brand": "GL.iNet",
+      "title": "GL.iNet firmware downloads",
+      "kind": "firmware",
+      "policy": "link",
+      "summary": "Travel / 4G-5G routers common on coaches \u2014 official firmware CDN + support. Link only (not a FOSS mirror of proprietary images).",
+      "links": {
+        "downloads": "https://dl.gl-inet.com/",
+        "firmware_selector": "https://firmware.gl-inet.com/",
+        "support": "https://www.gl-inet.com/support/"
+      }
+    },
+    {
+      "id": "teltonika-wiki",
+      "brand": "Teltonika",
+      "title": "Teltonika Networks wiki",
+      "kind": "firmware",
+      "policy": "link",
+      "summary": "Industrial / fleet cellular routers used on RVs and light trucks \u2014 official wiki + site. No redistributed vendor packages.",
+      "links": {
+        "wiki": "https://wiki.teltonika-networks.com/",
+        "site": "https://www.teltonika-networks.com/"
+      }
+    },
+    {
+      "id": "dometic-app",
+      "brand": "Dometic",
+      "title": "Dometic mobile apps",
+      "kind": "app",
+      "policy": "link",
+      "summary": "Official Dometic apps \u2014 store search / manufacturer site only (no guessed App Store IDs).",
+      "links": {
+        "site": "https://www.dometic.com/",
+        "play_search": "https://play.google.com/store/search?q=Dometic&c=apps"
       }
     },
     {
@@ -103,6 +176,19 @@
       "links": {
         "github": "https://github.com/SignalK/signalk-server",
         "site": "https://signalk.org/"
+      }
+    },
+    {
+      "id": "openwrt",
+      "brand": "FOSS",
+      "title": "OpenWrt",
+      "kind": "firmware",
+      "policy": "mirror-candidate",
+      "license": "GPL-2.0",
+      "summary": "Open router OS (often under travel routers). Mirror only official release images with checksum \u2014 never vendor-locked forks without license clarity.",
+      "links": {
+        "site": "https://openwrt.org/",
+        "github": "https://github.com/openwrt/openwrt"
       }
     }
   ]
