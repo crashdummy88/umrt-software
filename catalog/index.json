@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 10,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -478,6 +478,137 @@
       "links": {
         "github": "https://github.com/node-red/node-red-dashboard",
         "flows": "https://flows.nodered.org/"
+      }
+    },
+    {
+      "id": "victron-multiplus-ii",
+      "brand": "Victron",
+      "title": "MultiPlus / MultiPlus-II",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Inverter-charger family for RV/van/marine \u2014 size from real simultaneous loads + surge; never treat peak sticker as continuous. Official product + manuals hubs only.",
+      "links": {
+        "family": "https://www.victronenergy.com/inverters-chargers",
+        "multiplus_ii": "https://www.victronenergy.com/inverters-chargers/multiplus-ii",
+        "manuals": "https://www.victronenergy.com/support-and-downloads/manuals",
+        "ve_bus": "https://www.victronenergy.com/live/ve.bus:start",
+        "software_hub": "https://www.victronenergy.com/support-and-downloads/software"
+      },
+      "honesty": "Field: Victron Professional Certified Installer. Quattro when dual AC-in (shore+gen) matters."
+    },
+    {
+      "id": "victron-quattro",
+      "brand": "Victron",
+      "title": "Quattro inverter-chargers",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Dual AC-in inverter-chargers (shore + generator paths). Gen/ATS wiring is diagnose-driven \u2014 not assumed free.",
+      "links": {
+        "product": "https://www.victronenergy.com/inverters-chargers/quattro",
+        "family": "https://www.victronenergy.com/inverters-chargers",
+        "manuals": "https://www.victronenergy.com/support-and-downloads/manuals",
+        "ve_bus": "https://www.victronenergy.com/live/ve.bus:start"
+      }
+    },
+    {
+      "id": "victron-smartsolar",
+      "brand": "Victron",
+      "title": "SmartSolar / BlueSolar MPPT",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Official solar charge controller family \u2014 match array Voc/Isc and battery voltage; configure in VictronConnect.",
+      "links": {
+        "family": "https://www.victronenergy.com/solar-charge-controllers",
+        "manuals": "https://www.victronenergy.com/support-and-downloads/manuals",
+        "victronconnect": "https://www.victronenergy.com/live/victronconnect:start",
+        "software_hub": "https://www.victronenergy.com/support-and-downloads/software"
+      }
+    },
+    {
+      "id": "victron-smartshunt",
+      "brand": "Victron",
+      "title": "SmartShunt / battery monitors",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Battery monitor / SmartShunt \u2014 SOC truth depends on correct shunt wiring and settings. Official product + manuals only.",
+      "links": {
+        "family": "https://www.victronenergy.com/battery-monitors",
+        "smartshunt": "https://www.victronenergy.com/battery-monitors/smart-battery-shunt",
+        "manuals": "https://www.victronenergy.com/support-and-downloads/manuals",
+        "victronconnect": "https://www.victronenergy.com/live/victronconnect:start"
+      }
+    },
+    {
+      "id": "victron-cerbo-gx",
+      "brand": "Victron",
+      "title": "Cerbo GX / GX devices",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Cerbo / GX system brain for VRM and VE.Bus/VE.Direct/VE.Can integration. Firmware via Victron-published paths only \u2014 no re-hosted .swu.",
+      "links": {
+        "product": "https://www.victronenergy.com/panel-systems-remote-monitoring/cerbo-gx",
+        "venus_docs": "https://www.victronenergy.com/live/ccgx:start",
+        "venus_os": "https://www.victronenergy.com/live/venus-os:start",
+        "firmware_updating": "https://www.victronenergy.com/live/ccgx:firmware_updating",
+        "professional_firmware": "https://professional.victronenergy.com/downloads/firmware/",
+        "vrm": "https://vrm.victronenergy.com/"
+      }
+    },
+    {
+      "id": "victron-orion-dc-dc",
+      "brand": "Victron",
+      "title": "Orion-class DC-DC (e.g. Orion-Tr Smart)",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Orion-class DC-DC (e.g. Orion-Tr Smart \u2014 illustrative class example, not a must-buy SKU or partner badge) for lithium-safe chassis/alternator charging. Do not drop LiFePO4 onto unprotected alternators or dumb converters.",
+      "links": {
+        "family": "https://www.victronenergy.com/dc-dc-converters",
+        "orion_tr_smart": "https://www.victronenergy.com/dc-dc-converters/orion-tr-smart",
+        "manuals": "https://www.victronenergy.com/support-and-downloads/manuals",
+        "victronconnect": "https://www.victronenergy.com/live/victronconnect:start"
+      },
+      "honesty": "Hard gate: chassis lithium needs proper DC-DC / alt protection."
+    },
+    {
+      "id": "victron-lynx-dc",
+      "brand": "Victron",
+      "title": "Lynx DC distribution",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Lynx Distributor / DC bus family \u2014 fuse hierarchy starts at the Li bank (Class-T or manufacturer-required), then downstream ANL/MIDI/MEGA by ampacity.",
+      "links": {
+        "family": "https://www.victronenergy.com/dc-distribution-systems",
+        "lynx_distributor": "https://www.victronenergy.com/dc-distribution-systems/lynx-distributor",
+        "manuals": "https://www.victronenergy.com/support-and-downloads/manuals",
+        "ve_can": "https://www.victronenergy.com/live/ve.can:start"
+      }
+    },
+    {
+      "id": "victron-mk3-usb",
+      "brand": "Victron",
+      "title": "MK3-USB (VE.Bus interface)",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Official MK3-USB interface for VE.Bus configure/update with Victron tools \u2014 download software from Victron only.",
+      "links": {
+        "product": "https://www.victronenergy.com/accessories/interface-mk3-usb",
+        "software_hub": "https://www.victronenergy.com/support-and-downloads/software",
+        "veconfigure": "https://www.victronenergy.com/media/pg/VEConfigure_Manual/en/index-en.html",
+        "ve_bus": "https://www.victronenergy.com/live/ve.bus:start"
+      }
+    },
+    {
+      "id": "victron-battery-compatibility",
+      "brand": "Victron",
+      "title": "Battery compatibility (LiFePO4)",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Official Victron battery compatibility / lithium notes. Cold-corridor honesty: LiFePO4 typically refuses charge near/below freezing unless heated LiFePO4 / integrated heat / BMS charge-gate (generic \u2014 no house brand endorsement). Example only: many BMS inhibit ~0 \u00b0C/32 \u00b0F \u2014 confirm battery/BMS manual.",
+      "links": {
+        "compatibility": "https://www.victronenergy.com/live/battery_compatibility:start",
+        "victron_lithium": "https://www.victronenergy.com/live/battery_compatibility:victron_lithium_batteries",
+        "manuals": "https://www.victronenergy.com/support-and-downloads/manuals",
+        "tech_info": "https://www.victronenergy.com/support-and-downloads/technical-information"
       }
     }
   ]
