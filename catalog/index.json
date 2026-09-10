@@ -1,8 +1,8 @@
 {
-  "version": 4,
+  "version": 5,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
-  "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
+  "scope": "RV · camper · Class A · light truck connectivity-first; light marine FOSS OK.",
   "entries": [
     {
       "id": "victron-connect",
@@ -24,7 +24,7 @@
       "title": "Venus OS / GX",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official Venus OS / GX images \u2014 use Victron-published builds for field installs.",
+      "summary": "Official Venus OS / GX images — use Victron-published builds for field installs.",
       "links": {
         "github": "https://github.com/victronenergy/venus",
         "docs": "https://www.victronenergy.com/live/ccgx:start",
@@ -87,7 +87,7 @@
       "title": "Winegard support",
       "kind": "software",
       "policy": "link",
-      "summary": "RV antenna / ConnecT support \u2014 official Winegard only.",
+      "summary": "RV antenna / ConnecT support — official Winegard only.",
       "links": {
         "support": "https://winegard.com/support/",
         "site": "https://winegard.com/"
@@ -99,7 +99,7 @@
       "title": "KING Connect",
       "kind": "software",
       "policy": "link",
-      "summary": "KING RV antenna / connectivity products \u2014 manufacturer hub links only.",
+      "summary": "KING RV antenna / connectivity products — manufacturer hub links only.",
       "links": {
         "site": "https://kingconnect.com/"
       }
@@ -110,7 +110,7 @@
       "title": "SureCall support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Cellular boosters for vehicles / buildings \u2014 official support only. Outdoor RF honesty still applies on installs.",
+      "summary": "Cellular boosters for vehicles / buildings — official support only. Outdoor RF honesty still applies on installs.",
       "links": {
         "support": "https://surecall.com/support/",
         "site": "https://surecall.com/"
@@ -134,7 +134,7 @@
       "title": "GL.iNet firmware downloads",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Travel / 4G-5G routers common on coaches \u2014 official firmware CDN + support. Link only (not a FOSS mirror of proprietary images).",
+      "summary": "Travel / 4G-5G routers common on coaches — official firmware CDN + support. Link only (not a FOSS mirror of proprietary images).",
       "links": {
         "downloads": "https://dl.gl-inet.com/",
         "firmware_selector": "https://firmware.gl-inet.com/",
@@ -147,7 +147,7 @@
       "title": "Teltonika Networks wiki",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Industrial / fleet cellular routers used on RVs and light trucks \u2014 official wiki + site. No redistributed vendor packages.",
+      "summary": "Industrial / fleet cellular routers used on RVs and light trucks — official wiki + site. No redistributed vendor packages.",
       "links": {
         "wiki": "https://wiki.teltonika-networks.com/",
         "site": "https://www.teltonika-networks.com/"
@@ -159,7 +159,7 @@
       "title": "Dometic mobile apps",
       "kind": "app",
       "policy": "link",
-      "summary": "Official Dometic apps \u2014 store search / manufacturer site only (no guessed App Store IDs).",
+      "summary": "Official Dometic apps — store search / manufacturer site only (no guessed App Store IDs).",
       "links": {
         "site": "https://www.dometic.com/",
         "play_search": "https://play.google.com/store/search?q=Dometic&c=apps"
@@ -172,10 +172,27 @@
       "kind": "software",
       "policy": "mirror-candidate",
       "license": "Apache-2.0",
-      "summary": "Open marine/RV data server \u2014 pin release + SHA256 before mirroring.",
+      "summary": "Open marine/RV data server — pin release + SHA256 before mirroring.",
       "links": {
         "github": "https://github.com/SignalK/signalk-server",
         "site": "https://signalk.org/"
+      }
+    },
+    {
+      "id": "node-red",
+      "brand": "FOSS",
+      "title": "Node-RED",
+      "kind": "software",
+      "policy": "mirror-candidate",
+      "license": "Apache-2.0",
+      "summary": "Low-code flow automation (common with Signal K / marine-RV dashboards). Pin release + SHA256 before mirroring; official docs/npm/github only.",
+      "links": {
+        "site": "https://nodered.org/",
+        "docs": "https://nodered.org/docs/",
+        "getting_started": "https://nodered.org/docs/getting-started/",
+        "github": "https://github.com/node-red/node-red",
+        "npm": "https://www.npmjs.com/package/node-red",
+        "license": "https://nodered.org/about/license/"
       }
     },
     {
@@ -185,7 +202,7 @@
       "kind": "firmware",
       "policy": "mirror-candidate",
       "license": "GPL-2.0",
-      "summary": "Open router OS (often under travel routers). Mirror only official release images with checksum \u2014 never vendor-locked forks without license clarity.",
+      "summary": "Open router OS (often under travel routers). Mirror only official release images with checksum — never vendor-locked forks without license clarity.",
       "links": {
         "site": "https://openwrt.org/",
         "github": "https://github.com/openwrt/openwrt"
