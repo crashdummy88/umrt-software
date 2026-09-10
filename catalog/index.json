@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 12,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -68,12 +68,13 @@
       "title": "weBoost support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official support. UMRT: weBoost Authorized Installer. Outdoor RF required; AGC manages gain \u2014 no invent-from-zero; we do not tune gain like a volume knob.",
+      "summary": "Official support (+ support.weboost.com). UMRT: weBoost Authorized Installer. Outdoor RF required; AGC \u2014 no invent-from-zero; we do not tune gain.",
       "links": {
         "support": "https://www.weboost.com/support",
+        "support_alias": "https://support.weboost.com/",
         "site": "https://www.weboost.com/",
-        "app_page": "https://www.weboost.com/app",
-        "drive_reach_rv": "https://www.weboost.com/products/drive-reach-rv"
+        "parent": "https://www.wilsonconnectivity.com/",
+        "app_page": "https://www.weboost.com/app"
       }
     },
     {
@@ -87,6 +88,24 @@
         "ios": "https://apps.apple.com/us/app/weboost/id1611974453",
         "android": "https://play.google.com/store/apps/details?id=com.wilsonelectronics.weboost",
         "app_page": "https://www.weboost.com/app"
+      }
+    },
+    {
+      "id": "weboost-rv-line",
+      "brand": "weBoost",
+      "title": "weBoost RV / vehicle product lines",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Official RV/vehicle SKUs (Drive Reach RV / RV20 / RV35 / RV50 / Destination / Overland). Amplifies usable outdoor RF only; AGC. Install guide PDF OEM-hosted.",
+      "links": {
+        "rv_category": "https://www.weboost.com/boosters/vehicle-rv",
+        "drive_reach_rv": "https://www.weboost.com/products/drive-reach-rv",
+        "rv20": "https://www.weboost.com/products/drive-reach-rv-2",
+        "rv35": "https://www.weboost.com/products/weboost-rv-35",
+        "rv50": "https://www.weboost.com/products/weboost-rv-50",
+        "destination_rv": "https://www.weboost.com/products/destination-rv",
+        "drive_reach_overland": "https://www.weboost.com/products/drive-reach-overland",
+        "install_guide_pdf": "https://assets.wilsonelectronics.com/m/700bdbf86910493c/original/Drive-Reach-RV-Installation-Guide.pdf"
       }
     },
     {
@@ -108,7 +127,7 @@
       "title": "SureCall support & manuals",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Vehicle/building boosters \u2014 manufacturer only. Outdoor RF + antenna separation honesty still applies. No UMRT SureCall cert title.",
+      "summary": "Vehicle/RV boosters \u2014 manufacturer only. Outdoor RF + separation. No UMRT SureCall cert title.",
       "links": {
         "support": "https://surecall.com/support/",
         "manuals": "https://surecall.com/user-manuals/",
@@ -122,10 +141,26 @@
       "title": "SureCall app",
       "kind": "app",
       "policy": "link",
-      "summary": "Antenna aiming / separation feedback on compatible boosters. Does not invent coverage from zero outdoor RF.",
+      "summary": "Antenna aiming / separation on compatible boosters. Does not invent coverage from zero outdoor RF.",
       "links": {
         "ios": "https://apps.apple.com/us/app/surecall/id6449509462",
         "android": "https://play.google.com/store/apps/details?id=com.surecall.surecall"
+      }
+    },
+    {
+      "id": "surecall-rv-line",
+      "brand": "SureCall",
+      "title": "SureCall RV / vehicle product lines",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Fusion2Go XR RV / XR / Ultra / RV kits \u2014 official product pages only. Outdoor RF honesty; no invented Authorized title.",
+      "links": {
+        "rv_category": "https://surecall.com/rv-cell-phone-boosters/",
+        "vehicle_category": "https://surecall.com/vehicle-cell-signal-boosters/",
+        "fusion2go_xr_rv": "https://surecall.com/rv-cell-phone-boosters/fusion2go-xr-rv-cell-phone-signal-booster/",
+        "fusion2go_xr": "https://surecall.com/car-boosters/fusion2go-xr/",
+        "fusion2go_ultra": "https://surecall.com/signal-booster-for-trucks/fusion2go-ultra/",
+        "fusion2go_rv": "https://surecall.com/rv-boosters/fusion2go-rv/"
       }
     },
     {
@@ -134,10 +169,11 @@
       "title": "Cel-Fi / Nextivity support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Nextivity Cel-Fi coverage systems. Official support only. Some models are operator-locked \u2014 confirm carrier fit before promising multi-carrier boost. No UMRT Cel-Fi cert title.",
+      "summary": "Official Nextivity/Cel-Fi support + software hub. Often one operator at a time (WAVE switch) \u2014 not simultaneous multi-carrier like weBoost. No UMRT Cel-Fi cert.",
       "links": {
         "support": "https://nextivityinc.com/support/",
         "cel_fi_support": "https://support.cel-fi.com/hc/en-us",
+        "software": "https://nextivityinc.com/software/",
         "site": "https://nextivityinc.com/",
         "cel_fi_site": "https://cel-fi.com/"
       }
@@ -151,10 +187,11 @@
       "summary": "Register, configure, monitor, update Cel-Fi (Bluetooth). Primary setup path \u2014 not a substitute for outdoor RF. Do not confuse with MyWAVE.",
       "links": {
         "software": "https://nextivityinc.com/software/wave/",
+        "wave_portal": "https://wave.nextivityinc.com/",
+        "wavefieldtool": "https://nextivityinc.com/software/wavefieldtool/",
         "overview": "https://support.cel-fi.com/hc/en-us/articles/14324851714971-WAVE-App-Overview",
         "ios": "https://apps.apple.com/us/app/cel-fi-wave/id980050278",
-        "android": "https://play.google.com/store/apps/details?id=com.NxtyWave",
-        "wave_portal": "https://wave.nextivityinc.com/"
+        "android": "https://play.google.com/store/apps/details?id=com.NxtyWave"
       }
     },
     {
@@ -170,12 +207,25 @@
       }
     },
     {
+      "id": "celfi-mobile-line",
+      "brand": "Cel-Fi",
+      "title": "Cel-Fi GO / ROAM mobile lines",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "GO G32 (+ mobile kits) and ROAM R41 \u2014 official product pages. Carrier/operator selection via WAVE; one-at-a-time honesty.",
+      "links": {
+        "go_g32": "https://nextivityinc.com/go-g32/",
+        "go_g32_mobile": "https://nextivityinc.com/go-g32/mobile-solutions/",
+        "roam_r41": "https://nextivityinc.com/products/roam-r41/"
+      }
+    },
+    {
       "id": "king-connect",
       "brand": "KING",
       "title": "KING Connect (legacy)",
       "kind": "software",
       "policy": "link",
-      "summary": "Do not sell new. Site returns 200 but is empty Shopify placeholder; deep support/manuals 404. Existing Extend \u2192 weBoost RV path. No KING cert title.",
+      "summary": "Do not sell new. Site returns 200 but is empty Shopify placeholder; deep support/manuals 404. Existing Extend \u2192 weBoost RV path. No KING cert title. No KING apps published.",
       "links": {
         "site": "https://kingconnect.com/",
         "migrate_weboost_rv": "https://www.weboost.com/boosters/vehicle-rv"
@@ -187,11 +237,13 @@
       "title": "Winegard support",
       "kind": "software",
       "policy": "link",
-      "summary": "RV antenna / ConnecT / ConnecT 5G \u2014 official Winegard only. ConnecT is a connectivity hub (Wi-Fi + cellular paths), not a weBoost-class RF amp; set expectations honestly.",
+      "summary": "ConnecT / ConnecT 5G / Gateway = RV Wi-Fi + LTE router/hotspot (SIM), not a weBoost-class RF amp. Official Winegard only.",
       "links": {
         "support": "https://winegard.com/support/",
+        "registration": "https://winegard.com/product-registration",
         "connect": "https://winegard.com/connect",
         "connect_5g": "https://winegard.com/connect-5g",
+        "connect_2_4g": "https://winegard.com/connect-2-4g/",
         "site": "https://winegard.com/"
       }
     },
@@ -201,8 +253,11 @@
       "title": "Winegard RV Halo app",
       "kind": "app",
       "policy": "link",
-      "summary": "Official app for Winegard ConnecT / Halo products (replaces discontinued ConnecTed). Setup, updates, manuals \u2014 not a cell-booster AGC tuner.",
+      "summary": "Official app for ConnecT / Halo (replaces ConnecTed). Setup/updates \u2014 not a cell-booster AGC tuner.",
       "links": {
+        "rv_halo": "https://winegard.com/smart/rv-halo",
+        "compatible_devices": "https://winegard.com/smart/rv-halo/compatible-devices",
+        "rvhalo_alias": "https://rvhalo.com/",
         "ios": "https://apps.apple.com/us/app/rv-halo/id1563032659",
         "android": "https://play.google.com/store/apps/details?id=com.winegard.halo"
       }
