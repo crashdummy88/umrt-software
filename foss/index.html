@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FOSS | UMRT Software</title>
-  <meta name="description" content="Signal K, OpenWrt, Node-RED — official FOSS links only. Mirror-candidate honesty: pin release + SHA256. No proprietary redistribution." />
-  <meta property="og:title" content="FOSS | UMRT Software" />
-  <meta property="og:description" content="Official FOSS links shelf. Mirror only when license-clear with checksum + upstream pin." />
+  <title>FOSS downloads | UMRT Software</title>
+  <meta name="description" content="Official FOSS firmware / app / support links for United Mobile RV field work. Signal K, OpenWrt, Node-RED — manufacturer and project links only. Mirror-candidate after pin+SHA256. No proprietary binary redistribution." />
+  <meta property="og:title" content="FOSS downloads | UMRT Software" />
+  <meta property="og:description" content="Official FOSS links for Signal K, OpenWrt, and Node-RED. Link vs mirror honesty; pin+SHA256 before any mirror. No proprietary redistrib." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://umrt-software.pages.dev/foss/" />
   <meta property="og:image" content="https://umrt-software.pages.dev/assets/og/umrt-software-og-card.png" />
@@ -14,6 +14,8 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://umrt-software.pages.dev/assets/og/umrt-software-og-card.png" />
+  <meta name="twitter:title" content="FOSS downloads | UMRT Software" />
+  <meta name="twitter:description" content="Official FOSS links. Mirror-candidate after pin+SHA256. No proprietary redistrib." />
   <link rel="canonical" href="https://umrt-software.pages.dev/foss/" />
   <link rel="stylesheet" href="/shared/css/umrt.css" />
 </head>
@@ -21,59 +23,68 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header"><div class="wrap header-inner">
     <a class="logo" href="/">UMRT <span>Software</span></a>
-    <nav aria-label="Primary"><a href="/">Hub</a><a href="/#catalog">Catalog</a><a href="/policy.html">Policy</a></nav>
-</div></header>
+    <nav aria-label="Primary"><a href="/">Hub</a><a href="/#catalog">Catalog</a><a href="/nodered/">Node-RED</a><a href="/policy.html">Policy</a></nav>
+  </div></header>
   <main id="main" class="wrap hero">
     <p class="eyebrow">FOSS</p>
     <h1>Official links</h1>
-    <p class="lede">Open-source shelf for coach dashboards and routers: <strong>Signal K</strong>, <strong>OpenWrt</strong>, and <strong>Node-RED</strong> (plus related dashboard plugins). Catalog policy is <strong>mirror-candidate</strong> — link official sources until a clear license, pinned upstream tag, and SHA256 are recorded. UMRT integrates/installs; we do <strong>not</strong> productize unvetted community flows.</p>
+    <p class="lede">Open-source candidates for RV and light-marine field work: Signal K, OpenWrt, and Node-RED. This hub points at official project sites only. We integrate and install — we do not productize unvetted community flows, and we do not re-host proprietary vendor binaries.</p>
 
-    <h2>Start here (official only)</h2>
+    <h2>What FOSS means on this hub</h2>
     <ul class="fine" style="margin:1rem 0 0; padding-left:1.25rem; line-height:1.7">
-      <li>Node-RED hub (deep): <a href="/nodered/">/nodered/</a> · alias <a href="/node-red/">/node-red/</a></li>
-      <li>OpenWrt hub: <a href="/openwrt/">/openwrt/</a></li>
-      <li>Signal K: <a href="https://signalk.org/" rel="noopener noreferrer" target="_blank">signalk.org</a> · server <a href="https://github.com/SignalK/signalk-server" rel="noopener noreferrer" target="_blank">GitHub</a></li>
-      <li>Node-RED: <a href="https://nodered.org/" rel="noopener noreferrer" target="_blank">nodered.org</a> · <a href="https://nodered.org/docs/" rel="noopener noreferrer" target="_blank">docs</a> · <a href="https://nodered.org/about/license/" rel="noopener noreferrer" target="_blank">Apache-2.0 license</a></li>
-      <li>OpenWrt: <a href="https://openwrt.org/" rel="noopener noreferrer" target="_blank">openwrt.org</a> · Firmware Selector <a href="https://firmware-selector.openwrt.org/" rel="noopener noreferrer" target="_blank">firmware-selector.openwrt.org</a> · downloads <a href="https://downloads.openwrt.org/" rel="noopener noreferrer" target="_blank">downloads.openwrt.org</a></li>
+      <li><strong>Link</strong> — default. Catalog cards and this page send you to the official project site, docs, GitHub, or package registry.</li>
+      <li><strong>Mirror-candidate</strong> — a labeled possibility only. Before any file lands under <code>mirrors/</code>: clear license, pinned upstream release tag, and SHA256 + upstream URL recorded in the catalog.</li>
+      <li><strong>Not a mirror yet</strong> — until pin + checksum exist, treat every FOSS card as link-only. See <a href="/policy.html">Policy</a>.</li>
     </ul>
 
-    <h2>What belongs on this shelf</h2>
+    <h2>Ecosystem overview</h2>
+    <p class="fine">These three projects often sit together on coaches and light marine: Signal K for vessel/RV data, Node-RED for dashboards and bridges, OpenWrt under many travel routers. Start at the official homes — not random forks or re-packs.</p>
     <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
-      <li><strong>Signal K Server</strong> — marine/RV data bus; often pairs with Node-RED on coaches.</li>
-      <li><strong>Signal K Node-RED plugin</strong> — official bridge; Apache-2.0 mirror-candidate.</li>
-      <li><strong>Node-RED</strong> — low-code flows for dashboards; secure the runtime before exposing LAN/WAN.</li>
-      <li><strong>Node-RED Dashboard (classic)</strong> + <strong>FlowFuse Dashboard 2.0</strong> — UI nodes; pin release before any mirror.</li>
-      <li><strong>OpenWrt</strong> — FOSS router OS / Firmware Selector; replacing vendor firmware is brick-risk — verify device + checksums.</li>
+      <li><strong>Signal K</strong> — <a href="https://signalk.org/" rel="noopener noreferrer" target="_blank">signalk.org</a> · server: <a href="https://github.com/SignalK/signalk-server" rel="noopener noreferrer" target="_blank">SignalK/signalk-server</a> (Apache-2.0)</li>
+      <li><strong>OpenWrt</strong> — <a href="https://openwrt.org/" rel="noopener noreferrer" target="_blank">openwrt.org</a> · downloads: <a href="https://downloads.openwrt.org/" rel="noopener noreferrer" target="_blank">downloads.openwrt.org</a> · source: <a href="https://github.com/openwrt/openwrt" rel="noopener noreferrer" target="_blank">openwrt/openwrt</a></li>
+      <li><strong>Node-RED</strong> — <a href="https://nodered.org/" rel="noopener noreferrer" target="_blank">nodered.org</a> · docs: <a href="https://nodered.org/docs/" rel="noopener noreferrer" target="_blank">nodered.org/docs</a> · dedicated hub: <a href="/nodered/">/nodered/</a> (also <a href="/node-red/">/node-red/</a>)</li>
+    </ul>
+    <p class="fine">Node-RED integrate/install only — no unvetted-flow productization. Match plugin versions to upstream docs; we do not invent a supported-stack matrix.</p>
+
+    <h2>Start here (official only)</h2>
+    <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
+      <li>Signal K site: <a href="https://signalk.org/" rel="noopener noreferrer" target="_blank">signalk.org</a></li>
+      <li>Signal K Node-RED plugin: <a href="https://github.com/SignalK/signalk-node-red" rel="noopener noreferrer" target="_blank">SignalK/signalk-node-red</a></li>
+      <li>OpenWrt site: <a href="https://openwrt.org/" rel="noopener noreferrer" target="_blank">openwrt.org</a></li>
+      <li>OpenWrt downloads: <a href="https://downloads.openwrt.org/" rel="noopener noreferrer" target="_blank">downloads.openwrt.org</a></li>
+      <li>Node-RED site: <a href="https://nodered.org/" rel="noopener noreferrer" target="_blank">nodered.org</a></li>
+      <li>Node-RED getting started: <a href="https://nodered.org/docs/getting-started/" rel="noopener noreferrer" target="_blank">nodered.org/docs/getting-started</a></li>
+      <li>Node-RED flows library: <a href="https://flows.nodered.org/" rel="noopener noreferrer" target="_blank">flows.nodered.org</a> — review each flow before use</li>
+      <li>OpenWrt brand shelf (when present): <a href="/openwrt/">/openwrt/</a></li>
     </ul>
 
     <h2>Mirror honesty</h2>
-    <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
-      <li>Until pin + SHA256 + upstream URL land in catalog: <strong>link only</strong> (no <code>mirrors/</code> binaries).</li>
-      <li>Clear license required (Apache-2.0 / GPL-2.0 as published upstream) — never “OpenWrt-derived” proprietary vendor images as FOSS mirrors.</li>
-      <li>Flows library is review-before-use — we help integrate; we do not ship random community flows as a UMRT product.</li>
-    </ul>
-    <p class="fine">Plugin / dashboard sources: Signal K Node-RED <a href="https://github.com/SignalK/signalk-node-red" rel="noopener noreferrer" target="_blank">GitHub</a> · classic dashboard <a href="https://github.com/node-red/node-red-dashboard" rel="noopener noreferrer" target="_blank">GitHub</a> · FlowFuse Dashboard 2.0 <a href="https://github.com/FlowFuse/node-red-dashboard" rel="noopener noreferrer" target="_blank">GitHub</a>.</p>
+    <p class="fine">Catalog policy is <strong>mirror-candidate</strong>, not an active mirror. Before any <code>mirrors/</code> file: clear license, pinned upstream release tag, SHA256 + upstream URL in catalog. No proprietary vendor <code>.bin</code> / <code>.swu</code>. Until then: link only. Full rules on <a href="/policy.html">Policy</a>.</p>
 
     <h2>Never</h2>
     <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
-      <li>Re-hosting proprietary vendor <code>.bin</code> / <code>.swu</code> under a FOSS label.</li>
-      <li>Mirroring without license + pin + checksum.</li>
-      <li>Claiming UMRT “certifies” OpenWrt / Signal K / FlowFuse (we link and integrate only).</li>
-      <li>Productizing unvetted Node-RED community flows.</li>
+      <li>Cracked tools, keygens, or unlocked firmware.</li>
+      <li>Re-hosting proprietary vendor binaries on this hub.</li>
+      <li>Shipping unvetted community Node-RED flows as a UMRT product.</li>
+      <li>Publishing checksums without a pinned upstream tag + SHA256.</li>
+      <li>Inventing certifications or a private &ldquo;supported FOSS stack&rdquo; matrix.</li>
     </ul>
 
-    <p class="fine">Policy: manufacturer / store links only for proprietary software. FOSS mirrors require a clear license — see <a href="/policy.html">Policy</a>.</p>
-    <div class="cards" data-catalog data-brand="FOSS" style="margin-top:1.5rem"></div>
+    <h2>Catalog (FOSS)</h2>
+    <p class="fine">Live cards from <code>/catalog/index.json</code> filtered to brand FOSS — Signal K server, Node-RED, OpenWrt, dashboards, and related plugins. Link / mirror-candidate per entry.</p>
+    <div class="cards" data-catalog data-brand="FOSS" style="margin-top:1rem"></div>
 
-    <p class="fine" style="margin-top:1.25rem">Related hubs: <a href="/nodered/">Node-RED</a> · <a href="/openwrt/">OpenWrt</a> · Troubleshoot: <a href="/troubleshoot/node-red/">Node-RED</a></p>
+    <p class="fine" style="margin-top:1.25rem">Cross-links: <a href="/nodered/">Node-RED hub</a> · <a href="/node-red/">/node-red/</a> · <a href="/#catalog">Catalog</a> · <a href="/policy.html">Policy</a> · <a href="/openwrt/">OpenWrt</a></p>
 
     <p style="margin-top:1.5rem" class="btn-row">
+      <a class="btn" href="tel:+16166065277">Prefer Text (616) 606-5277</a>
+      <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/book-service/">Book service</a>
       <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/">United Mobile RV sales site</a>
     </p>
     <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented Starlink cert).</p>
   </main>
   <footer class="site-footer"><div class="wrap">
-    <p>United Mobile RV LLC · Official links shelf — convert on <a href="/">home</a></p>
+    <p>United Mobile RV LLC · Prefer Text <a href="tel:+16166065277">(616) 606-5277</a></p>
   </div></footer>
   <script src="/shared/js/catalog.js" defer></script>
 </body>
