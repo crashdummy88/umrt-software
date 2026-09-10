@@ -59,15 +59,61 @@ code { font-size: 0.9em; background: #222; padding: 0.1em 0.35em; border-radius:
 }
 
 
-/* VISUAL share-UX polish */
-.share-strip { display:flex; flex-wrap:wrap; align-items:center; gap:0.75rem; margin-top:1rem; }
-.share-btn { cursor:pointer; font:inherit; min-height:44px; }
-.share-status { min-height:1.2em; color:var(--gold,#C9972C); }
-.catalog-filter-label { display:block; margin-bottom:0.35rem; }
-.catalog-filter { width:min(100%,28rem); max-width:100%; background:#141414; color:#fff; border:1px solid #3a3a3a; border-radius:6px; padding:0.7rem 0.9rem; font:inherit; min-height:44px; margin-bottom:0.75rem; }
-.catalog-filter:focus { outline:2px solid #C9972C; outline-offset:2px; border-color:#C9972C; }
-.catalog-filter::placeholder { color:#777; }
-@media (max-width:720px) {
-  .share-strip { flex-direction:column; align-items:stretch; }
-  .share-btn, .catalog-filter { width:100%; }
+/* VISUAL W3 catalog scale */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #141414;
+  border: 1px solid transparent;
+  border-top: 2px solid var(--gold);
+  padding: 1rem 1.05rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 6px;
+  min-height: 7.25rem;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+.card:hover {
+  border-color: rgba(201,151,44,0.35);
+  background: #181818;
+  transform: translateY(-1px);
+}
+.card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.card h3 { margin: 0 0 0.4rem; color: var(--white); font-size: 1.02rem; letter-spacing: -0.01em; }
+.card p { margin: 0; color: #bbb; font-size: 0.9rem; line-height: 1.45; flex: 1; }
+.card-share { margin-top: 0.75rem; }
+.share-strip { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 1rem; }
+.share-btn { cursor: pointer; font: inherit; min-height: 44px; }
+.share-mini {
+  cursor: pointer; font: inherit; font-size: 0.8rem;
+  background: transparent; color: var(--gold); border: 1px solid #555;
+  border-radius: 3px; padding: 0.35rem 0.55rem; min-height: 36px;
+}
+.share-status { min-height: 1.2em; color: var(--gold); }
+.catalog-filter {
+  width: min(100%, 28rem); max-width: 100%;
+  background: #141414; color: #fff; border: 1px solid #3a3a3a;
+  border-radius: 6px; padding: 0.7rem 0.9rem; font: inherit;
+  min-height: 44px; margin: 0.35rem 0 0.85rem;
+}
+.catalog-filter:focus { outline: 2px solid var(--gold); outline-offset: 2px; border-color: var(--gold); }
+.catalog-filter::placeholder { color: #777; }
+.catalog-filter-label { display: block; margin-top: 0.35rem; }
+@media (max-width: 720px) {
+  .cards { grid-template-columns: 1fr; gap: 0.75rem; }
+  .card { min-height: 0; }
+  .share-strip { flex-direction: column; align-items: stretch; }
+  .share-btn, .catalog-filter { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+  .card:hover { transform: none; }
 }
