@@ -49,7 +49,7 @@
       "title": "Peplink / Pepwave firmware & InControl",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official firmware + InControl. Field speak: bonding and/or failover (SpeedFusion) with Starlink + cellular.",
+      "summary": "Official firmware + InControl (Pepwave under same Peplink support tree). Bonding and/or failover (SpeedFusion) \u2014 not bonding-only. Peplink Certified Associate.",
       "links": {
         "firmware": "https://www.peplink.com/support/downloads/firmware/",
         "incontrol": "https://incontrol.peplink.com/",
@@ -62,7 +62,7 @@
       "title": "weBoost support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Support portal. Authorized Installer: outdoor RF required; AGC; no invent-from-zero signal.",
+      "summary": "Support portal. weBoost Authorized Installer: outdoor RF required; AGC; no invent-from-zero / no tune gain.",
       "links": {
         "support": "https://www.weboost.com/support",
         "site": "https://www.weboost.com/"
@@ -74,7 +74,7 @@
       "title": "Starlink app",
       "kind": "app",
       "policy": "link",
-      "summary": "Official app. Clear-sky installs; no Starlink Certified title.",
+      "summary": "Official app. Clear-sky installs only. Install capability \u2014 not an invented Starlink Certified title.",
       "links": {
         "ios": "https://apps.apple.com/us/app/starlink/id1537177988",
         "android": "https://play.google.com/store/apps/details?id=com.starlink.mobile",
@@ -229,7 +229,7 @@
       "title": "Peplink support & forum",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official support + firmware downloads + community forum. Field: bonding and/or failover (SpeedFusion).",
+      "summary": "Official support + firmware + forum. Bonding and/or failover (SpeedFusion). Peplink Certified Associate \u2014 no separate Pepwave cert.",
       "links": {
         "support": "https://www.peplink.com/support/",
         "firmware": "https://www.peplink.com/support/downloads/firmware/",
@@ -243,7 +243,7 @@
       "title": "weBoost support & guides",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official weBoost support + Wilson Amplifiers resources. Outdoor RF / AGC honesty on installs.",
+      "summary": "Official weBoost support + Wilson Amplifiers resources. Outdoor RF required; AGC; no invent-from-zero / no tune gain.",
       "links": {
         "support": "https://www.weboost.com/support",
         "site": "https://www.weboost.com/",
@@ -256,7 +256,7 @@
       "title": "Starlink support",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official Starlink support hub. Clear-sky installs; no invented Starlink Certified title.",
+      "summary": "Official Starlink support hub. Clear-sky installs only; install capability \u2014 not an invented Starlink Certified title.",
       "links": {
         "support": "https://www.starlink.com/support",
         "app_ios": "https://apps.apple.com/us/app/starlink/id1537177988",
