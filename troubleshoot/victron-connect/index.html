@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VictronConnect · Venus · VRM | Troubleshoot | UMRT Software</title>
-  <meta name="description" content="VictronConnect, Venus OS / GX, and VRM troubleshooting — official Victron docs for United Mobile RV field techs and owners. Victron Professional Certified Installer." />
+  <meta name="description" content="VictronConnect, Venus OS / GX, and VRM troubleshooting — official Victron docs plus field steps for United Mobile RV. Victron Professional Certified Installer." />
   <link rel="canonical" href="https://umrt-software.pages.dev/troubleshoot/victron-connect/" />
   <link rel="stylesheet" href="/shared/css/umrt.css" />
 </head>
@@ -13,20 +13,33 @@
   <header class="site-header"><div class="wrap header-inner">
     <a class="logo" href="/">UMRT <span>Software</span></a>
     <nav aria-label="Primary"><a href="/#catalog">Catalog</a><a href="/troubleshoot/">Troubleshoot</a><a href="/policy.html">Policy</a></nav>
-</div></header>
+  </div></header>
   <main id="main">
     <section class="wrap hero">
       <p class="eyebrow">Software troubleshooting</p>
       <h1>VictronConnect · Venus · VRM</h1>
-      <p class="lede">App won't connect, GX offline, or VRM blank — official Victron docs first. Field installs: Victron Professional Certified Installer. Then Prefer Text (616) 606-5277.</p>
+      <p class="lede">App won't connect, GX offline, or VRM blank — official Victron docs first, then field checks below. Field installs: <strong>Victron Professional Certified Installer</strong>.</p>
       <div class="btn-row">
-<a class="btn btn-ghost" href="/victron/">Victron downloads</a>
-</div>
+        <a class="btn btn-ghost" href="/victron/">Victron downloads</a>
+        <a class="btn btn-ghost" href="/troubleshoot/">Troubleshoot directory</a>
+      </div>
+    </section>
+
+    <section class="wrap band">
+      <h2>Before you chase firmware</h2>
+      <p>Most “software” failures we see on coaches are still physical or settings issues: phone Bluetooth permissions, GX Wi-Fi/Ethernet path, BMS <em>allow-to-charge</em> / cold-temperature charge inhibit, loose DC lugs (ripple), or a charger still on a lead-acid profile. Confirm the symptom in VictronConnect or on the GX display, then use Victron’s manuals. UMRT does <strong>not</strong> host <code>.swu</code> or <code>.bin</code> files.</p>
     </section>
 
     <section class="wrap band">
       <h2>VictronConnect won't find or won't pair</h2>
-      <p class="fine">Bluetooth, VE.Direct, or VE.Smart link issues — start with Victron's own VictronConnect documentation and the current app from the store.</p>
+      <p>Bluetooth, VE.Direct, or VE.Smart link issues — work the phone and proximity first, then Victron’s docs and a store-fresh app build.</p>
+      <ol class="policy-list">
+        <li>Confirm Bluetooth is on; on many phones, location permission must be allowed for BLE scanning.</li>
+        <li>Stand close to the product; metal bays and crowded 2.4 GHz kill discovery.</li>
+        <li>Force-quit VictronConnect; toggle phone Bluetooth; retry. Try a second phone before condemning the dongle/product.</li>
+        <li>For VE.Direct USB, confirm the interface and drivers per Victron docs — not a random cable claim.</li>
+        <li>Update the app from the <strong>verified</strong> store listing below (not a sideload APK).</li>
+      </ol>
       <ul class="policy-list">
         <li><a href="https://www.victronenergy.com/live/victronconnect:start" rel="noopener noreferrer" target="_blank">VictronConnect live docs</a></li>
         <li><a href="https://www.victronenergy.com/victronconnectapp/victronconnect/downloads" rel="noopener noreferrer" target="_blank">VictronConnect downloads page</a></li>
@@ -37,7 +50,13 @@
 
     <section class="wrap band">
       <h2>GX / Venus offline or won't update</h2>
-      <p class="fine">Online update when the GX has internet; otherwise use Victron-published images from Professional or the release feed — never a third-party <code>.swu</code>.</p>
+      <p>Online update when the GX has internet; otherwise use Victron-published images from Professional or the release feed — never a third-party <code>.swu</code>.</p>
+      <ol class="policy-list">
+        <li>Confirm the GX has a working Ethernet/Wi-Fi path (captive portals at campgrounds break updates and VRM).</li>
+        <li>Try online update per Victron’s firmware-updating doc.</li>
+        <li>If offline, pull the correct image only from Victron Professional or the official release images feed; follow the Cerbo firmware manual.</li>
+        <li>Do not flash files emailed by strangers or mirrored on UMRT — we link out only.</li>
+      </ol>
       <ul class="policy-list">
         <li><a href="https://www.victronenergy.com/live/ccgx:start" rel="noopener noreferrer" target="_blank">Venus / GX docs</a></li>
         <li><a href="https://www.victronenergy.com/live/ccgx:firmware_updating" rel="noopener noreferrer" target="_blank">Firmware updating (live)</a></li>
@@ -50,17 +69,40 @@
 
     <section class="wrap band">
       <h2>VRM portal or app blank / not logging</h2>
-      <p class="fine">Confirm the GX is online and the site is registered, then use Victron's VRM docs and official apps.</p>
+      <p>Confirm the GX is online and the site is registered, then use Victron's VRM docs and <strong>verified</strong> official apps.</p>
+      <ol class="policy-list">
+        <li>On the GX: confirm internet and VRM logging / two-way communication status.</li>
+        <li>On the portal: confirm you are viewing the correct installation and time range.</li>
+        <li>Reinstall the mobile app only from the store IDs below — wrong VRM listings exist online.</li>
+      </ol>
       <ul class="policy-list">
         <li><a href="https://vrm.victronenergy.com/" rel="noopener noreferrer" target="_blank">VRM portal</a></li>
         <li><a href="https://www.victronenergy.com/live/vrm_portal:start" rel="noopener noreferrer" target="_blank">VRM portal docs</a></li>
-        <li><a href="https://apps.apple.com/us/app/vrm-victron-remote-management/id658834560" rel="noopener noreferrer" target="_blank">VRM on App Store</a> · <a href="https://play.google.com/store/apps/details?id=nl.victronenergy" rel="noopener noreferrer" target="_blank">VRM on Google Play</a></li>
+        <li><a href="https://apps.apple.com/us/app/vrm-victron-remote-management/id658834560" rel="noopener noreferrer" target="_blank">VRM on App Store (id658834560)</a> · <a href="https://play.google.com/store/apps/details?id=nl.victronenergy" rel="noopener noreferrer" target="_blank">VRM on Google Play (nl.victronenergy)</a></li>
       </ul>
+      <p class="fine"><strong>DO NOT USE:</strong> iOS <code>id1557620472</code> · Android package <code>com.victronenergy.vrm</code>.</p>
+    </section>
+
+    <section class="wrap band">
+      <h2>“Not charging” that looks like an app bug</h2>
+      <p>If VictronConnect shows an MPPT or Multi awake but charge current is ~0, check physical and BMS gates before firmware:</p>
+      <ul class="policy-list">
+        <li>LiFePO4 cold-charge inhibit near/below freezing unless heated/gated — warm cells / read BMS allow-to-charge. (Example only: many BMS charge-inhibit around 0 °C / 32 °F — <strong>confirm your battery/BMS manual</strong>; some heated packs differ. No universal cutoff.)</li>
+        <li>True LiFePO4 profile (or Victron commissioned voltages) — dumb converters are not “drop-in.”</li>
+        <li>Chassis path needs Orion-class DC-DC (e.g. Orion-Tr Smart — illustrative class example, not a must-buy SKU / partner badge) — unprotected alternators are a hardware problem, not an app toggle.</li>
+        <li>Loose DC lugs / undersized cable → ripple alarms; retorque and verify Class-T (or mfr-required) at the Li bank.</li>
+      </ul>
+      <p class="fine">Sales / service companion: <a href="https://united-mobile-rv.pages.dev/victron/">united-mobile-rv.pages.dev/victron</a> (no pricing on this software hub page).</p>
     </section>
 
     <section class="wrap band">
       <h2>VE.Bus Multi / Quattro configuration</h2>
-      <p class="fine">VEConfigure and assistants — tools and manuals from Victron only (we do not host installers).</p>
+      <p>VEConfigure and assistants — tools and manuals from Victron only (we do not host installers).</p>
+      <ol class="policy-list">
+        <li>Identify exact MultiPlus / MultiPlus-II / Quattro SKU and firmware context.</li>
+        <li>Change one assistant / limit at a time; document before/after.</li>
+        <li>Download VEConfigure / related tools only from Victron’s software hub.</li>
+      </ol>
       <ul class="policy-list">
         <li><a href="https://www.victronenergy.com/media/pg/VEConfigure_Manual/en/index-en.html" rel="noopener noreferrer" target="_blank">VEConfigure manual</a></li>
         <li><a href="https://www.victronenergy.com/live/ve.bus:veconfigure_manual" rel="noopener noreferrer" target="_blank">VEConfigure live docs</a></li>
@@ -76,16 +118,22 @@
         <li><a href="https://www.victronenergy.com/support-and-downloads/manuals" rel="noopener noreferrer" target="_blank">Manuals</a></li>
         <li><a href="https://www.victronenergy.com/support-and-downloads/technical-information" rel="noopener noreferrer" target="_blank">Technical information</a></li>
         <li><a href="https://community.victronenergy.com/" rel="noopener noreferrer" target="_blank">Victron Community</a></li>
-        <li><a href="https://apps.apple.com/us/app/victron-toolkit/id791585341" rel="noopener noreferrer" target="_blank">Victron Toolkit (iOS)</a> · <a href="https://play.google.com/store/apps/details?id=nl.victronenergy.victronledapp" rel="noopener noreferrer" target="_blank">Toolkit (Android)</a></li>
+        <li><a href="https://apps.apple.com/us/app/victron-toolkit/id791585341" rel="noopener noreferrer" target="_blank">Victron Toolkit (iOS id791585341)</a> · <a href="https://play.google.com/store/apps/details?id=nl.victronenergy.victronledapp" rel="noopener noreferrer" target="_blank">Toolkit (Android nl.victronenergy.victronledapp)</a></li>
       </ul>
+      <p class="fine"><strong>Toolkit DO NOT USE:</strong> iOS <code>id1149803941</code> · Android <code>com.victronenergy.victrontoolkit</code> · <code>nl.victronenergy.victronstock</code>.</p>
       <div class="btn-row" style="margin-top:1.5rem">
-<a class="btn btn-ghost" href="/victron/">Brand downloads page</a>
-</div>
+        <a class="btn btn-ghost" href="/victron/">Victron downloads</a>
+      </div>
       <p class="fine" style="margin-top:2rem"><a href="/troubleshoot/">&larr; All troubleshoot</a></p>
+    </section>
+
+    <section class="wrap band">
+      <h2>DIY / diagnostic disclaimer</h2>
+      <p class="fine">This page is <strong>diagnostic-first</strong> framing with OEM links — <strong>not</strong> a substitute for on-site work. Electrical hazard: lithium DC and inverter AC can injure, start fires, or void warranties if mishandled. Follow manufacturer docs for your exact product and firmware. <strong>United Mobile RV LLC is not liable for DIY mistakes.</strong> On-site service companion: <a href="https://united-mobile-rv.pages.dev/victron/">united-mobile-rv.pages.dev/victron</a>.</p>
     </section>
   </main>
   <footer class="site-footer"><div class="wrap">
-    <p>United Mobile RV LLC · Official links shelf — convert on <a href="/">home</a></p>
+    <p>United Mobile RV LLC · <a href="/">UMRT Software</a></p>
     <p class="fine">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented Starlink cert).</p>
   </div></footer>
 </body>
