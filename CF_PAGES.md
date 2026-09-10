@@ -16,3 +16,4 @@ No Functions required for v1 (static catalog JSON).
 
 Wave1 QGPS hard-kill + incontrol2 20260910T074142Z\n
 # redeploy nudge 2026-09-10T07:41Z qgps-hard-404
+# qgps hard-404 2026-09-10T07:42:06.235043Z
