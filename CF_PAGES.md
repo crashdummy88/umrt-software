@@ -9,3 +9,5 @@
 - Framework preset: **None**
 
 No Functions required for v1 (static catalog JSON).
+
+# redeploy nudge 2026-09-10T07:19Z
