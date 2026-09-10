@@ -1,17 +1,36 @@
-# Soft Pages → live convert paths ONLY (never whole hub / never /*)
+# Soft Pages → live/sibling convert ONLY (never whole hub / never /*)
 # Wave 3 Funnel — Book → live book-service
-/go/book    https://unitedmobilerv.com/book-service/  302
-/go/book/   https://unitedmobilerv.com/book-service/  302
-/go/victron https://unitedmobilerv.com/victron/  302
-/go/victron/ https://unitedmobilerv.com/victron/  302
-/go/wireless https://unitedmobilerv.com/wireless/  302
-/go/wireless/ https://unitedmobilerv.com/wireless/  302
+/go/book       https://unitedmobilerv.com/book-service/  302
+/go/book/      https://unitedmobilerv.com/book-service/  302
+/go/victron    https://unitedmobilerv.com/victron/  302
+/go/victron/   https://unitedmobilerv.com/victron/  302
+/go/wireless   https://unitedmobilerv.com/wireless/  302
+/go/wireless/  https://unitedmobilerv.com/wireless/  302
 /go/electrical https://unitedmobilerv.com/electrical/  302
 /go/electrical/ https://unitedmobilerv.com/electrical/  302
-/go/home    https://unitedmobilerv.com/  302
-/go/home/   https://unitedmobilerv.com/  302
-/go/text    /#prefer-text  302
-/go/text/   /#prefer-text  302
+/go/home       https://unitedmobilerv.com/  302
+/go/home/      https://unitedmobilerv.com/  302
+/go/text       /#prefer-text  302
+/go/text/      /#prefer-text  302
+/go/portal     https://umrt-portal.pages.dev/  302
+/go/portal/    https://umrt-portal.pages.dev/  302
+/go/pay        https://umrt-pay.pages.dev/  302
+/go/pay/       https://umrt-pay.pages.dev/  302
+/go/status     https://umrt-status.pages.dev/  302
+/go/status/    https://umrt-status.pages.dev/  302
+/go/docs       https://umrt-docs.pages.dev/  302
+/go/docs/      https://umrt-docs.pages.dev/  302
+/go/community  https://umrt-community.pages.dev/  302
+/go/community/ https://umrt-community.pages.dev/  302
+/go/mothership https://united-mobile-rv.pages.dev/  302
+/go/mothership/ https://united-mobile-rv.pages.dev/  302
+
+/go/go         https://umrt-go.pages.dev/  302
+/go/go/        https://umrt-go.pages.dev/  302
+/go/areas      https://umrt-areas.pages.dev/  302
+/go/areas/     https://umrt-areas.pages.dev/  302
+/go/quote      https://umrt-quote.pages.dev/  302
+/go/quote/     https://umrt-quote.pages.dev/  302
 
 # Wave 1 CF settle: explicit HTTP 404 (NOT 302 to hub) until edge clears
 /qgps  /404.html  404
