@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://umrt-software.pages.dev/</loc></url>
-  <url><loc>https://umrt-software.pages.dev/policy.html</loc></url>
   <url><loc>https://umrt-software.pages.dev/victron/</loc></url>
-  <url><loc>https://umrt-software.pages.dev/dometic/</loc></url>
   <url><loc>https://umrt-software.pages.dev/peplink/</loc></url>
   <url><loc>https://umrt-software.pages.dev/weboost/</loc></url>
   <url><loc>https://umrt-software.pages.dev/starlink/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/dometic/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/winegard/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/king/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/surecall/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/celfi/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/glinet/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/teltonika/</loc></url>
   <url><loc>https://umrt-software.pages.dev/foss/</loc></url>
   <url><loc>https://umrt-software.pages.dev/qgps/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/policy.html</loc></url>
 </urlset>
