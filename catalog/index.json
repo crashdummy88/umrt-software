@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official links only.",
   "entries": [
@@ -11,9 +11,10 @@
       "policy": "link",
       "summary": "Configure and monitor Victron products (Bluetooth / VE.Direct / VE.Smart).",
       "links": {
-        "ios": "https://apps.apple.com/app/victronconnect/id893979272",
+        "ios": "https://apps.apple.com/us/app/victronconnect/id943840744",
         "android": "https://play.google.com/store/apps/details?id=com.victronenergy.victronconnect",
-        "docs": "https://www.victronenergy.com/live/victronconnect:start"
+        "docs": "https://www.victronenergy.com/live/victronconnect:start",
+        "downloads": "https://www.victronenergy.com/victronconnectapp/victronconnect/downloads"
       }
     },
     {
@@ -22,7 +23,7 @@
       "title": "Venus OS / GX",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official Venus OS / GX images and source — use Victron-published builds for field installs.",
+      "summary": "Official Venus OS / GX images and source \u2014 use Victron-published builds for field installs.",
       "links": {
         "github": "https://github.com/victronenergy/venus",
         "docs": "https://www.victronenergy.com/live/ccgx:start"
@@ -46,11 +47,11 @@
       "title": "Dometic mobile apps",
       "kind": "app",
       "policy": "link",
-      "summary": "Official Dometic apps — store listings only.",
+      "summary": "Official Dometic apps \u2014 store listings only.",
       "links": {
         "site": "https://www.dometic.com/",
-        "ios_search": "https://apps.apple.com/us/search?term=Dometic",
-        "play_search": "https://play.google.com/store/search?q=Dometic&c=apps"
+        "play_search": "https://play.google.com/store/search?q=Dometic&c=apps",
+        "apps_info": "https://www.dometic.com/"
       }
     },
     {
@@ -86,7 +87,7 @@
       "policy": "link",
       "summary": "Official app. Clear-sky installs; no Starlink certified title.",
       "links": {
-        "ios": "https://apps.apple.com/app/starlink/id1534408764",
+        "ios": "https://apps.apple.com/us/app/starlink/id1537177988",
         "android": "https://play.google.com/store/apps/details?id=com.starlink.mobile",
         "support": "https://www.starlink.com/support"
       }
@@ -98,7 +99,7 @@
       "kind": "software",
       "policy": "mirror-candidate",
       "license": "Apache-2.0",
-      "summary": "Open marine/RV data server — pin release + SHA256 before mirroring.",
+      "summary": "Open marine/RV data server \u2014 pin release + SHA256 before mirroring.",
       "links": {
         "github": "https://github.com/SignalK/signalk-server",
         "site": "https://signalk.org/"
