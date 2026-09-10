@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -461,7 +461,7 @@
       "title": "Starlink hardware specs (official PDFs)",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official specs hub + Mini / Flat High Performance / High Performance PDFs for power sizing honesty. Link only \u2014 we do not re-host binaries.",
+      "summary": "Official specs hub + Mini / Flat High Performance / High Performance PDFs for power sizing honesty (Mini ~lower draw; Flat/HP much higher). Link only \u2014 we do not re-host binaries.",
       "links": {
         "specifications": "https://www.starlink.com/specifications",
         "mini_pdf": "https://starlink.com/public-files/specification_sheet_mini.pdf",
@@ -490,10 +490,13 @@
       "title": "Starlink accessories & shop",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official mounts, cables, and shop. Prefer Starlink accessories pages over third-party clones when advising customers.",
+      "summary": "Official mounts, cables, shop + Flat HP accessories/install PDFs. Field honesty: seal roof penetrations, size cable runs, and match kit power draw (Mini vs Flat/HP) \u2014 installs-only, never Starlink Certified.",
       "links": {
         "accessories": "https://www.starlink.com/accessories",
-        "shop": "https://www.starlink.com/shop"
+        "shop": "https://www.starlink.com/shop",
+        "flat_hp_accessories_pdf": "https://starlink.com/public-files/accessories_guide_flat_high_performance.pdf",
+        "flat_hp_install_pdf": "https://starlink.com/public-files/installation_guide_flat_high_performance_kit.pdf",
+        "mini_pdf": "https://starlink.com/public-files/specification_sheet_mini.pdf"
       }
     },
     {
