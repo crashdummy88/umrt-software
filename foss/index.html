@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FOSS downloads | UMRT Software</title>
-  <meta name="description" content="FOSS official download and app links for United Mobile RV field techs. Manufacturer links only — no proprietary binary redistribution." />
+  <title>Open source | UMRT Software</title>
+  <meta name="description" content="FOSS mirror candidates for United Mobile RV field work. Mirror only when license allows — checksum + upstream required." />
   <link rel="stylesheet" href="/shared/css/umrt.css" />
 </head>
 <body>
@@ -15,13 +15,18 @@
   </div></header>
   <main class="wrap hero">
     <p class="eyebrow">FOSS</p>
-    <h1>Official links</h1>
-    <p class="lede">Open-source mirror candidates (e.g. Signal K). Confirm license, pin version, record SHA256 before placing files under /mirrors/.</p>
-    <p class="fine">Policy: manufacturer / store links only for proprietary software. FOSS mirrors require a clear license — see <a href="/policy.html">Policy</a>.</p>
+    <h1>Open-source candidates</h1>
+    <p class="lede">These may be mirrored under <code>/mirrors/</code> only after license check, pinned version, and SHA256. Proprietary vendor firmware never lands here.</p>
+    <ol class="policy-list">
+      <li>Confirm license allows redistribution.</li>
+      <li>Pin an upstream release tag (not a random commit).</li>
+      <li>Record SHA256 + upstream URL in <code>catalog/index.json</code> with <code>policy: "mirror"</code>.</li>
+      <li>Store the artifact under <code>mirrors/&lt;id&gt;/&lt;version&gt;/</code>.</li>
+    </ol>
     <div class="cards" data-catalog data-brand="FOSS" style="margin-top:1.5rem"></div>
-    <p style="margin-top:1.5rem" class="btn-row">
+    <p class="btn-row" style="margin-top:1.5rem">
       <a class="btn" href="tel:+16166065277">Prefer Text (616) 606-5277</a>
-      <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/book-service/">Book service</a>
+      <a class="btn btn-ghost" href="/policy.html">Policy</a>
     </p>
     <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented cert).</p>
   </main>
