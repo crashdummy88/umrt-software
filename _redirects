@@ -1,4 +1,5 @@
 # Soft Pages → live convert paths ONLY (never whole hub)
+# NEVER redirect /qgps — path is hard-deleted; must 404
 /go/book   https://unitedmobilerv.com/book-service/  302
 /go/text   /#prefer-text  302
 /go/home   https://unitedmobilerv.com/  302
