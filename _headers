@@ -10,9 +10,3 @@
   Content-Type: image/png
   Cache-Control: public, max-age=3600
 
-/qgps
-  Cache-Control: max-age=0, must-revalidate
-/qgps/
-  Cache-Control: max-age=0, must-revalidate
-/qgps/*
-  Cache-Control: max-age=0, must-revalidate
