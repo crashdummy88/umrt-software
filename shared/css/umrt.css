@@ -1,0 +1,41 @@
+:root {
+  --gold: #C9972C;
+  --black: #1A1A1A;
+  --white: #FFFFFF;
+  --light: #F5F5F5;
+  --gray: #666666;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font); background: var(--black); color: var(--white); line-height: 1.5; }
+a { color: var(--gold); }
+.wrap { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--gold); color: var(--black); padding: 0.5rem; z-index: 99; }
+.site-header { border-bottom: 1px solid #2e2e2e; }
+.header-inner { display: flex; align-items: center; gap: 1rem; padding: 0.85rem 0; flex-wrap: wrap; }
+.logo { color: var(--white); text-decoration: none; font-weight: 700; letter-spacing: 0.02em; }
+.logo span { color: var(--gold); }
+nav { display: flex; gap: 1rem; flex: 1; }
+nav a { color: #bbb; text-decoration: none; font-size: 0.92rem; }
+nav a:hover { color: var(--gold); }
+.phone { color: var(--gold); text-decoration: none; font-weight: 600; }
+.hero { padding: 3rem 0 2rem; }
+.eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; font-weight: 600; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0.35rem 0 0.75rem; }
+.lede { color: #bbb; max-width: 40rem; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+.btn { display: inline-block; background: var(--gold); color: var(--black); text-decoration: none; font-weight: 700; padding: 0.65rem 1rem; border-radius: 4px; }
+.btn-ghost { background: transparent; color: var(--gold); border: 1px solid #555; }
+.band { padding: 2rem 0; border-top: 1px solid #2e2e2e; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+.card { display: block; background: #141414; border-top: 2px solid var(--gold); padding: 1rem 1.1rem; text-decoration: none; color: inherit; border-radius: 4px; }
+.card h3 { margin: 0 0 0.4rem; color: var(--white); }
+.card p { margin: 0; color: #bbb; font-size: 0.92rem; }
+.policy-list { color: #ccc; }
+.site-footer { border-top: 1px solid #2e2e2e; padding: 1.5rem 0 2rem; margin-top: 2rem; color: #888; font-size: 0.9rem; }
+.fine { font-size: 0.8rem; color: #666; }
+.badge { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.2rem 0.45rem; border-radius: 3px; margin-right: 0.35rem; }
+.badge-link { background: #333; color: #ddd; }
+.badge-mirror { background: #2a3d1f; color: #b6e39a; }
+.badge-candidate { background: #3d321f; color: #e3d09a; }
