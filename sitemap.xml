@@ -26,4 +26,7 @@
   <url><loc>https://umrt-software.pages.dev/foss/</loc></url>
   <url><loc>https://umrt-software.pages.dev/qgps/</loc></url>
   <url><loc>https://umrt-software.pages.dev/nodered/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/starlink-offline/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/weboost-no-boost/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/peplink-wan-flapping/</loc></url>
 </urlset>
