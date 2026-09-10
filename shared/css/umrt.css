@@ -42,3 +42,5 @@ h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0.35rem 0 0.75rem; }
 
 code { font-size: 0.9em; background: #222; padding: 0.1em 0.35em; border-radius: 3px; }
 .card a { word-break: break-word; }
+
+.hero { padding: 2rem 0 1rem; }
