@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Open source | UMRT Software</title>
-  <meta name="description" content="FOSS mirror candidates for United Mobile RV field work. Mirror only when license allows — checksum + upstream required." />
-  <meta property="og:title" content="Open source | UMRT Software" />
-  <meta property="og:description" content="FOSS mirror candidates. Mirror only when license allows." />
+  <title>FOSS downloads | UMRT Software</title>
+  <meta name="description" content="Official FOSS firmware / app / support links for United Mobile RV field work. Manufacturer links only — no proprietary binary redistribution." />
+  <meta property="og:title" content="FOSS downloads | UMRT Software" />
+  <meta property="og:description" content="Official FOSS links. Manufacturer / store only." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://umrt-software.pages.dev/foss/" />
   <link rel="canonical" href="https://umrt-software.pages.dev/foss/" />
@@ -16,26 +16,27 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header"><div class="wrap header-inner">
     <a class="logo" href="/">UMRT <span>Software</span></a>
-    <nav><a href="/">Hub</a><a href="/policy.html">Policy</a></nav>
-    <a class="phone" href="tel:+16166065277">Prefer Text</a>
+    <nav aria-label="Primary"><a href="/">Hub</a><a href="/#catalog">Catalog</a><a href="/policy.html">Policy</a></nav>
+    <a class="phone" href="tel:+16166065277">Prefer Text (616) 606-5277</a>
   </div></header>
   <main id="main" class="wrap hero">
     <p class="eyebrow">FOSS</p>
-    <h1>Open-source candidates</h1>
-    <p class="lede">These may be mirrored under <code>/mirrors/</code> only after license check, pinned version, and SHA256. Proprietary vendor firmware never lands here.</p>
-    <ol class="policy-list">
-      <li>Confirm license allows redistribution.</li>
-      <li>Pin an upstream release tag (not a random commit).</li>
-      <li>Record SHA256 + upstream URL in <code>catalog/index.json</code> with <code>policy: "mirror"</code>.</li>
-      <li>Store the artifact under <code>mirrors/&lt;id&gt;/&lt;version&gt;/</code>.</li>
-    </ol>
+    <h1>Official links</h1>
+    <p class="lede">Open-source candidates (Signal K, OpenWrt). Mirror only when license-clear with checksum + upstream pin.</p>
+    <p class="fine">Start at the manufacturer portal: <a href="https://signalk.org/" rel="noopener noreferrer" target="_blank">signalk.org</a></p>
+    <p class="fine">Policy: manufacturer / store links only for proprietary software. FOSS mirrors require a clear license — see <a href="/policy.html">Policy</a>.</p>
     <div class="cards" data-catalog data-brand="FOSS" style="margin-top:1.5rem"></div>
-    <p class="btn-row" style="margin-top:1.5rem">
+    
+    <p style="margin-top:1.5rem" class="btn-row">
       <a class="btn" href="tel:+16166065277">Prefer Text (616) 606-5277</a>
-      <a class="btn btn-ghost" href="/policy.html">Policy</a>
+      <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/book-service/">Book service</a>
+      <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/">United Mobile RV sales site</a>
     </p>
-    <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented cert).</p>
+    <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented Starlink cert).</p>
   </main>
+  <footer class="site-footer"><div class="wrap">
+    <p>United Mobile RV LLC · Prefer Text <a href="tel:+16166065277">(616) 606-5277</a></p>
+  </div></footer>
   <script src="/shared/js/catalog.js" defer></script>
 </body>
 </html>
