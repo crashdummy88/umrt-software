@@ -25,6 +25,13 @@
 /go/mothership https://united-mobile-rv.pages.dev/  302
 /go/mothership/ https://united-mobile-rv.pages.dev/  302
 
+/go/go         https://umrt-go.pages.dev/  302
+/go/go/        https://umrt-go.pages.dev/  302
+/go/areas      https://umrt-areas.pages.dev/  302
+/go/areas/     https://umrt-areas.pages.dev/  302
+/go/quote      https://umrt-quote.pages.dev/  302
+/go/quote/     https://umrt-quote.pages.dev/  302
+
 # Wave 1 CF settle: explicit HTTP 404 (NOT 302 to hub) until edge clears
 /qgps  /404.html  404
 /qgps/ /404.html  404
