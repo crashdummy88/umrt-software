@@ -11,7 +11,7 @@
         return e.brand === brand;
       });
       if (!entries.length) {
-        root.innerHTML = "<p class=\"lede\">No catalog entries yet for this brand.</p>";
+        root.innerHTML = "<p class=\"lede\">No catalog entries yet — Prefer Text (616) 606-5277 if you need a link meanwhile.</p>";
         return;
       }
       root.innerHTML = entries.map(function (e) {
@@ -21,17 +21,18 @@
         var links = Object.keys(e.links || {}).map(function (k) {
           return "<a href=\"" + e.links[k] + "\" rel=\"noopener noreferrer\" target=\"_blank\">" + k + "</a>";
         }).join(" · ");
+        var lic = e.license ? "<p class=\"fine\">License: " + e.license + "</p>" : "";
         return (
           "<article class=\"card\" style=\"cursor:default\">" +
           "<p><span class=\"badge " + badge + "\">" + e.policy + "</span><span class=\"badge badge-link\">" + e.kind + "</span></p>" +
           "<h3>" + e.title + "</h3>" +
-          "<p>" + (e.summary || "") + "</p>" +
+          "<p>" + (e.summary || "") + "</p>" + lic +
           "<p style=\"margin-top:0.75rem\">" + links + "</p>" +
           "</article>"
         );
       }).join("");
     })
     .catch(function () {
-      root.innerHTML = "<p class=\"lede\">Catalog failed to load.</p>";
+      root.innerHTML = "<p class=\"lede\">Catalog failed to load. Prefer Text <a href=\"tel:+16166065277\">(616) 606-5277</a>.</p>";
     });
 })();
