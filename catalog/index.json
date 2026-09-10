@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -667,6 +667,74 @@
         "victron_lithium": "https://www.victronenergy.com/live/battery_compatibility:victron_lithium_batteries",
         "manuals": "https://www.victronenergy.com/support-and-downloads/manuals",
         "tech_info": "https://www.victronenergy.com/support-and-downloads/technical-information"
+      }
+    },
+    {
+      "id": "openwrt-selector",
+      "brand": "OpenWrt",
+      "title": "OpenWrt Firmware Selector",
+      "kind": "firmware",
+      "policy": "mirror-candidate",
+      "license": "GPL-2.0",
+      "summary": "FOSS router OS \u2014 use Firmware Selector for exact device; verify checksums. Replacing vendor FW is brick-risk.",
+      "links": {
+        "selector": "https://firmware-selector.openwrt.org/",
+        "site": "https://openwrt.org/",
+        "downloads": "https://openwrt.org/downloads"
+      }
+    },
+    {
+      "id": "teltonika-downloads",
+      "brand": "Teltonika",
+      "title": "Teltonika firmware wiki downloads",
+      "kind": "firmware",
+      "policy": "link",
+      "summary": "Industrial/fleet cellular \u2014 model FW on official wiki only. No Teltonika partner title.",
+      "links": {
+        "downloads": "https://wiki.teltonika-networks.com/view/Downloads",
+        "wiki": "https://wiki.teltonika-networks.com/",
+        "rms": "https://rms.teltonika-networks.com/",
+        "site": "https://teltonika-networks.com/"
+      }
+    },
+    {
+      "id": "glinet-docs",
+      "brand": "GL.iNet",
+      "title": "GL.iNet router docs",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Travel router docs + official CDN. Vendor images proprietary even if OpenWrt-derived \u2014 link only. No GL partner title.",
+      "links": {
+        "docs": "https://docs.gl-inet.com/router/en/4/",
+        "cdn": "https://dl.gl-inet.com/",
+        "upgrade": "https://docs.gl-inet.com/router/en/4/interface_guide/upgrade/",
+        "site": "https://www.gl-inet.com/"
+      }
+    },
+    {
+      "id": "cradlepoint-netcloud",
+      "brand": "Cradlepoint",
+      "title": "Cradlepoint / Ericsson NetCloud",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Enterprise WWAN class. Modern NCOS via NetCloud Manager + active subscription \u2014 no offline NCOS mirrors. No Cradlepoint partner/cert. UMRT certified multi-WAN remains Peplink.",
+      "links": {
+        "support": "https://cradlepoint.com/support/",
+        "netcloud": "https://cradlepoint.com/products/netcloud-service/",
+        "docs": "https://docs.cradlepoint.com/"
+      }
+    },
+    {
+      "id": "sierra-airlink",
+      "brand": "Sierra Wireless",
+      "title": "Semtech / Sierra Wireless AirLink",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "AirLink RV50X/RV55/LX/XR/MP-class. Semtech formerly Sierra Wireless. Firmware from The Source; cloud = ALMS (not NetCloud/InControl). Do not equate to Peplink SpeedFusion. No partner title.",
+      "links": {
+        "source": "https://source.sierrawireless.com/",
+        "support": "https://www.sierrawireless.com/support/",
+        "alms": "https://www.sierrawireless.com/router-solutions/alms/"
       }
     }
   ]
