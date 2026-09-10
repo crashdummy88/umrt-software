@@ -1,6 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "updated": "2026-09-10",
+  "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official links only.",
   "entries": [
     {
       "id": "victron-connect",
@@ -8,59 +9,73 @@
       "title": "VictronConnect",
       "kind": "app",
       "policy": "link",
-      "summary": "Configure and monitor Victron devices (Bluetooth / VE.Direct).",
+      "summary": "Configure and monitor Victron products (Bluetooth / VE.Direct / VE.Smart).",
       "links": {
         "ios": "https://apps.apple.com/app/victronconnect/id893979272",
         "android": "https://play.google.com/store/apps/details?id=com.victronenergy.victronconnect",
-        "desktop": "https://www.victronenergy.com/live/victronconnect:start"
+        "docs": "https://www.victronenergy.com/live/victronconnect:start"
       }
     },
     {
       "id": "victron-venus-os",
       "brand": "Victron",
-      "title": "Venus OS / GX images",
+      "title": "Venus OS / GX",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official GX / Venus OS images and changelog — use Victron’s published builds unless a FOSS fork is explicitly mirrored.",
+      "summary": "Official Venus OS / GX images and source — use Victron-published builds for field installs.",
       "links": {
-        "upstream": "https://github.com/victronenergy/venus",
+        "github": "https://github.com/victronenergy/venus",
         "docs": "https://www.victronenergy.com/live/ccgx:start"
+      }
+    },
+    {
+      "id": "victron-vrm",
+      "brand": "Victron",
+      "title": "VRM Portal",
+      "kind": "software",
+      "policy": "link",
+      "summary": "Remote monitoring portal for GX devices.",
+      "links": {
+        "portal": "https://vrm.victronenergy.com/",
+        "docs": "https://www.victronenergy.com/live/vrm_portal:start"
       }
     },
     {
       "id": "dometic-app",
       "brand": "Dometic",
-      "title": "Dometic app",
+      "title": "Dometic mobile apps",
       "kind": "app",
       "policy": "link",
-      "summary": "Official Dometic mobile app — link only.",
+      "summary": "Official Dometic apps — store listings only.",
       "links": {
-        "ios": "https://apps.apple.com/app/dometic",
-        "android": "https://play.google.com/store/apps/search?q=Dometic",
-        "support": "https://www.dometic.com/"
+        "site": "https://www.dometic.com/",
+        "ios_search": "https://apps.apple.com/us/search?term=Dometic",
+        "play_search": "https://play.google.com/store/search?q=Dometic&c=apps"
       }
     },
     {
-      "id": "peplink-incontrol",
+      "id": "peplink-downloads",
       "brand": "Peplink",
-      "title": "InControl / firmware",
+      "title": "Peplink firmware & InControl",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Peplink firmware and InControl cloud — official portals only (no mirrored vendor firmware).",
+      "summary": "Official firmware and InControl. Field: bonding and/or failover (SpeedFusion) with Starlink + cellular.",
       "links": {
         "firmware": "https://www.peplink.com/support/downloads/",
-        "incontrol": "https://incontrol.peplink.com/"
+        "incontrol": "https://incontrol.peplink.com/",
+        "support": "https://www.peplink.com/support/"
       }
     },
     {
       "id": "weboost-support",
       "brand": "weBoost",
-      "title": "weBoost support / downloads",
+      "title": "weBoost support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Support and any published updates — link only. Installs respect outdoor RF (AGC; no invent-signal claims).",
+      "summary": "Support portal. Authorized Installer: outdoor RF required; AGC; no invent-from-zero.",
       "links": {
-        "support": "https://www.weboost.com/support"
+        "support": "https://www.weboost.com/support",
+        "site": "https://www.weboost.com/"
       }
     },
     {
@@ -69,9 +84,9 @@
       "title": "Starlink app",
       "kind": "app",
       "policy": "link",
-      "summary": "Official Starlink app for commission and aiming. Clear-sky installs; pairs with cell via Peplink bonding and/or failover.",
+      "summary": "Official app. Clear-sky installs; no Starlink certified title.",
       "links": {
-        "ios": "https://apps.apple.com/app/starlink",
+        "ios": "https://apps.apple.com/app/starlink/id1534408764",
         "android": "https://play.google.com/store/apps/details?id=com.starlink.mobile",
         "support": "https://www.starlink.com/support"
       }
@@ -83,9 +98,9 @@
       "kind": "software",
       "policy": "mirror-candidate",
       "license": "Apache-2.0",
-      "summary": "Open marine/RV data server — strong FOSS mirror candidate once pinned to a release + checksum.",
+      "summary": "Open marine/RV data server — pin release + SHA256 before mirroring.",
       "links": {
-        "upstream": "https://github.com/SignalK/signalk-server",
+        "github": "https://github.com/SignalK/signalk-server",
         "site": "https://signalk.org/"
       }
     }
