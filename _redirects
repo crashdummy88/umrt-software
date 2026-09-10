@@ -3,3 +3,7 @@
 /go/book   https://unitedmobilerv.com/book-service/  302
 /go/text   /#prefer-text  302
 /go/home   https://unitedmobilerv.com/  302
+
+# Wave 1 CF settle: explicit HTTP 404 (NOT 302 to hub) until CDN HIT clears
+/qgps  /404.html  404
+/qgps/ /404.html  404
