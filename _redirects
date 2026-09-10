@@ -1,5 +1,15 @@
-# Soft Pages → live convert paths ONLY (never whole hub)
-# NEVER redirect /qgps — path is hard-deleted; must 404
-/go/book   https://unitedmobilerv.com/book-service/  302
-/go/text   /#prefer-text  302
-/go/home   https://unitedmobilerv.com/  302
+# Soft Pages → live convert paths ONLY (never whole hub / never /*)
+# NEVER redirect /qgps — hard-deleted; must HTTP 404
+# Wave 3 Funnel — Book → live book-service
+/go/book    https://unitedmobilerv.com/book-service/  302
+/go/book/   https://unitedmobilerv.com/book-service/  302
+/go/victron https://unitedmobilerv.com/victron/  302
+/go/victron/ https://unitedmobilerv.com/victron/  302
+/go/wireless https://unitedmobilerv.com/wireless/  302
+/go/wireless/ https://unitedmobilerv.com/wireless/  302
+/go/electrical https://unitedmobilerv.com/electrical/  302
+/go/electrical/ https://unitedmobilerv.com/electrical/  302
+/go/home    https://unitedmobilerv.com/  302
+/go/home/   https://unitedmobilerv.com/  302
+/go/text    /#prefer-text  302
+/go/text/   /#prefer-text  302
