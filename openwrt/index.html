@@ -4,11 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OpenWrt firmware (FOSS) | UMRT Software</title>
-  <meta name="description" content="Official OpenWrt Firmware Selector and downloads. FOSS — verify checksums. Not a UMRT-certified product." />
+  <meta name="description" content="Official OpenWrt Firmware Selector + downloads. FOSS project — not a product UMRT certifies. Exact device required; brick-risk if wrong image. Mirror-candidate after pin+SHA256. No proprietary OpenWrt-derived redistrib." />
   <meta property="og:title" content="OpenWrt firmware (FOSS) | UMRT Software" />
-  <meta property="og:description" content="Official OpenWrt Firmware Selector and downloads. FOSS — verify checksums. Not a UMRT-certified product." />
+  <meta property="og:description" content="Official OpenWrt Selector + downloads only. Exact device; verify SHA256. Brick-risk if wrong image. FOSS — not a UMRT-certified product. Mirror-candidate after pin+SHA256." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://umrt-software.pages.dev/openwrt/" />
+  <meta property="og:image" content="https://umrt-software.pages.dev/assets/og/umrt-software-og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://umrt-software.pages.dev/assets/og/umrt-software-og-card.png" />
+  <meta name="twitter:title" content="OpenWrt firmware (FOSS) | UMRT Software" />
+  <meta name="twitter:description" content="Official OpenWrt Selector + downloads. Exact device; brick-risk if wrong image. Mirror-candidate after pin+SHA256." />
   <link rel="canonical" href="https://umrt-software.pages.dev/openwrt/" />
   <link rel="stylesheet" href="/shared/css/umrt.css" />
 </head>
@@ -16,23 +23,74 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header"><div class="wrap header-inner">
     <a class="logo" href="/">UMRT <span>Software</span></a>
-    <nav aria-label="Primary"><a href="/">Hub</a><a href="/#catalog">Catalog</a><a href="/policy.html">Policy</a></nav>
-</div></header>
+    <nav aria-label="Primary"><a href="/">Hub</a><a href="/#catalog">Catalog</a><a href="/foss/">FOSS</a><a href="/policy.html">Policy</a></nav>
+  </div></header>
   <main id="main" class="wrap hero">
-    <p class="eyebrow">OpenWrt · FOSS</p>
-    <h1>Official links</h1>
-    <p class="lede">Upstream OpenWrt is a FOSS project — not a product we certify. Use the Firmware Selector for your exact device; verify checksums. Replacing vendor (e.g. GL.iNet) images with upstream OpenWrt is a different brick-risk path.</p>
-    <p class="fine">Start at <a href="https://firmware-selector.openwrt.org/" rel="noopener noreferrer" target="_blank">firmware-selector.openwrt.org</a> · Project <a href="https://openwrt.org/" rel="noopener noreferrer" target="_blank">openwrt.org</a> · Downloads <a href="https://openwrt.org/downloads" rel="noopener noreferrer" target="_blank">openwrt.org/downloads</a> · Server <a href="https://downloads.openwrt.org/" rel="noopener noreferrer" target="_blank">downloads.openwrt.org</a></p>
-    <p class="fine">Policy: manufacturer / store links only for proprietary software. FOSS mirrors require a clear license — see <a href="/policy.html">Policy</a>.</p>
-    <div class="cards" data-catalog data-brand="OpenWrt" style="margin-top:1.5rem"></div>
-    
+    <p class="eyebrow">FOSS · routers</p>
+    <h1>OpenWrt · FOSS firmware</h1>
+    <p class="lede">OpenWrt is a <strong>FOSS</strong> Linux distribution for embedded routers — not a brand UMRT certifies. Use the official <strong>Firmware Selector</strong> for your exact device and verify checksums/signatures per OpenWrt docs. Wrong image = brick risk. This hub links official OpenWrt project sites only.</p>
+
+    <h2>Owner honesty</h2>
+    <ul class="fine" style="margin:1rem 0 0; padding-left:1.25rem; line-height:1.7">
+      <li><strong>Exact device</strong> — pick the precise model/revision in the Firmware Selector (or Table of Hardware). Flashing the wrong image can brick the router.</li>
+      <li><strong>Verify artifacts</strong> — check <code>sha256sums</code> / signatures against official OpenWrt download docs before any flash. Do not trust random re-packs.</li>
+      <li><strong>Stable vs snapshot</strong> — production coaches usually want a stable release train, not daily snapshots, unless you are deliberately testing.</li>
+      <li><strong>Not SpeedFusion</strong> — OpenWrt can do multi-WAN with packages; that is not Peplink Hot Failover / Bonding / Smoothing. Peplink path: <a href="/peplink/">/peplink/</a>.</li>
+      <li><strong>No OpenWrt &ldquo;cert.&rdquo;</strong> — FOSS project only. Field credentials on this site are Victron / weBoost / Peplink / Dometic / Starlink-install as listed in the footer — not an OpenWrt certification.</li>
+    </ul>
+
+    <h2>Vendor images vs upstream</h2>
+    <p class="fine">Many travel routers (including some GL.iNet units) ship <strong>vendor</strong> OpenWrt-based firmware. That is not the same support path as flashing <strong>upstream</strong> OpenWrt from openwrt.org. Replacing vendor firmware with upstream is a different brick-risk and warranty path — see also <a href="/glinet/">/glinet/</a>. We do not redistribute proprietary vendor &ldquo;OpenWrt-derived&rdquo; binaries on this hub.</p>
+
+    <h2>Start here (official only)</h2>
+    <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
+      <li>Firmware Selector (preferred): <a href="https://firmware-selector.openwrt.org/" rel="noopener noreferrer" target="_blank">firmware-selector.openwrt.org</a></li>
+      <li>Project home: <a href="https://openwrt.org/" rel="noopener noreferrer" target="_blank">openwrt.org</a></li>
+      <li>Downloads wiki: <a href="https://openwrt.org/downloads" rel="noopener noreferrer" target="_blank">openwrt.org/downloads</a></li>
+      <li>Download server: <a href="https://downloads.openwrt.org/" rel="noopener noreferrer" target="_blank">downloads.openwrt.org</a></li>
+      <li>Source (GitHub): <a href="https://github.com/openwrt/openwrt" rel="noopener noreferrer" target="_blank">github.com/openwrt/openwrt</a></li>
+      <li>Table of Hardware: <a href="https://openwrt.org/toh/start" rel="noopener noreferrer" target="_blank">openwrt.org/toh/start</a></li>
+      <li>Releases overview: <a href="https://openwrt.org/releases/start" rel="noopener noreferrer" target="_blank">openwrt.org/releases/start</a></li>
+      <li>Installation overview: <a href="https://openwrt.org/docs/guide-user/installation/generic.overview" rel="noopener noreferrer" target="_blank">generic.overview</a></li>
+      <li>Sysupgrade notes: <a href="https://openwrt.org/docs/guide-user/installation/generic.sysupgrade" rel="noopener noreferrer" target="_blank">generic.sysupgrade</a></li>
+    </ul>
+
+    <h2>Mirror honesty</h2>
+    <p class="fine">Catalog policy is <strong>mirror-candidate</strong>, not an active mirror. Before any file lands under <code>mirrors/</code>: clear license, pinned upstream release tag, and SHA256 + upstream URL recorded in the catalog. No proprietary vendor <code>.bin</code> / &ldquo;OpenWrt-derived&rdquo; redistrib. Until pin + checksum exist: <strong>link only</strong> to official OpenWrt hosts. Full rules on <a href="/policy.html">Policy</a> · ecosystem context on <a href="/foss/">/foss/</a>.</p>
+
+    <h2>Field notes (link shelf, not a how-to dump)</h2>
+    <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
+      <li>Start at the Firmware Selector — do not guess filenames from memory or third-party blogs.</li>
+      <li>Confirm factory vs sysupgrade image type against OpenWrt install docs for that device.</li>
+      <li>Keep a recovery path (serial / TFTP / vendor recovery) in mind before first flash; Prefer Text if you are unsure.</li>
+      <li>Package feeds and LuCI versions track the release you flashed — match docs to that train.</li>
+      <li>Node-RED / Signal K on the LAN often sit behind an OpenWrt travel router — see <a href="/nodered/">/nodered/</a> and <a href="/foss/">/foss/</a>; we do not invent a supported-stack matrix.</li>
+    </ul>
+
+    <h2>Never</h2>
+    <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
+      <li>Cracked tools, unlocked firmware, or random &ldquo;OpenWrt&rdquo; re-packs from unofficial hosts.</li>
+      <li>Re-hosting proprietary vendor OpenWrt-derived binaries on this hub.</li>
+      <li>Flashing without verifying device identity and SHA256 against official OpenWrt artifacts.</li>
+      <li>Publishing checksums without a pinned upstream tag + SHA256 in the catalog.</li>
+      <li>Claiming OpenWrt certification or equating OpenWrt multi-WAN with Peplink SpeedFusion modes.</li>
+    </ul>
+
+    <h2>Catalog (OpenWrt)</h2>
+    <p class="fine">Live cards from <code>/catalog/index.json</code> filtered to brand OpenWrt — Firmware Selector and related FOSS entries. Link / mirror-candidate per entry; prefer official Selector.</p>
+    <div class="cards" data-catalog data-brand="OpenWrt" style="margin-top:1rem"></div>
+
+    <p class="fine" style="margin-top:1.25rem">Cross-links: <a href="/foss/">FOSS hub</a> · <a href="/nodered/">Node-RED</a> · <a href="/node-red/">/node-red/</a> · <a href="/glinet/">GL.iNet</a> · <a href="/peplink/">Peplink</a> · <a href="/#catalog">Catalog</a> · <a href="/policy.html">Policy</a></p>
+
     <p style="margin-top:1.5rem" class="btn-row">
-<a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/">United Mobile RV sales site</a>
+      <a class="btn" href="tel:+16166065277">Prefer Text (616) 606-5277</a>
+      <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/book-service/">Book service</a>
+      <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/">United Mobile RV sales site</a>
     </p>
     <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented Starlink cert).</p>
   </main>
   <footer class="site-footer"><div class="wrap">
-    <p>United Mobile RV LLC · Official links shelf — convert on <a href="/">home</a></p>
+    <p>United Mobile RV LLC · Prefer Text <a href="tel:+16166065277">(616) 606-5277</a></p>
   </div></footer>
   <script src="/shared/js/catalog.js" defer></script>
 </body>
