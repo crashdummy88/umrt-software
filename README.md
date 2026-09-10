@@ -15,7 +15,7 @@ Field hub for **firmware, software, and app links** used on United Mobile RV ins
 **(616) 606-5277** · Book service: https://united-mobile-rv.pages.dev/book-service/ · Sales site: https://united-mobile-rv.pages.dev/
 
 ## Structure
-- Brand pages: `/victron` `/peplink` `/weboost` `/starlink` `/winegard` `/king` `/surecall` `/celfi` `/glinet` `/teltonika` `/dometic` `/foss` `/qgps`
+- Brand pages: `/victron` `/peplink` `/weboost` `/starlink` `/winegard` `/king` `/surecall` `/celfi` `/glinet` `/teltonika` `/dometic` `/foss`
 - Catalog: `/catalog/index.json` (v4) — first fold on home
 - FOSS mirrors folder: `/mirrors/` (artifacts added only when license-clear)
 
