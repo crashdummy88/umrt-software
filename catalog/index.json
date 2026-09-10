@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -68,10 +68,140 @@
       "title": "weBoost support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Support portal. Authorized Installer: outdoor RF required; AGC; no invent-from-zero signal.",
+      "summary": "Official support. UMRT: weBoost Authorized Installer. Outdoor RF required; AGC manages gain \u2014 no invent-from-zero; we do not tune gain like a volume knob.",
       "links": {
         "support": "https://www.weboost.com/support",
-        "site": "https://www.weboost.com/"
+        "site": "https://www.weboost.com/",
+        "app_page": "https://www.weboost.com/app",
+        "drive_reach_rv": "https://www.weboost.com/products/drive-reach-rv"
+      }
+    },
+    {
+      "id": "weboost-app",
+      "brand": "weBoost",
+      "title": "weBoost app",
+      "kind": "app",
+      "policy": "link",
+      "summary": "Install guidance, tower aiming, before/after readings. Complements Authorized Installer placement \u2014 does not create signal from zero RF.",
+      "links": {
+        "ios": "https://apps.apple.com/us/app/weboost/id1611974453",
+        "android": "https://play.google.com/store/apps/details?id=com.wilsonelectronics.weboost",
+        "app_page": "https://www.weboost.com/app"
+      }
+    },
+    {
+      "id": "weboost-docs",
+      "brand": "weBoost",
+      "title": "weBoost support & Wilson resources",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "weBoost support plus Wilson Amplifiers resources. Same honesty: outdoor RF / AGC / no invent-from-zero.",
+      "links": {
+        "support": "https://www.weboost.com/support",
+        "site": "https://www.weboost.com/",
+        "wilson_resources": "https://www.wilsonamplifiers.com/resources/"
+      }
+    },
+    {
+      "id": "surecall-support",
+      "brand": "SureCall",
+      "title": "SureCall support & manuals",
+      "kind": "firmware",
+      "policy": "link",
+      "summary": "Vehicle/building boosters \u2014 manufacturer only. Outdoor RF + antenna separation honesty still applies. No UMRT SureCall cert title.",
+      "links": {
+        "support": "https://surecall.com/support/",
+        "manuals": "https://surecall.com/user-manuals/",
+        "vehicle": "https://surecall.com/car-boosters/",
+        "site": "https://surecall.com/"
+      }
+    },
+    {
+      "id": "surecall-app",
+      "brand": "SureCall",
+      "title": "SureCall app",
+      "kind": "app",
+      "policy": "link",
+      "summary": "Antenna aiming / separation feedback on compatible boosters. Does not invent coverage from zero outdoor RF.",
+      "links": {
+        "ios": "https://apps.apple.com/us/app/surecall/id6449509462",
+        "android": "https://play.google.com/store/apps/details?id=com.surecall.surecall"
+      }
+    },
+    {
+      "id": "celfi-nextivity",
+      "brand": "Cel-Fi",
+      "title": "Cel-Fi / Nextivity support",
+      "kind": "firmware",
+      "policy": "link",
+      "summary": "Nextivity Cel-Fi coverage systems. Official support only. Some models are operator-locked \u2014 confirm carrier fit before promising multi-carrier boost. No UMRT Cel-Fi cert title.",
+      "links": {
+        "support": "https://nextivityinc.com/support/",
+        "cel_fi_support": "https://support.cel-fi.com/hc/en-us",
+        "site": "https://nextivityinc.com/",
+        "cel_fi_site": "https://cel-fi.com/"
+      }
+    },
+    {
+      "id": "celfi-wave-app",
+      "brand": "Cel-Fi",
+      "title": "CEL-FI WAVE app",
+      "kind": "app",
+      "policy": "link",
+      "summary": "Register, configure, monitor, and update Cel-Fi boosters (Bluetooth). Use WAVE for setup honesty \u2014 not a substitute for outdoor RF / donor path.",
+      "links": {
+        "software": "https://nextivityinc.com/software/wave/",
+        "overview": "https://support.cel-fi.com/hc/en-us/articles/14324851714971-WAVE-App-Overview",
+        "ios": "https://apps.apple.com/us/app/cel-fi-wave/id980050278",
+        "android": "https://play.google.com/store/apps/details?id=com.NxtyWave"
+      }
+    },
+    {
+      "id": "king-connect",
+      "brand": "KING",
+      "title": "KING Connect hub",
+      "kind": "software",
+      "policy": "link",
+      "summary": "KING RV antenna / connectivity hub. As of 2026-09-10 only kingconnect.com homepage verified 200; deep /support and /product-manuals returned 404 \u2014 do not invent dead deep links. Cellular Extend honesty = outdoor RF / separation (same physics as weBoost-class boosters). No UMRT KING cert title.",
+      "links": {
+        "site": "https://kingconnect.com/"
+      }
+    },
+    {
+      "id": "king-wifi-app",
+      "brand": "KING",
+      "title": "King Wi-Fi app (Falcon / WiFiMax)",
+      "kind": "app",
+      "policy": "link",
+      "summary": "Self-aiming KING Falcon Wi-Fi antenna app \u2014 not a cellular booster app. Android listing verified 200; iOS store URL returned 404 on check date (omit iOS until re-verified).",
+      "links": {
+        "android": "https://play.google.com/store/apps/details?id=com.punchthrough.kingselfaimingwifi"
+      }
+    },
+    {
+      "id": "winegard-support",
+      "brand": "Winegard",
+      "title": "Winegard support",
+      "kind": "software",
+      "policy": "link",
+      "summary": "RV antenna / ConnecT / ConnecT 5G \u2014 official Winegard only. ConnecT is a connectivity hub (Wi-Fi + cellular paths), not a weBoost-class RF amp; set expectations honestly.",
+      "links": {
+        "support": "https://winegard.com/support/",
+        "connect": "https://winegard.com/connect",
+        "connect_5g": "https://winegard.com/connect-5g",
+        "site": "https://winegard.com/"
+      }
+    },
+    {
+      "id": "winegard-rv-halo",
+      "brand": "Winegard",
+      "title": "Winegard RV Halo app",
+      "kind": "app",
+      "policy": "link",
+      "summary": "Official app for Winegard ConnecT / Halo products (replaces discontinued ConnecTed). Setup, updates, manuals \u2014 not a cell-booster AGC tuner.",
+      "links": {
+        "ios": "https://apps.apple.com/us/app/rv-halo/id1563032659",
+        "android": "https://play.google.com/store/apps/details?id=com.winegard.halo"
       }
     },
     {
@@ -85,53 +215,6 @@
         "ios": "https://apps.apple.com/us/app/starlink/id1537177988",
         "android": "https://play.google.com/store/apps/details?id=com.starlink.mobile",
         "support": "https://www.starlink.com/support"
-      }
-    },
-    {
-      "id": "winegard-support",
-      "brand": "Winegard",
-      "title": "Winegard support",
-      "kind": "software",
-      "policy": "link",
-      "summary": "RV antenna / ConnecT support \u2014 official Winegard only.",
-      "links": {
-        "support": "https://winegard.com/support/",
-        "site": "https://winegard.com/"
-      }
-    },
-    {
-      "id": "king-connect",
-      "brand": "KING",
-      "title": "KING Connect",
-      "kind": "software",
-      "policy": "link",
-      "summary": "KING RV antenna / connectivity products \u2014 manufacturer hub links only.",
-      "links": {
-        "site": "https://kingconnect.com/"
-      }
-    },
-    {
-      "id": "surecall-support",
-      "brand": "SureCall",
-      "title": "SureCall support",
-      "kind": "firmware",
-      "policy": "link",
-      "summary": "Cellular boosters for vehicles / buildings \u2014 official support only. Outdoor RF honesty still applies on installs.",
-      "links": {
-        "support": "https://surecall.com/support/",
-        "site": "https://surecall.com/"
-      }
-    },
-    {
-      "id": "celfi-nextivity",
-      "brand": "Cel-Fi",
-      "title": "Cel-Fi / Nextivity support",
-      "kind": "firmware",
-      "policy": "link",
-      "summary": "Cel-Fi cellular coverage solutions (Nextivity). Official support portal only.",
-      "links": {
-        "support": "https://nextivityinc.com/support/",
-        "site": "https://nextivityinc.com/"
       }
     },
     {
@@ -281,19 +364,6 @@
         "firmware": "https://www.peplink.com/support/downloads/firmware/",
         "forum": "https://forum.peplink.com/",
         "incontrol": "https://incontrol.peplink.com/"
-      }
-    },
-    {
-      "id": "weboost-docs",
-      "brand": "weBoost",
-      "title": "weBoost support & guides",
-      "kind": "docs",
-      "policy": "link",
-      "summary": "Official weBoost support + Wilson Amplifiers resources. Outdoor RF / AGC honesty on installs.",
-      "links": {
-        "support": "https://www.weboost.com/support",
-        "site": "https://www.weboost.com/",
-        "wilson_resources": "https://www.wilsonamplifiers.com/resources/"
       }
     },
     {
