@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 13,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -260,6 +260,132 @@
         "rvhalo_alias": "https://rvhalo.com/",
         "ios": "https://apps.apple.com/us/app/rv-halo/id1563032659",
         "android": "https://play.google.com/store/apps/details?id=com.winegard.halo"
+      }
+    },
+    {
+      "id": "weboost-antennas",
+      "brand": "weBoost",
+      "title": "weBoost antennas & accessories",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Official weBoost antenna collection. Donor/indoor antennas still need isolation \u2014 AGC / outdoor RF honesty unchanged. Authorized Installer exact.",
+      "links": {
+        "antennas": "https://www.weboost.com/collections/antennas",
+        "site": "https://www.weboost.com/"
+      }
+    },
+    {
+      "id": "wilson-amplifiers-antennas",
+      "brand": "Wilson Amplifiers",
+      "title": "Wilson Amplifiers antennas",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Third-party Wilson Amplifiers antenna/resources hub (not a UMRT cert title). Useful OEM-adjacent antenna docs for weBoost-class installs.",
+      "links": {
+        "antennas": "https://www.wilsonamplifiers.com/antennas/",
+        "resources": "https://www.wilsonamplifiers.com/resources/",
+        "site": "https://www.wilsonamplifiers.com/"
+      }
+    },
+    {
+      "id": "poynting-antennas",
+      "brand": "Poynting",
+      "title": "Poynting antennas",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Cellular/Wi-Fi MIMO antennas common on coaches. Official site + downloads only \u2014 no UMRT Poynting cert.",
+      "links": {
+        "site": "https://poynting.tech/",
+        "downloads": "https://poynting.tech/downloads/",
+        "contact": "https://poynting.tech/contact/"
+      }
+    },
+    {
+      "id": "mobilemark-antennas",
+      "brand": "Mobile Mark",
+      "title": "Mobile Mark antennas",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Cellular/mobile antennas \u2014 official support + cellular category. No invented cert.",
+      "links": {
+        "site": "https://www.mobilemark.com/",
+        "support": "https://www.mobilemark.com/support/",
+        "cellular": "https://www.mobilemark.com/product-category/cellular-antennas/"
+      }
+    },
+    {
+      "id": "parsec-antennas",
+      "brand": "Parsec",
+      "title": "Parsec antennas",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Cellular/5G antenna OEM used with mobile routers. Official products/support only.",
+      "links": {
+        "site": "https://parsec-t.com/",
+        "products": "https://parsec-t.com/products/",
+        "support": "https://parsec-t.com/support/"
+      }
+    },
+    {
+      "id": "taoglas-antennas",
+      "brand": "Taoglas",
+      "title": "Taoglas cellular antennas",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "External cellular antenna category + support. OEM links only \u2014 no UMRT Taoglas cert.",
+      "links": {
+        "site": "https://www.taoglas.com/",
+        "cellular_external": "https://www.taoglas.com/product-category/external-antennas/cellular-external-antennas/",
+        "support": "https://www.taoglas.com/support/"
+      }
+    },
+    {
+      "id": "airgain-antennas",
+      "brand": "Airgain",
+      "title": "Airgain antennas",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Mobile/cellular antenna OEM. Official site/products only.",
+      "links": {
+        "site": "https://www.airgain.com/",
+        "products": "https://www.airgain.com/products/"
+      }
+    },
+    {
+      "id": "laird-rf-antennas",
+      "brand": "Laird Connectivity",
+      "title": "Laird RF antennas",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "RF antenna catalog \u2014 official Laird Connectivity links only.",
+      "links": {
+        "site": "https://www.lairdconnect.com/",
+        "rf_antennas": "https://www.lairdconnect.com/rf-antennas"
+      }
+    },
+    {
+      "id": "peplink-antennas",
+      "brand": "Peplink",
+      "title": "Peplink antennas",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Official Peplink antenna products for MAX/Transit class. Pair with bonding and/or failover honesty \u2014 not a booster cert.",
+      "links": {
+        "antennas": "https://www.peplink.com/products/antennas/",
+        "firmware": "https://www.peplink.com/support/downloads/firmware/"
+      }
+    },
+    {
+      "id": "tycon-poe",
+      "brand": "Tycon",
+      "title": "Tycon PoE / power",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "PoE injectors/power for outdoor radios & antennas \u2014 official Tycon only. Clean DC/PoE is half of RV RF reliability; no invented cert.",
+      "links": {
+        "site": "https://www.tyconsystems.com/",
+        "tyconpower": "https://tyconpower.com/",
+        "products": "https://tyconpower.com/products/"
       }
     },
     {
