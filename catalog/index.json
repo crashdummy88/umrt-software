@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -148,34 +148,37 @@
       "title": "CEL-FI WAVE app",
       "kind": "app",
       "policy": "link",
-      "summary": "Register, configure, monitor, and update Cel-Fi boosters (Bluetooth). Use WAVE for setup honesty \u2014 not a substitute for outdoor RF / donor path.",
+      "summary": "Register, configure, monitor, update Cel-Fi (Bluetooth). Primary setup path \u2014 not a substitute for outdoor RF. Do not confuse with MyWAVE.",
       "links": {
         "software": "https://nextivityinc.com/software/wave/",
         "overview": "https://support.cel-fi.com/hc/en-us/articles/14324851714971-WAVE-App-Overview",
         "ios": "https://apps.apple.com/us/app/cel-fi-wave/id980050278",
-        "android": "https://play.google.com/store/apps/details?id=com.NxtyWave"
+        "android": "https://play.google.com/store/apps/details?id=com.NxtyWave",
+        "wave_portal": "https://wave.nextivityinc.com/"
+      }
+    },
+    {
+      "id": "celfi-mywave-app",
+      "brand": "Cel-Fi",
+      "title": "CEL-FI MyWAVE app",
+      "kind": "app",
+      "policy": "link",
+      "summary": "Optional Follow-my-Phone utility for GO/ROAM Mobile Mode. Do not confuse with WAVE.",
+      "links": {
+        "ios": "https://apps.apple.com/us/app/cel-fi-mywave/id1560705133",
+        "android": "https://play.google.com/store/apps/details?id=com.nextivityinc.MyWave"
       }
     },
     {
       "id": "king-connect",
       "brand": "KING",
-      "title": "KING Connect hub",
+      "title": "KING Connect (legacy)",
       "kind": "software",
       "policy": "link",
-      "summary": "KING RV antenna / connectivity hub. As of 2026-09-10 only kingconnect.com homepage verified 200; deep /support and /product-manuals returned 404 \u2014 do not invent dead deep links. Cellular Extend honesty = outdoor RF / separation (same physics as weBoost-class boosters). No UMRT KING cert title.",
+      "summary": "Do not sell new. Site returns 200 but is empty Shopify placeholder; deep support/manuals 404. Existing Extend \u2192 weBoost RV path. No KING cert title.",
       "links": {
-        "site": "https://kingconnect.com/"
-      }
-    },
-    {
-      "id": "king-wifi-app",
-      "brand": "KING",
-      "title": "King Wi-Fi app (Falcon / WiFiMax)",
-      "kind": "app",
-      "policy": "link",
-      "summary": "Self-aiming KING Falcon Wi-Fi antenna app \u2014 not a cellular booster app. Android listing verified 200; iOS store URL returned 404 on check date (omit iOS until re-verified).",
-      "links": {
-        "android": "https://play.google.com/store/apps/details?id=com.punchthrough.kingselfaimingwifi"
+        "site": "https://kingconnect.com/",
+        "migrate_weboost_rv": "https://www.weboost.com/boosters/vehicle-rv"
       }
     },
     {
