@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://umrt-software.pages.dev/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/policy.html</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/no-power/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/no-water/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/roof-leak/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/generator-wont-start/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/victron-connect/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/peplink/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/weboost/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/starlink-app/</loc></url>
+  <url><loc>https://umrt-software.pages.dev/troubleshoot/node-red/</loc></url>
   <url><loc>https://umrt-software.pages.dev/victron/</loc></url>
   <url><loc>https://umrt-software.pages.dev/peplink/</loc></url>
   <url><loc>https://umrt-software.pages.dev/weboost/</loc></url>
@@ -14,5 +25,5 @@
   <url><loc>https://umrt-software.pages.dev/teltonika/</loc></url>
   <url><loc>https://umrt-software.pages.dev/foss/</loc></url>
   <url><loc>https://umrt-software.pages.dev/qgps/</loc></url>
-  <url><loc>https://umrt-software.pages.dev/policy.html</loc></url>
+  <url><loc>https://umrt-software.pages.dev/nodered/</loc></url>
 </urlset>
