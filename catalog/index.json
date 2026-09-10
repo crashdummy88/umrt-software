@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -416,6 +416,113 @@
       "links": {
         "github": "https://github.com/node-red/node-red-dashboard",
         "flows": "https://flows.nodered.org/"
+      }
+    },
+    {
+      "id": "openwrt-selector",
+      "brand": "OpenWrt",
+      "title": "OpenWrt Firmware Selector",
+      "kind": "firmware",
+      "policy": "mirror-candidate",
+      "license": "GPL-2.0",
+      "summary": "FOSS router OS \u2014 use Firmware Selector for exact device; verify checksums. Replacing vendor FW is brick-risk.",
+      "links": {
+        "selector": "https://firmware-selector.openwrt.org/",
+        "site": "https://openwrt.org/",
+        "downloads": "https://openwrt.org/downloads"
+      }
+    },
+    {
+      "id": "teltonika-downloads",
+      "brand": "Teltonika",
+      "title": "Teltonika firmware wiki downloads",
+      "kind": "firmware",
+      "policy": "link",
+      "summary": "Industrial/fleet cellular \u2014 model FW on official wiki only. No Teltonika partner title.",
+      "links": {
+        "downloads": "https://wiki.teltonika-networks.com/view/Downloads",
+        "wiki": "https://wiki.teltonika-networks.com/",
+        "rms": "https://rms.teltonika-networks.com/",
+        "site": "https://teltonika-networks.com/"
+      }
+    },
+    {
+      "id": "glinet-docs",
+      "brand": "GL.iNet",
+      "title": "GL.iNet router docs",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Travel router docs + official CDN. Vendor images proprietary even if OpenWrt-derived \u2014 link only. No GL partner title.",
+      "links": {
+        "docs": "https://docs.gl-inet.com/router/en/4/",
+        "cdn": "https://dl.gl-inet.com/",
+        "upgrade": "https://docs.gl-inet.com/router/en/4/interface_guide/upgrade/",
+        "site": "https://www.gl-inet.com/"
+      }
+    },
+    {
+      "id": "cradlepoint-netcloud",
+      "brand": "Cradlepoint",
+      "title": "Cradlepoint NetCloud",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Enterprise WWAN class. Modern NCOS via NetCloud Manager + subscription \u2014 no offline NCOS myth. No Cradlepoint partner title. UMRT multi-WAN cert story remains Peplink.",
+      "links": {
+        "support": "https://cradlepoint.com/support/",
+        "netcloud": "https://cradlepoint.com/products/netcloud-service/",
+        "docs": "https://docs.cradlepoint.com/"
+      }
+    },
+    {
+      "id": "sierra-airlink",
+      "brand": "Sierra",
+      "title": "Semtech / Sierra AirLink",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "AirLink RV50X/RV55-class. Firmware via The Source; manage with ALMS. No Sierra partner title; not Peplink SpeedFusion.",
+      "links": {
+        "support": "https://www.sierrawireless.com/support/",
+        "source": "https://source.sierrawireless.com/",
+        "alms": "https://www.sierrawireless.com/router-solutions/alms/",
+        "site": "https://www.sierrawireless.com/"
+      }
+    },
+    {
+      "id": "starlink-plans",
+      "brand": "Starlink",
+      "title": "Starlink plans (Residential / Roam)",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Residential \u2260 travel. Roam = RV/nomad; don't oversell nationwide in-motion. Install capability only \u2014 never Starlink Certified.",
+      "links": {
+        "plans": "https://www.starlink.com/service-plans",
+        "residential": "https://www.starlink.com/residential",
+        "roam": "https://www.starlink.com/roam"
+      }
+    },
+    {
+      "id": "starlink-bypass",
+      "brand": "Starlink",
+      "title": "Starlink bypass mode",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Third-party router / Peplink path \u2014 official bypass docs only. No proprietary firmware hacks.",
+      "links": {
+        "bypass": "https://www.starlink.com/bypass-mode",
+        "support": "https://www.starlink.com/support"
+      }
+    },
+    {
+      "id": "starlink-specs",
+      "brand": "Starlink",
+      "title": "Starlink specifications",
+      "kind": "docs",
+      "policy": "link",
+      "summary": "Hardware specs for power sizing honesty (Mini vs Flat/HP draw). Official Starlink only.",
+      "links": {
+        "specs": "https://www.starlink.com/specifications",
+        "accessories": "https://www.starlink.com/accessories",
+        "shop": "https://www.starlink.com/shop"
       }
     }
   ]
