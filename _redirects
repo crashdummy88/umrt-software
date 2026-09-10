@@ -1,0 +1,4 @@
+# Soft Pages → live convert paths ONLY (never whole hub)
+/go/book   https://unitedmobilerv.com/book-service/  302
+/go/text   /#prefer-text  302
+/go/home   https://unitedmobilerv.com/  302
