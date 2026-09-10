@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Peplink downloads | UMRT Software</title>
-  <meta name="description" content="Official Peplink firmware / InControl / support links for United Mobile RV field work. Manufacturer links only — no proprietary binary redistribution." />
-  <meta property="og:title" content="Peplink downloads | UMRT Software" />
-  <meta property="og:description" content="Official Peplink links. Bonding and/or failover (SpeedFusion). Manufacturer / store only." />
+  <title>Peplink | UMRT Software</title>
+  <meta name="description" content="Official Peplink firmware, InControl, and SpeedFusion links. Bonding and/or failover as configured — Hot Failover ≠ Bonding ≠ Smoothing. Manufacturer links only." />
+  <meta property="og:title" content="Peplink | UMRT Software" />
+  <meta property="og:description" content="Official Peplink links. Name the SpeedFusion mode. Manufacturer / store only — no proprietary binary redistribution." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://umrt-software.pages.dev/peplink/" />
   <link rel="canonical" href="https://umrt-software.pages.dev/peplink/" />
@@ -22,18 +22,50 @@
   <main id="main" class="wrap hero">
     <p class="eyebrow">Peplink</p>
     <h1>Official links</h1>
-    <p class="lede">Firmware and InControl from Peplink only (includes Pepwave under the same Peplink support tree). Peplink Certified Associate installs: bonding and/or failover (SpeedFusion) with Starlink + cellular — not bonding-only marketing.</p>
+    <p class="lede">Firmware and InControl from Peplink only (includes Pepwave under the same Peplink support tree). Peplink Certified Associate field work uses <strong>bonding and/or failover (SpeedFusion)</strong> — name the mode: <strong>Hot Failover ≠ Bonding ≠ Smoothing ≠ local outbound-only failover</strong>. Entry chassis may need PrimeCare or a feature pack before SpeedFusion modes unlock — verify the SKU invoice. No “bonding-only” marketing when the coach only needs clean failover.</p>
+
+    <h2>Start here (manufacturer only)</h2>
     <ul class="fine" style="margin:1rem 0 0; padding-left:1.25rem; line-height:1.7">
       <li>Firmware: <a href="https://www.peplink.com/support/downloads/firmware/" rel="noopener noreferrer" target="_blank">peplink.com/support/downloads/firmware</a></li>
-      <li>InControl: <a href="https://incontrol.peplink.com/" rel="noopener noreferrer" target="_blank">incontrol.peplink.com</a></li>
+      <li>InControl 2 (canonical): <a href="https://incontrol2.peplink.com/" rel="noopener noreferrer" target="_blank">incontrol2.peplink.com</a></li>
       <li>Support: <a href="https://www.peplink.com/support/" rel="noopener noreferrer" target="_blank">peplink.com/support</a></li>
+      <li>SpeedFusion overview: <a href="https://www.peplink.com/technology/speedfusion-vpn/" rel="noopener noreferrer" target="_blank">peplink.com/technology/speedfusion-vpn</a></li>
+      <li>Mobile routers: <a href="https://www.peplink.com/products/mobile-routers/" rel="noopener noreferrer" target="_blank">peplink.com/products/mobile-routers</a></li>
     </ul>
+
+    <h2>SpeedFusion honesty</h2>
+    <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
+      <li><strong>Local outbound failover</strong> — no SpeedFusion peer; some sessions may drop on handoff.</li>
+      <li><strong>Hot Failover</strong> — SpeedFusion/PepVPN peer; session-friendlier cutover when health checks fail.</li>
+      <li><strong>Bonding</strong> — packet aggregation inside a SpeedFusion tunnel (peer + license/Care as required). Never promise 2× speed; Starlink + cellular latency mismatch can hurt interactive apps.</li>
+      <li><strong>Smoothing</strong> — redundant copies across WANs; burns more metered data.</li>
+    </ul>
+    <p class="fine">“Bonding not bonding” in the field is usually missing peer, missing Care/feature pack, or outbound-policy-only config — not a random firmware mirror.</p>
+
+    <h2>Field notes (link shelf, not a how-to dump)</h2>
+    <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
+      <li>WAN Health Check flaps — fix power/RF and diversify targets before chasing firmware.</li>
+      <li>Starlink as WAN — official Ethernet adapter or Starlink router LAN → Peplink WAN; keep PoE brownout-aware (measure on site).</li>
+      <li>Cellular modem on the same chassis fused DC as the router — not a cigarette-lighter tap. Starlink PoE on its own fused path.</li>
+      <li>No invented watts / fuse / dBi matrices on this hub — quote after measurement.</li>
+    </ul>
+
+    <h2>Never</h2>
+    <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
+      <li>Cracked tools, unlocked firmware, or re-hosted vendor <code>.bin</code> / <code>.swu</code>.</li>
+      <li>Claiming bonding when only local failover is configured.</li>
+      <li>Inventing Starlink Certified / partner titles (Starlink = install capability only on the sales site).</li>
+    </ul>
+
     <p class="fine">Policy: manufacturer / store links only for proprietary software. FOSS mirrors require a clear license — see <a href="/policy.html">Policy</a>.</p>
     <div class="cards" data-catalog data-brand="Peplink" style="margin-top:1.5rem"></div>
-    
+
+    <p class="fine" style="margin-top:1.25rem">Mothership guide: <a href="https://united-mobile-rv.pages.dev/guide/peplink-multi-wan-guide/">Peplink multi-WAN</a> · Troubleshoot: <a href="/troubleshoot/peplink-wan-flapping/">WAN flapping</a> · <a href="https://united-mobile-rv.pages.dev/troubleshoot/peplink-wan-flapping/">sales-site twin</a></p>
+
     <p style="margin-top:1.5rem" class="btn-row">
       <a class="btn" href="tel:+16166065277">Prefer Text (616) 606-5277</a>
       <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/book-service/">Book service</a>
+      <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/wireless/">Wireless service</a>
       <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/">United Mobile RV sales site</a>
     </p>
     <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented Starlink cert).</p>
