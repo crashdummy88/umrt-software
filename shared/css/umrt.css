@@ -44,3 +44,16 @@ code { font-size: 0.9em; background: #222; padding: 0.1em 0.35em; border-radius:
 .card a { word-break: break-word; }
 
 .hero { padding: 2rem 0 1rem; }
+
+.catalog-filter { width: 100%; max-width: 28rem; margin: 0.5rem 0 1rem; padding: 0.65rem 0.75rem; border-radius: 4px; border: 1px solid #444; background: #111; color: #fff; font-size: 1rem; }
+.catalog-filter-label { display: block; margin-top: 0.35rem; }
+.share-strip { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.share-btn { cursor: pointer; font: inherit; }
+.share-mini { cursor: pointer; font: inherit; font-size: 0.8rem; background: transparent; color: var(--gold); border: 1px solid #555; border-radius: 3px; padding: 0.25rem 0.5rem; }
+.card-share { margin-top: 0.75rem; }
+@media (max-width: 640px) {
+  .hero { padding: 1.5rem 0 0.75rem; }
+  .cards { grid-template-columns: 1fr; }
+  .header-inner { gap: 0.5rem; }
+  nav { width: 100%; flex-wrap: wrap; }
+}
