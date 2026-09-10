@@ -1,2 +1,1 @@
-/node-red /nodered/ 301
-/node-red/ /nodered/ 301
+# Node-RED alias serves HTML with OG (no 301) so share crawlers see tags.
