@@ -57,3 +57,17 @@ code { font-size: 0.9em; background: #222; padding: 0.1em 0.35em; border-radius:
   .header-inner { gap: 0.5rem; }
   nav { width: 100%; flex-wrap: wrap; }
 }
+
+
+/* VISUAL share-UX polish */
+.share-strip { display:flex; flex-wrap:wrap; align-items:center; gap:0.75rem; margin-top:1rem; }
+.share-btn { cursor:pointer; font:inherit; min-height:44px; }
+.share-status { min-height:1.2em; color:var(--gold,#C9972C); }
+.catalog-filter-label { display:block; margin-bottom:0.35rem; }
+.catalog-filter { width:min(100%,28rem); max-width:100%; background:#141414; color:#fff; border:1px solid #3a3a3a; border-radius:6px; padding:0.7rem 0.9rem; font:inherit; min-height:44px; margin-bottom:0.75rem; }
+.catalog-filter:focus { outline:2px solid #C9972C; outline-offset:2px; border-color:#C9972C; }
+.catalog-filter::placeholder { color:#777; }
+@media (max-width:720px) {
+  .share-strip { flex-direction:column; align-items:stretch; }
+  .share-btn, .catalog-filter { width:100%; }
+}

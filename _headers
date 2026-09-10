@@ -3,3 +3,9 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: interest-cohort=()
+/og.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600
+/assets/og/*
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600
