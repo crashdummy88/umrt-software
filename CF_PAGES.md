@@ -10,5 +10,4 @@
 
 No Functions required for v1 (static catalog JSON).
 
-# redeploy nudge 20260910T073141Z
-Visual #16 home og absolute Brand PNG
+# redeploy nudge 2026-09-10T07:35Z Wave2+antenna
