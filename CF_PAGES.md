@@ -13,3 +13,4 @@ No Functions required for v1 (static catalog JSON).
 # redeploy nudge 20260910T074424Z
 Visual #37 deepen CTA strip
 # tip settle 2026-09-10T07:44Z Wave3+/qgps-404
+# skeleton QGPS 404 settle 2026-09-10T09:04Z
