@@ -1,8 +1,8 @@
 {
-  "version": 16,
+  "version": 17,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
-  "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
+  "scope": "RV · camper · Class A · light truck connectivity-first; light marine FOSS OK.",
   "entries": [
     {
       "id": "victron-connect",
@@ -24,7 +24,7 @@
       "title": "Venus OS / GX",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official Venus OS / GX for Cerbo, Ekrano, and other GX devices \u2014 Victron-published builds only (no re-hosted .swu).",
+      "summary": "Official Venus OS / GX for Cerbo, Ekrano, and other GX devices — Victron-published builds only (no re-hosted .swu).",
       "links": {
         "docs": "https://www.victronenergy.com/live/ccgx:start",
         "firmware_updating": "https://www.victronenergy.com/live/ccgx:firmware_updating",
@@ -41,7 +41,7 @@
       "title": "VRM portal & app",
       "kind": "software",
       "policy": "link",
-      "summary": "Remote monitoring for GX devices \u2014 portal plus official VRM mobile apps.",
+      "summary": "Remote monitoring for GX devices — portal plus official VRM mobile apps.",
       "links": {
         "portal": "https://vrm.victronenergy.com/",
         "docs": "https://www.victronenergy.com/live/vrm_portal:start",
@@ -68,7 +68,7 @@
       "title": "weBoost support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official support (+ support.weboost.com). UMRT: weBoost Authorized Installer. Outdoor RF required; AGC \u2014 no invent-from-zero; we do not tune gain.",
+      "summary": "Official support (+ support.weboost.com). UMRT: weBoost Authorized Installer. Outdoor RF required; AGC — no invent-from-zero; we do not tune gain.",
       "links": {
         "support": "https://www.weboost.com/support",
         "support_alias": "https://support.weboost.com/",
@@ -83,7 +83,7 @@
       "title": "weBoost app",
       "kind": "app",
       "policy": "link",
-      "summary": "Install guidance, tower aiming, before/after readings. Complements Authorized Installer placement \u2014 does not create signal from zero RF.",
+      "summary": "Install guidance, tower aiming, before/after readings. Complements Authorized Installer placement — does not create signal from zero RF.",
       "links": {
         "ios": "https://apps.apple.com/us/app/weboost/id1611974453",
         "android": "https://play.google.com/store/apps/details?id=com.wilsonelectronics.weboost",
@@ -127,7 +127,7 @@
       "title": "SureCall support & manuals",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Vehicle/RV boosters \u2014 manufacturer only. Outdoor RF + separation. No UMRT SureCall cert title.",
+      "summary": "Vehicle/RV boosters — manufacturer only. Outdoor RF + separation. No UMRT SureCall cert title.",
       "links": {
         "support": "https://surecall.com/support/",
         "manuals": "https://surecall.com/user-manuals/",
@@ -153,7 +153,7 @@
       "title": "SureCall RV / vehicle product lines",
       "kind": "docs",
       "policy": "link",
-      "summary": "Fusion2Go XR RV / XR / Ultra / RV kits \u2014 official product pages only. Outdoor RF honesty; no invented Authorized title.",
+      "summary": "Fusion2Go XR RV / XR / Ultra / RV kits — official product pages only. Outdoor RF honesty; no invented Authorized title.",
       "links": {
         "rv_category": "https://surecall.com/rv-cell-phone-boosters/",
         "vehicle_category": "https://surecall.com/vehicle-cell-signal-boosters/",
@@ -169,7 +169,7 @@
       "title": "Cel-Fi / Nextivity support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official Nextivity/Cel-Fi support + software hub. Often one operator at a time (WAVE switch) \u2014 not simultaneous multi-carrier like weBoost. No UMRT Cel-Fi cert.",
+      "summary": "Official Nextivity/Cel-Fi support + software hub. Often one operator at a time (WAVE switch) — not simultaneous multi-carrier like weBoost. No UMRT Cel-Fi cert.",
       "links": {
         "support": "https://nextivityinc.com/support/",
         "cel_fi_support": "https://support.cel-fi.com/hc/en-us",
@@ -184,7 +184,7 @@
       "title": "CEL-FI WAVE app",
       "kind": "app",
       "policy": "link",
-      "summary": "Register, configure, monitor, update Cel-Fi (Bluetooth). Primary setup path \u2014 not a substitute for outdoor RF. Do not confuse with MyWAVE.",
+      "summary": "Register, configure, monitor, update Cel-Fi (Bluetooth). Primary setup path — not a substitute for outdoor RF. Do not confuse with MyWAVE.",
       "links": {
         "software": "https://nextivityinc.com/software/wave/",
         "wave_portal": "https://wave.nextivityinc.com/",
@@ -212,7 +212,7 @@
       "title": "Cel-Fi GO / ROAM mobile lines",
       "kind": "docs",
       "policy": "link",
-      "summary": "GO G32 (+ mobile kits) and ROAM R41 \u2014 official product pages. Carrier/operator selection via WAVE; one-at-a-time honesty.",
+      "summary": "GO G32 (+ mobile kits) and ROAM R41 — official product pages. Carrier/operator selection via WAVE; one-at-a-time honesty.",
       "links": {
         "go_g32": "https://nextivityinc.com/go-g32/",
         "go_g32_mobile": "https://nextivityinc.com/go-g32/mobile-solutions/",
@@ -225,7 +225,7 @@
       "title": "KING Connect (legacy)",
       "kind": "software",
       "policy": "link",
-      "summary": "Do not sell new. Site returns 200 but is empty Shopify placeholder; deep support/manuals 404. Existing Extend \u2192 weBoost RV path. No KING cert title. No KING apps published.",
+      "summary": "Do not sell new. Site returns 200 but is empty Shopify placeholder; deep support/manuals 404. Existing Extend → weBoost RV path. No KING cert title. No KING apps published.",
       "links": {
         "site": "https://kingconnect.com/",
         "migrate_weboost_rv": "https://www.weboost.com/boosters/vehicle-rv"
@@ -253,7 +253,7 @@
       "title": "Winegard RV Halo app",
       "kind": "app",
       "policy": "link",
-      "summary": "Official app for ConnecT / Halo (replaces ConnecTed). Setup/updates \u2014 not a cell-booster AGC tuner.",
+      "summary": "Official app for ConnecT / Halo (replaces ConnecTed). Setup/updates — not a cell-booster AGC tuner.",
       "links": {
         "rv_halo": "https://winegard.com/smart/rv-halo",
         "compatible_devices": "https://winegard.com/smart/rv-halo/compatible-devices",
@@ -268,7 +268,7 @@
       "title": "weBoost antennas & accessories",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official weBoost antenna collection. Donor/indoor antennas still need isolation \u2014 AGC / outdoor RF honesty unchanged. Authorized Installer exact.",
+      "summary": "Official weBoost antenna collection. Donor/indoor antennas still need isolation — AGC / outdoor RF honesty unchanged. Authorized Installer exact.",
       "links": {
         "antennas": "https://www.weboost.com/collections/antennas",
         "site": "https://www.weboost.com/"
@@ -293,7 +293,7 @@
       "title": "Poynting antennas",
       "kind": "docs",
       "policy": "link",
-      "summary": "Cellular/Wi-Fi MIMO antennas common on coaches. Official site + downloads only \u2014 no UMRT Poynting cert.",
+      "summary": "Cellular/Wi-Fi MIMO antennas common on coaches. Official site + downloads only — no UMRT Poynting cert.",
       "links": {
         "site": "https://poynting.tech/",
         "downloads": "https://poynting.tech/downloads/",
@@ -306,7 +306,7 @@
       "title": "Mobile Mark antennas",
       "kind": "docs",
       "policy": "link",
-      "summary": "Cellular/mobile antennas \u2014 official support + cellular category. No invented cert.",
+      "summary": "Cellular/mobile antennas — official support + cellular category. No invented cert.",
       "links": {
         "site": "https://www.mobilemark.com/",
         "support": "https://www.mobilemark.com/support/",
@@ -332,7 +332,7 @@
       "title": "Taoglas cellular antennas",
       "kind": "docs",
       "policy": "link",
-      "summary": "External cellular antenna category + support. OEM links only \u2014 no UMRT Taoglas cert.",
+      "summary": "External cellular antenna category + support. OEM links only — no UMRT Taoglas cert.",
       "links": {
         "site": "https://www.taoglas.com/",
         "cellular_external": "https://www.taoglas.com/product-category/external-antennas/cellular-external-antennas/",
@@ -357,7 +357,7 @@
       "title": "Laird RF antennas",
       "kind": "docs",
       "policy": "link",
-      "summary": "RF antenna catalog \u2014 official Laird Connectivity links only.",
+      "summary": "RF antenna catalog — official Laird Connectivity links only.",
       "links": {
         "site": "https://www.lairdconnect.com/",
         "rf_antennas": "https://www.lairdconnect.com/rf-antennas"
@@ -369,7 +369,7 @@
       "title": "Peplink antennas",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official Peplink antenna products for MAX/Transit class. Pair with bonding and/or failover honesty \u2014 not a booster cert.",
+      "summary": "Official Peplink antenna products for MAX/Transit class. Pair with bonding and/or failover honesty — not a booster cert.",
       "links": {
         "antennas": "https://www.peplink.com/products/antennas/",
         "firmware": "https://www.peplink.com/support/downloads/firmware/"
@@ -381,7 +381,7 @@
       "title": "Tycon PoE / power",
       "kind": "docs",
       "policy": "link",
-      "summary": "PoE injectors/power for outdoor radios & antennas \u2014 official Tycon only. Clean DC/PoE is half of RV RF reliability; no invented cert.",
+      "summary": "PoE injectors/power for outdoor radios & antennas — official Tycon only. Clean DC/PoE is half of RV RF reliability; no invented cert.",
       "links": {
         "site": "https://www.tyconsystems.com/",
         "tyconpower": "https://tyconpower.com/",
@@ -394,7 +394,7 @@
       "title": "Starlink app",
       "kind": "app",
       "policy": "link",
-      "summary": "Official Starlink app (obstruction / setup / account). Installs-only \u2014 no Starlink Certified title.",
+      "summary": "Official Starlink app (obstruction / setup / account). Installs-only — no Starlink Certified title.",
       "links": {
         "ios": "https://apps.apple.com/us/app/starlink/id1537177988",
         "android": "https://play.google.com/store/apps/details?id=com.starlink.mobile",
@@ -407,7 +407,7 @@
       "title": "GL.iNet firmware downloads",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Travel / 4G-5G routers common on coaches \u2014 official firmware CDN + support. Link only (not a FOSS mirror of proprietary images).",
+      "summary": "Travel / 4G-5G routers common on coaches — official firmware CDN + support. Link only (not a FOSS mirror of proprietary images).",
       "links": {
         "downloads": "https://dl.gl-inet.com/",
         "firmware_selector": "https://firmware.gl-inet.com/",
@@ -420,7 +420,7 @@
       "title": "Teltonika Networks wiki",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Industrial / fleet cellular routers used on RVs and light trucks \u2014 official wiki + site. No redistributed vendor packages.",
+      "summary": "Industrial / fleet cellular routers used on RVs and light trucks — official wiki + site. No redistributed vendor packages.",
       "links": {
         "wiki": "https://wiki.teltonika-networks.com/",
         "site": "https://www.teltonika-networks.com/"
@@ -432,7 +432,7 @@
       "title": "Dometic mobile apps",
       "kind": "app",
       "policy": "link",
-      "summary": "Official Dometic apps \u2014 store search / manufacturer site only (no guessed App Store IDs).",
+      "summary": "Official Dometic apps — store search / manufacturer site only (no guessed App Store IDs).",
       "links": {
         "site": "https://www.dometic.com/",
         "play_search": "https://play.google.com/store/search?q=Dometic&c=apps"
@@ -445,7 +445,7 @@
       "kind": "software",
       "policy": "mirror-candidate",
       "license": "Apache-2.0",
-      "summary": "Open marine/RV data server \u2014 pairs with Node-RED on coaches. Official signalk.org + GitHub only; pin release + SHA256 before mirroring.",
+      "summary": "Open marine/RV data server — pairs with Node-RED on coaches. Official signalk.org + GitHub only; pin release + SHA256 before mirroring.",
       "links": {
         "github": "https://github.com/SignalK/signalk-server",
         "site": "https://signalk.org/",
@@ -460,7 +460,7 @@
       "kind": "software",
       "policy": "mirror-candidate",
       "license": "Apache-2.0",
-      "summary": "Low-code flow automation for RV/light-marine dashboards (often with Signal K). Official nodered.org only; pin release + SHA256 before any mirror. UMRT integrates/installs \u2014 we do NOT productize unvetted community flows.",
+      "summary": "Low-code flow automation for RV/light-marine dashboards (often with Signal K). Official nodered.org only; pin release + SHA256 before any mirror. UMRT integrates/installs — we do NOT productize unvetted community flows.",
       "links": {
         "site": "https://nodered.org/",
         "docs": "https://nodered.org/docs/",
@@ -480,10 +480,11 @@
       "kind": "firmware",
       "policy": "mirror-candidate",
       "license": "GPL-2.0",
-      "summary": "Open router OS (often under travel routers). Mirror only official release images with checksum \u2014 never vendor-locked forks without license clarity.",
+      "summary": "Open router OS (often under travel routers). Mirror only official release images with checksum — never vendor-locked forks without license clarity.",
       "links": {
         "site": "https://openwrt.org/",
-        "github": "https://github.com/openwrt/openwrt"
+        "github": "https://github.com/openwrt/openwrt",
+        "downloads": "https://downloads.openwrt.org/"
       }
     },
     {
@@ -507,7 +508,7 @@
       "title": "Victron Toolkit",
       "kind": "app",
       "policy": "link",
-      "summary": "Cable size / voltage drop, Multi & Quattro LED codes, and inverter derating \u2014 official store apps only.",
+      "summary": "Cable size / voltage drop, Multi & Quattro LED codes, and inverter derating — official store apps only.",
       "links": {
         "ios": "https://apps.apple.com/us/app/victron-toolkit/id791585341",
         "android": "https://play.google.com/store/apps/details?id=nl.victronenergy.victronledapp",
@@ -520,7 +521,7 @@
       "title": "VEConfigure / VE.Bus tools",
       "kind": "software",
       "policy": "link",
-      "summary": "VEConfigure 3, Quick Configure, System Configurator, and VEFlash \u2014 download from Victron only (we do not host installers).",
+      "summary": "VEConfigure 3, Quick Configure, System Configurator, and VEFlash — download from Victron only (we do not host installers).",
       "links": {
         "software_hub": "https://www.victronenergy.com/support-and-downloads/software",
         "manual": "https://www.victronenergy.com/media/pg/VEConfigure_Manual/en/index-en.html",
@@ -534,7 +535,7 @@
       "title": "VE Power Setup",
       "kind": "software",
       "policy": "link",
-      "summary": "Firmware updates for VE.Can products (Skylla-i, Lynx Shunt VE.Can, interfaces) \u2014 Victron installer only.",
+      "summary": "Firmware updates for VE.Can products (Skylla-i, Lynx Shunt VE.Can, interfaces) — Victron installer only.",
       "links": {
         "software_hub": "https://www.victronenergy.com/support-and-downloads/software",
         "manual": "https://www.victronenergy.com/live/ccgx:ccgx_ve_power_setup"
@@ -573,7 +574,7 @@
       "title": "Starlink plans (Residential vs Roam)",
       "kind": "docs",
       "policy": "link",
-      "summary": "Honesty for RV travel: Residential is fixed-address (no roam / no in-motion). Roam is the travel plan (pause/standby; in-motion in select areas). /rv redirects to Roam \u2014 not a separate SKU. Install capability only \u2014 never Starlink Certified.",
+      "summary": "Honesty for RV travel: Residential is fixed-address (no roam / no in-motion). Roam is the travel plan (pause/standby; in-motion in select areas). /rv redirects to Roam — not a separate SKU. Install capability only — never Starlink Certified.",
       "links": {
         "service_plans": "https://www.starlink.com/service-plans",
         "residential": "https://www.starlink.com/residential",
@@ -587,7 +588,7 @@
       "title": "Starlink hardware specs (official PDFs)",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official specs hub + Mini / Flat High Performance / High Performance PDFs for power sizing honesty (Mini ~lower draw; Flat/HP much higher). Link only \u2014 we do not re-host binaries.",
+      "summary": "Official specs hub + Mini / Flat High Performance / High Performance PDFs for power sizing honesty (Mini ~lower draw; Flat/HP much higher). Link only — we do not re-host binaries.",
       "links": {
         "specifications": "https://www.starlink.com/specifications",
         "mini_pdf": "https://starlink.com/public-files/specification_sheet_mini.pdf",
@@ -616,7 +617,7 @@
       "title": "Starlink accessories & shop",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official mounts, cables, shop + Flat HP accessories/install PDFs. Field honesty: seal roof penetrations, size cable runs, and match kit power draw (Mini vs Flat/HP) \u2014 installs-only, never Starlink Certified.",
+      "summary": "Official mounts, cables, shop + Flat HP accessories/install PDFs. Field honesty: seal roof penetrations, size cable runs, and match kit power draw (Mini vs Flat/HP) — installs-only, never Starlink Certified.",
       "links": {
         "accessories": "https://www.starlink.com/accessories",
         "shop": "https://www.starlink.com/shop",
@@ -648,7 +649,8 @@
       "links": {
         "flows": "https://flows.nodered.org/",
         "user_guide": "https://nodered.org/docs/user-guide/",
-        "signalk_node_red": "https://github.com/SignalK/signalk-node-red"
+        "signalk_node_red": "https://github.com/SignalK/signalk-node-red",
+        "npm_signalk": "https://www.npmjs.com/package/@signalk/node-red"
       }
     },
     {
@@ -658,10 +660,11 @@
       "kind": "software",
       "policy": "mirror-candidate",
       "license": "Apache-2.0",
-      "summary": "Classic Node-RED UI dashboard nodes \u2014 pin release + SHA256 before any mirror; official GitHub only.",
+      "summary": "Classic Node-RED UI dashboard nodes — pin release + SHA256 before any mirror; official GitHub and registry only.",
       "links": {
         "github": "https://github.com/node-red/node-red-dashboard",
-        "flows": "https://flows.nodered.org/"
+        "flows": "https://flows.nodered.org/",
+        "npm": "https://www.npmjs.com/package/node-red-dashboard"
       }
     },
     {
@@ -670,7 +673,7 @@
       "title": "MultiPlus / MultiPlus-II",
       "kind": "docs",
       "policy": "link",
-      "summary": "Inverter-charger family for RV/van/marine \u2014 size from real simultaneous loads + surge; never treat peak sticker as continuous. Official product + manuals hubs only.",
+      "summary": "Inverter-charger family for RV/van/marine — size from real simultaneous loads + surge; never treat peak sticker as continuous. Official product + manuals hubs only.",
       "links": {
         "family": "https://www.victronenergy.com/inverters-chargers",
         "multiplus_ii": "https://www.victronenergy.com/inverters-chargers/multiplus-ii",
@@ -686,7 +689,7 @@
       "title": "Quattro inverter-chargers",
       "kind": "docs",
       "policy": "link",
-      "summary": "Dual AC-in inverter-chargers (shore + generator paths). Gen/ATS wiring is diagnose-driven \u2014 not assumed free.",
+      "summary": "Dual AC-in inverter-chargers (shore + generator paths). Gen/ATS wiring is diagnose-driven — not assumed free.",
       "links": {
         "product": "https://www.victronenergy.com/inverters-chargers/quattro",
         "family": "https://www.victronenergy.com/inverters-chargers",
@@ -700,7 +703,7 @@
       "title": "SmartSolar / BlueSolar MPPT",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official solar charge controller family \u2014 match array Voc/Isc and battery voltage; configure in VictronConnect.",
+      "summary": "Official solar charge controller family — match array Voc/Isc and battery voltage; configure in VictronConnect.",
       "links": {
         "family": "https://www.victronenergy.com/solar-charge-controllers",
         "manuals": "https://www.victronenergy.com/support-and-downloads/manuals",
@@ -714,7 +717,7 @@
       "title": "SmartShunt / battery monitors",
       "kind": "docs",
       "policy": "link",
-      "summary": "Battery monitor / SmartShunt \u2014 SOC truth depends on correct shunt wiring and settings. Official product + manuals only.",
+      "summary": "Battery monitor / SmartShunt — SOC truth depends on correct shunt wiring and settings. Official product + manuals only.",
       "links": {
         "family": "https://www.victronenergy.com/battery-monitors",
         "smartshunt": "https://www.victronenergy.com/battery-monitors/smart-battery-shunt",
@@ -728,7 +731,7 @@
       "title": "Cerbo GX / GX devices",
       "kind": "docs",
       "policy": "link",
-      "summary": "Cerbo / GX system brain for VRM and VE.Bus/VE.Direct/VE.Can integration. Firmware via Victron-published paths only \u2014 no re-hosted .swu.",
+      "summary": "Cerbo / GX system brain for VRM and VE.Bus/VE.Direct/VE.Can integration. Firmware via Victron-published paths only — no re-hosted .swu.",
       "links": {
         "product": "https://www.victronenergy.com/panel-systems-remote-monitoring/cerbo-gx",
         "venus_docs": "https://www.victronenergy.com/live/ccgx:start",
@@ -744,7 +747,7 @@
       "title": "Orion-class DC-DC (e.g. Orion-Tr Smart)",
       "kind": "docs",
       "policy": "link",
-      "summary": "Orion-class DC-DC (e.g. Orion-Tr Smart \u2014 illustrative class example, not a must-buy SKU or partner badge) for lithium-safe chassis/alternator charging. Do not drop LiFePO4 onto unprotected alternators or dumb converters.",
+      "summary": "Orion-class DC-DC (e.g. Orion-Tr Smart — illustrative class example, not a must-buy SKU or partner badge) for lithium-safe chassis/alternator charging. Do not drop LiFePO4 onto unprotected alternators or dumb converters.",
       "links": {
         "family": "https://www.victronenergy.com/dc-dc-converters",
         "orion_tr_smart": "https://www.victronenergy.com/dc-dc-converters/orion-tr-smart",
@@ -759,7 +762,7 @@
       "title": "Lynx DC distribution",
       "kind": "docs",
       "policy": "link",
-      "summary": "Lynx Distributor / DC bus family \u2014 fuse hierarchy starts at the Li bank (Class-T or manufacturer-required), then downstream ANL/MIDI/MEGA by ampacity.",
+      "summary": "Lynx Distributor / DC bus family — fuse hierarchy starts at the Li bank (Class-T or manufacturer-required), then downstream ANL/MIDI/MEGA by ampacity.",
       "links": {
         "family": "https://www.victronenergy.com/dc-distribution-systems",
         "lynx_distributor": "https://www.victronenergy.com/dc-distribution-systems/lynx-distributor",
@@ -773,7 +776,7 @@
       "title": "MK3-USB (VE.Bus interface)",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official MK3-USB interface for VE.Bus configure/update with Victron tools \u2014 download software from Victron only.",
+      "summary": "Official MK3-USB interface for VE.Bus configure/update with Victron tools — download software from Victron only.",
       "links": {
         "product": "https://www.victronenergy.com/accessories/interface-mk3-usb",
         "software_hub": "https://www.victronenergy.com/support-and-downloads/software",
@@ -787,7 +790,7 @@
       "title": "Battery compatibility (LiFePO4)",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official Victron battery compatibility / lithium notes. Cold-corridor honesty: LiFePO4 typically refuses charge near/below freezing unless heated LiFePO4 / integrated heat / BMS charge-gate (generic \u2014 no house brand endorsement). Example only: many BMS inhibit ~0 \u00b0C/32 \u00b0F \u2014 confirm battery/BMS manual.",
+      "summary": "Official Victron battery compatibility / lithium notes. Cold-corridor honesty: LiFePO4 typically refuses charge near/below freezing unless heated LiFePO4 / integrated heat / BMS charge-gate (generic — no house brand endorsement). Example only: many BMS inhibit ~0 °C/32 °F — confirm battery/BMS manual.",
       "links": {
         "compatibility": "https://www.victronenergy.com/live/battery_compatibility:start",
         "victron_lithium": "https://www.victronenergy.com/live/battery_compatibility:victron_lithium_batteries",
@@ -802,7 +805,7 @@
       "kind": "firmware",
       "policy": "mirror-candidate",
       "license": "GPL-2.0",
-      "summary": "FOSS router OS \u2014 use Firmware Selector for exact device; verify checksums. Replacing vendor FW is brick-risk.",
+      "summary": "FOSS router OS — use Firmware Selector for exact device; verify checksums. Replacing vendor FW is brick-risk.",
       "links": {
         "selector": "https://firmware-selector.openwrt.org/",
         "site": "https://openwrt.org/",
@@ -815,7 +818,7 @@
       "title": "Teltonika firmware wiki downloads",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Industrial/fleet cellular \u2014 model FW on official wiki only. No Teltonika partner title.",
+      "summary": "Industrial/fleet cellular — model FW on official wiki only. No Teltonika partner title.",
       "links": {
         "downloads": "https://wiki.teltonika-networks.com/view/Downloads",
         "wiki": "https://wiki.teltonika-networks.com/",
@@ -829,7 +832,7 @@
       "title": "GL.iNet router docs",
       "kind": "docs",
       "policy": "link",
-      "summary": "Travel router docs + official CDN. Vendor images proprietary even if OpenWrt-derived \u2014 link only. No GL partner title.",
+      "summary": "Travel router docs + official CDN. Vendor images proprietary even if OpenWrt-derived — link only. No GL partner title.",
       "links": {
         "docs": "https://docs.gl-inet.com/router/en/4/",
         "cdn": "https://dl.gl-inet.com/",
@@ -843,7 +846,7 @@
       "title": "Cradlepoint / Ericsson NetCloud",
       "kind": "docs",
       "policy": "link",
-      "summary": "Enterprise WWAN class. Modern NCOS via NetCloud Manager + active subscription \u2014 no offline NCOS mirrors. No Cradlepoint partner/cert. UMRT certified multi-WAN remains Peplink.",
+      "summary": "Enterprise WWAN class. Modern NCOS via NetCloud Manager + active subscription — no offline NCOS mirrors. No Cradlepoint partner/cert. UMRT certified multi-WAN remains Peplink.",
       "links": {
         "support": "https://cradlepoint.com/support/",
         "netcloud": "https://cradlepoint.com/products/netcloud-service/",
@@ -861,6 +864,35 @@
         "source": "https://source.sierrawireless.com/",
         "support": "https://www.sierrawireless.com/support/",
         "alms": "https://www.sierrawireless.com/router-solutions/alms/"
+      }
+    },
+    {
+      "id": "signalk-node-red",
+      "brand": "FOSS",
+      "title": "Signal K Node-RED plugin",
+      "kind": "software",
+      "policy": "mirror-candidate",
+      "license": "Apache-2.0",
+      "summary": "Official Signal K plugin for Node-RED. Apache-2.0 mirror-candidate. Pin release and SHA256 before mirroring; official sources only.",
+      "links": {
+        "github": "https://github.com/SignalK/signalk-node-red",
+        "signalk": "https://signalk.org/",
+        "nodered": "https://nodered.org/",
+        "npm": "https://www.npmjs.com/package/@signalk/node-red"
+      }
+    },
+    {
+      "id": "flowfuse-node-red-dashboard",
+      "brand": "FOSS",
+      "title": "FlowFuse Node-RED Dashboard 2.0",
+      "kind": "software",
+      "policy": "mirror-candidate",
+      "license": "Apache-2.0",
+      "summary": "FlowFuse Dashboard 2.0 for Node-RED — Apache-2.0 mirror-candidate (not a UMRT product). Pin release + SHA256 before mirroring; official sources only.",
+      "links": {
+        "github": "https://github.com/FlowFuse/node-red-dashboard",
+        "nodered": "https://nodered.org/",
+        "npm": "https://www.npmjs.com/package/@flowfuse/node-red-dashboard"
       }
     }
   ]
