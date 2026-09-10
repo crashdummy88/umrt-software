@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -10,7 +10,7 @@
       "title": "VictronConnect",
       "kind": "app",
       "policy": "link",
-      "summary": "Configure and monitor Victron products (Bluetooth / VE.Direct / VE.Smart).",
+      "summary": "Configure, monitor, update, and diagnose Victron products (Bluetooth / VE.Direct / VE.Smart / Wi-Fi).",
       "links": {
         "ios": "https://apps.apple.com/us/app/victronconnect/id943840744",
         "android": "https://play.google.com/store/apps/details?id=com.victronenergy.victronconnect",
@@ -24,23 +24,29 @@
       "title": "Venus OS / GX",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official Venus OS / GX images \u2014 use Victron-published builds for field installs.",
+      "summary": "Official Venus OS / GX for Cerbo, Ekrano, and other GX devices \u2014 Victron-published builds only (no re-hosted .swu).",
       "links": {
-        "github": "https://github.com/victronenergy/venus",
         "docs": "https://www.victronenergy.com/live/ccgx:start",
+        "firmware_updating": "https://www.victronenergy.com/live/ccgx:firmware_updating",
+        "cerbo_firmware_manual": "https://www.victronenergy.com/media/pg/Cerbo_GX/en/firmware-updates.html",
+        "professional_firmware": "https://professional.victronenergy.com/downloads/firmware/",
+        "release_images": "https://updates.victronenergy.com/feeds/venus/release/images/",
+        "github": "https://github.com/victronenergy/venus",
         "software_hub": "https://www.victronenergy.com/support-and-downloads/software"
       }
     },
     {
       "id": "victron-vrm",
       "brand": "Victron",
-      "title": "VRM Portal",
+      "title": "VRM portal & app",
       "kind": "software",
       "policy": "link",
-      "summary": "Remote monitoring portal for GX devices.",
+      "summary": "Remote monitoring for GX devices \u2014 portal plus official VRM mobile apps.",
       "links": {
         "portal": "https://vrm.victronenergy.com/",
-        "docs": "https://www.victronenergy.com/live/vrm_portal:start"
+        "docs": "https://www.victronenergy.com/live/vrm_portal:start",
+        "ios": "https://apps.apple.com/us/app/vrm-victron-remote-management/id658834560",
+        "android": "https://play.google.com/store/apps/details?id=nl.victronenergy"
       }
     },
     {
@@ -221,6 +227,45 @@
         "live_wiki": "https://www.victronenergy.com/live/start",
         "software_hub": "https://www.victronenergy.com/support-and-downloads/software",
         "community": "https://community.victronenergy.com/"
+      }
+    },
+    {
+      "id": "victron-toolkit",
+      "brand": "Victron",
+      "title": "Victron Toolkit",
+      "kind": "app",
+      "policy": "link",
+      "summary": "Cable size / voltage drop, Multi & Quattro LED codes, and inverter derating \u2014 official store apps only.",
+      "links": {
+        "ios": "https://apps.apple.com/us/app/victron-toolkit/id791585341",
+        "android": "https://play.google.com/store/apps/details?id=nl.victronenergy.victronledapp",
+        "software_hub": "https://www.victronenergy.com/support-and-downloads/software"
+      }
+    },
+    {
+      "id": "victron-veconfigure",
+      "brand": "Victron",
+      "title": "VEConfigure / VE.Bus tools",
+      "kind": "software",
+      "policy": "link",
+      "summary": "VEConfigure 3, Quick Configure, System Configurator, and VEFlash \u2014 download from Victron only (we do not host installers).",
+      "links": {
+        "software_hub": "https://www.victronenergy.com/support-and-downloads/software",
+        "manual": "https://www.victronenergy.com/media/pg/VEConfigure_Manual/en/index-en.html",
+        "live_docs": "https://www.victronenergy.com/live/ve.bus:veconfigure_manual",
+        "assistants": "https://www.victronenergy.com/live/assistants:start"
+      }
+    },
+    {
+      "id": "victron-ve-power-setup",
+      "brand": "Victron",
+      "title": "VE Power Setup",
+      "kind": "software",
+      "policy": "link",
+      "summary": "Firmware updates for VE.Can products (Skylla-i, Lynx Shunt VE.Can, interfaces) \u2014 Victron installer only.",
+      "links": {
+        "software_hub": "https://www.victronenergy.com/support-and-downloads/software",
+        "manual": "https://www.victronenergy.com/live/ccgx:ccgx_ve_power_setup"
       }
     },
     {
