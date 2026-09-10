@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "updated": "2026-09-10",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV \u00b7 camper \u00b7 Class A \u00b7 light truck connectivity-first; light marine FOSS OK.",
@@ -49,7 +49,7 @@
       "title": "Peplink / Pepwave firmware & InControl",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Official firmware + InControl (Pepwave under same Peplink support tree). Bonding and/or failover (SpeedFusion) \u2014 not bonding-only. Peplink Certified Associate.",
+      "summary": "Official firmware + InControl. Field speak: bonding and/or failover (SpeedFusion) with Starlink + cellular.",
       "links": {
         "firmware": "https://www.peplink.com/support/downloads/firmware/",
         "incontrol": "https://incontrol.peplink.com/",
@@ -62,7 +62,7 @@
       "title": "weBoost support",
       "kind": "firmware",
       "policy": "link",
-      "summary": "Support portal. weBoost Authorized Installer: outdoor RF required; AGC; no invent-from-zero / no tune gain.",
+      "summary": "Support portal. Authorized Installer: outdoor RF required; AGC; no invent-from-zero signal.",
       "links": {
         "support": "https://www.weboost.com/support",
         "site": "https://www.weboost.com/"
@@ -74,7 +74,7 @@
       "title": "Starlink app",
       "kind": "app",
       "policy": "link",
-      "summary": "Official app. Clear-sky installs only. Install capability \u2014 not an invented Starlink Certified title.",
+      "summary": "Official app. Clear-sky installs; no Starlink Certified title.",
       "links": {
         "ios": "https://apps.apple.com/us/app/starlink/id1537177988",
         "android": "https://play.google.com/store/apps/details?id=com.starlink.mobile",
@@ -185,14 +185,15 @@
       "kind": "software",
       "policy": "mirror-candidate",
       "license": "Apache-2.0",
-      "summary": "Low-code flow automation (common with Signal K / marine-RV dashboards). Pin release + SHA256 before mirroring; official docs/npm/github only.",
+      "summary": "Low-code flow automation (common with Signal K / marine-RV dashboards). Pin release + SHA256 before mirroring; official nodered.org / docs / npm / github only.",
       "links": {
         "site": "https://nodered.org/",
         "docs": "https://nodered.org/docs/",
         "getting_started": "https://nodered.org/docs/getting-started/",
         "github": "https://github.com/node-red/node-red",
         "npm": "https://www.npmjs.com/package/node-red",
-        "license": "https://nodered.org/about/license/"
+        "license": "https://nodered.org/about/license/",
+        "flows": "https://flows.nodered.org/"
       }
     },
     {
@@ -229,7 +230,7 @@
       "title": "Peplink support & forum",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official support + firmware + forum. Bonding and/or failover (SpeedFusion). Peplink Certified Associate \u2014 no separate Pepwave cert.",
+      "summary": "Official support + firmware downloads + community forum. Field: bonding and/or failover (SpeedFusion).",
       "links": {
         "support": "https://www.peplink.com/support/",
         "firmware": "https://www.peplink.com/support/downloads/firmware/",
@@ -243,7 +244,7 @@
       "title": "weBoost support & guides",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official weBoost support + Wilson Amplifiers resources. Outdoor RF required; AGC; no invent-from-zero / no tune gain.",
+      "summary": "Official weBoost support + Wilson Amplifiers resources. Outdoor RF / AGC honesty on installs.",
       "links": {
         "support": "https://www.weboost.com/support",
         "site": "https://www.weboost.com/",
@@ -256,7 +257,7 @@
       "title": "Starlink support",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official Starlink support hub. Clear-sky installs only; install capability \u2014 not an invented Starlink Certified title.",
+      "summary": "Official Starlink support hub. Clear-sky installs; no invented Starlink Certified title.",
       "links": {
         "support": "https://www.starlink.com/support",
         "app_ios": "https://apps.apple.com/us/app/starlink/id1537177988",
@@ -287,6 +288,19 @@
         "flows": "https://flows.nodered.org/",
         "user_guide": "https://nodered.org/docs/user-guide/",
         "signalk_node_red": "https://github.com/SignalK/signalk-node-red"
+      }
+    },
+    {
+      "id": "node-red-dashboard",
+      "brand": "FOSS",
+      "title": "Node-RED Dashboard (classic)",
+      "kind": "software",
+      "policy": "mirror-candidate",
+      "license": "Apache-2.0",
+      "summary": "Classic Node-RED UI dashboard nodes \u2014 pin release + SHA256 before any mirror; official GitHub only.",
+      "links": {
+        "github": "https://github.com/node-red/node-red-dashboard",
+        "flows": "https://flows.nodered.org/"
       }
     }
   ]
