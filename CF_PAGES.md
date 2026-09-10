@@ -10,15 +10,5 @@
 
 No Functions required for v1 (static catalog JSON).
 
-# redeploy nudge 2026-09-10T07:35Z Wave2+antenna
-# redeploy nudge 2026-09-10T07:39Z qgps-force-302
-# nudge 2026-09-10T07:41Z qgps must 404
-
-Wave1 QGPS hard-kill + incontrol2 20260910T074142Z\n
-# redeploy nudge 2026-09-10T07:41Z qgps-hard-404
-# qgps hard-404 2026-09-10T07:42:06.235043Z
-
-## Wave 3 `/go/*` soft redirects (Funnel)
-Specific paths only — **never** whole hub. No `/qgps` rules (hard 404).
-Book → https://unitedmobilerv.com/book-service/ via `/go/book`.
-
+# redeploy nudge 20260910T074424Z
+Visual #37 deepen CTA strip
