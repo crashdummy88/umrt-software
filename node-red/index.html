@@ -4,11 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Node-RED | UMRT Software</title>
-  <meta name="description" content="Official Node-RED links — canonical hub at /nodered/." />
-  <link rel="canonical" href="https://umrt-software.pages.dev/nodered/" />
-  <meta http-equiv="refresh" content="0; url=/nodered/" />
+  <meta name="description" content="Official Node-RED and Signal K links for RV and light-marine dashboards. FOSS mirror-candidate. No proprietary redistrib." />
+  <link rel="canonical" href="https://umrt-software.pages.dev/node-red/" />
   <link rel="stylesheet" href="/shared/css/umrt.css" />
-  <script>location.replace("/nodered/");</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -18,13 +16,59 @@
     <a class="phone" href="tel:+16166065277">Prefer Text (616) 606-5277</a>
   </div></header>
   <main id="main" class="wrap hero">
-    <p class="eyebrow">FOSS ¯ Node-RED</p>
+    <p class="eyebrow">FOSS · Node-RED</p>
     <h1>Official links</h1>
-    <p class="lede">This path aliases to the Node-RED hub. Continue at <a href="/nodered/">/nodered/</a> — official <a href="https://nodered.org/" rel="noopener noreferrer" target="_blank">nodered.org</a> links only.</p>
-    <p class="btn-row">
-      <a class="btn" href="/nodered/">Go to Node-RED hub</a>
-      <a class="btn btn-ghost" href="tel:+16166065277">Prefer Text (616) 606-5277</a>
+    <p class="fine">Also at <a href="/nodered/">/nodered/</a> (same content).</p>
+    <p class="lede">Low-code flow automation often paired with Signal K on RV and light-marine dashboards. We help integrate and install — we don’t overclaim custom flow productization. Mirror-candidate only after pin + SHA256.</p>
+    <p class="fine">Start at <a href="https://nodered.org/" rel="noopener noreferrer" target="_blank">nodered.org</a> · Docs: <a href="https://nodered.org/docs/" rel="noopener noreferrer" target="_blank">nodered.org/docs</a> · GitHub: <a href="https://github.com/node-red/node-red" rel="noopener noreferrer" target="_blank">node-red/node-red</a> · npm: <a href="https://www.npmjs.com/package/node-red" rel="noopener noreferrer" target="_blank">node-red</a> · License: <a href="https://nodered.org/about/license/" rel="noopener noreferrer" target="_blank">Apache-2.0</a></p>
+
+    <h2>On coaches and light marine</h2>
+    <p class="fine">Node-RED is commonly used for dashboard UI, alarms, and bridges between Signal K (and other sensor streams) and displays or notifications. We help integrate and install — we do not sell a proprietary UMRT Node-RED product, and we do not overclaim custom flow productization.</p>
+
+    <h2>Start here (official only)</h2>
+    <ul class="fine">
+      <li>Site: <a href="https://nodered.org/" rel="noopener noreferrer" target="_blank">nodered.org</a></li>
+      <li>Docs: <a href="https://nodered.org/docs/" rel="noopener noreferrer" target="_blank">nodered.org/docs</a></li>
+      <li>Getting started: <a href="https://nodered.org/docs/getting-started/" rel="noopener noreferrer" target="_blank">nodered.org/docs/getting-started</a></li>
+      <li>GitHub: <a href="https://github.com/node-red/node-red" rel="noopener noreferrer" target="_blank">node-red/node-red</a></li>
+      <li>npm: <a href="https://www.npmjs.com/package/node-red" rel="noopener noreferrer" target="_blank">node-red</a></li>
+      <li>License: <a href="https://nodered.org/about/license/" rel="noopener noreferrer" target="_blank">Apache-2.0</a></li>
+      <li>Flows library: <a href="https://flows.nodered.org/" rel="noopener noreferrer" target="_blank">flows.nodered.org</a></li>
+      <li>Dashboard (classic): <a href="https://github.com/node-red/node-red-dashboard" rel="noopener noreferrer" target="_blank">node-red/node-red-dashboard</a></li>
+    </ul>
+
+    <h2>Signal K pairing</h2>
+    <p class="fine">Signal K often sits next to Node-RED on coaches and light marine. Start at <a href="https://signalk.org/" rel="noopener noreferrer" target="_blank">signalk.org</a> and <a href="https://github.com/SignalK/signalk-server" rel="noopener noreferrer" target="_blank">SignalK/signalk-server</a> (Apache-2.0). See also <a href="/foss/">FOSS</a>. Match plugin versions to upstream docs — we do not invent a supported-stack matrix.</p>
+
+    <h2>Mirror honesty</h2>
+    <p class="fine">Catalog policy is <strong>mirror-candidate</strong>, not an active mirror. Before any <code>mirrors/</code> file: clear license, pinned upstream release tag, SHA256 + upstream URL in catalog. No proprietary vendor <code>.bin</code> / <code>.swu</code>. Until then: link only. See <a href="/policy.html">Policy</a>.</p>
+
+    <h2>Field checklist</h2>
+    <ul class="fine">
+      <li><strong>Editor will not open</strong> — confirm process and host:port per <a href="https://nodered.org/docs/getting-started/" rel="noopener noreferrer" target="_blank">getting-started</a>.</li>
+      <li><strong>Missing nodes</strong> — install from official palette / npm; prefer <a href="https://flows.nodered.org/" rel="noopener noreferrer" target="_blank">flows.nodered.org</a> or project GitHub.</li>
+      <li><strong>Dashboard blank on LAN</strong> — check bind address and dashboard package docs for your version.</li>
+      <li><strong>Signal K data missing</strong> — verify Signal K is up and nodes match upstream Signal K docs.</li>
+      <li><strong>After an update</strong> — export flows first; read GitHub release notes before upgrading.</li>
+    </ul>
+
+    <h2>Never</h2>
+    <ul class="fine">
+      <li>Cracked tools, keygens, or unlocked firmware.</li>
+      <li>Re-hosting proprietary vendor binaries on this hub.</li>
+      <li>Claiming a proprietary UMRT Node-RED product or invented certifications.</li>
+      <li>Publishing checksums without a pinned upstream tag + SHA256.</li>
+    </ul>
+
+    <div class="cards" data-catalog data-brand="FOSS" style="margin-top:1.5rem"></div>
+    <p class="btn-row" style="margin-top:1.5rem">
+      <a class="btn" href="tel:+16166065277">Prefer Text (616) 606-5277</a>
+      <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/book-service/">Book service</a>
+      <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/">United Mobile RV sales site</a>
+      <a class="btn btn-ghost" href="/foss/">FOSS hub</a>
     </p>
+    <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented cert).</p>
   </main>
+  <script src="/shared/js/catalog.js" defer></script>
 </body>
 </html>
