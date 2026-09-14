@@ -1,28 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-platform="software">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/design/platform-bar.css" />
   <title>UMRT Software — Official firmware &amp; FOSS links</title>
   <meta name="description" content="Victron, Peplink, Starlink, weBoost + Node-RED — manufacturer links only. No cracked bins. Built by a Victron Professional Certified Installer who works on coaches." />
   <meta name="theme-color" content="#1A1A1A" />
-  <link rel="canonical" href="https://umrt-software.pages.dev/" />
+  <link rel="canonical" href="https://software.unitedmobilerv.com/" />
   <meta name="robots" content="index,follow" />
   <meta property="og:title" content="UMRT Software — Official firmware &amp; FOSS links" />
   <meta property="og:description" content="Victron, Peplink, Starlink, weBoost + Node-RED — manufacturer links only. No cracked bins. Built by a Victron Professional Certified Installer who works on coaches." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://umrt-software.pages.dev/" />
+  <meta property="og:url" content="https://software.unitedmobilerv.com/" />
   <!-- og-deploy-stamp 20260910T073141Z -->
-  <meta property="og:image" content="https://umrt-software.pages.dev/assets/og/umrt-software-og-card.png" />
+  <meta property="og:image" content="https://software.unitedmobilerv.com/assets/og/umrt-software-og-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://umrt-software.pages.dev/assets/og/umrt-software-og-card.png" />
+  <meta name="twitter:image" content="https://software.unitedmobilerv.com/assets/og/umrt-software-og-card.png" />
   <meta name="twitter:title" content="UMRT Software — Official firmware &amp; FOSS links" />
   <link rel="stylesheet" href="/shared/css/umrt.css" />
 <!-- cf-nudge: home OG absolute 2026-09-10 -->
 </head>
 <body>
+  <div class="umrt-platform-bar" role="navigation" aria-label="UMRT properties">
+    <div class="umrt-platform-bar-inner">
+      <a href="https://unitedmobilerv.com/" data-platform-link="hub">Main Hub</a>
+      <a href="https://shop.unitedmobilerv.com/" data-platform-link="shop">Shop</a>
+      <a href="https://forum.unitedmobilerv.com/" data-platform-link="forum">Forum</a>
+      <a href="https://software.unitedmobilerv.com/" data-platform-link="software">Software</a>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var current = document.documentElement.getAttribute('data-platform');
+      if (!current) return;
+      var link = document.querySelector('.umrt-platform-bar [data-platform-link="' + current + '"]');
+      if (link) { link.setAttribute('aria-current', 'page'); link.classList.add('is-current'); }
+    })();
+  </script>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
@@ -49,7 +66,7 @@
         <a class="btn btn-ghost" href="https://united-mobile-rv.pages.dev/">United Mobile RV sales site</a>
       </div>
       <p class="share-strip" id="share-strip">
-        <button type="button" class="btn btn-ghost share-btn" data-share-url="https://umrt-software.pages.dev/" data-share-text="Official RV firmware &amp; FOSS links — manufacturer only, no cracked bins.">Copy link · share the shelf — not a download dump</button>
+        <button type="button" class="btn btn-ghost share-btn" data-share-url="https://software.unitedmobilerv.com/" data-share-text="Official RV firmware &amp; FOSS links — manufacturer only, no cracked bins.">Copy link · share the shelf — not a download dump</button>
         <span class="fine share-status" aria-live="polite"></span>
       </p>
     </section>
@@ -122,10 +139,10 @@
       <h2>Share lines</h2>
       <p class="fine">Official manufacturer links for coach firmware &amp; apps — no cracked bins. Victron · Peplink · Starlink · weBoost · Node-RED.</p>
       <ul class="policy-list fine">
-        <li>Need VictronConnect / VRM / GX without hunting? Official links only: https://umrt-software.pages.dev/</li>
-        <li>Peplink firmware + InControl — SpeedFusion as bonding and/or failover. https://umrt-software.pages.dev/</li>
-        <li>Starlink app + support for coach installs. Clear-sky honesty — we&apos;re not &quot;Starlink Certified.&quot; https://umrt-software.pages.dev/</li>
-        <li>Node-RED · Signal K · OpenWrt — FOSS only when the license is clear. https://umrt-software.pages.dev/</li>
+        <li>Need VictronConnect / VRM / GX without hunting? Official links only: https://software.unitedmobilerv.com/</li>
+        <li>Peplink firmware + InControl — SpeedFusion as bonding and/or failover. https://software.unitedmobilerv.com/</li>
+        <li>Starlink app + support for coach installs. Clear-sky honesty — we&apos;re not &quot;Starlink Certified.&quot; https://software.unitedmobilerv.com/</li>
+        <li>Node-RED · Signal K · OpenWrt — FOSS only when the license is clear. https://software.unitedmobilerv.com/</li>
       </ul>
     </section>
 
