@@ -12,7 +12,7 @@ Field hub for **firmware, software, and app links** used on United Mobile RV ins
 | **Vendor firmware / apps** | **Link only** to official portals / app stores |
 
 ## Prefer Text
-**(616) 606-5277** · Book service: https://united-mobile-rv.pages.dev/book-service/ · Sales site: https://united-mobile-rv.pages.dev/
+**(616) 606-5277** · Book service: https://book.unitedmobilerv.com/ · Sales site: https://unitedmobilerv.com/
 
 ## Structure
 - Brand pages: `/victron` `/peplink` `/weboost` `/starlink` `/winegard` `/king` `/surecall` `/celfi` `/glinet` `/teltonika` `/dometic` `/foss`
