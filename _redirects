@@ -1,7 +1,7 @@
 # Soft Pages → live/sibling convert ONLY (never whole hub / never /*)
-# Wave 3 Funnel — Book → live book suite (safety net only)
-/go/book       https://book.unitedmobilerv.com/  302
-/go/book/      https://book.unitedmobilerv.com/  302
+# Wave 3 Funnel — Book → Square appointment site (safety net only; /go is legacy)
+/go/book       https://united-mobile-rv-llc.square.site/  302
+/go/book/      https://united-mobile-rv-llc.square.site/  302
 /go/victron    https://unitedmobilerv.com/victron/  302
 /go/victron/   https://unitedmobilerv.com/victron/  302
 /go/wireless   https://unitedmobilerv.com/wireless/  302
@@ -20,10 +20,10 @@
 /go/status/    https://status.unitedmobilerv.com/  302
 /go/docs       https://docs.unitedmobilerv.com/  302
 /go/docs/      https://docs.unitedmobilerv.com/  302
-/go/community  https://umrt-community.pages.dev/  302
-/go/community/ https://umrt-community.pages.dev/  302
-/go/mothership https://united-mobile-rv.pages.dev/  302
-/go/mothership/ https://united-mobile-rv.pages.dev/  302
+/go/community  https://forum.unitedmobilerv.com/  302
+/go/community/ https://forum.unitedmobilerv.com/  302
+/go/mothership https://unitedmobilerv.com/  302
+/go/mothership/ https://unitedmobilerv.com/  302
 
 /go/go         https://umrt-go.pages.dev/  302
 /go/go/        https://umrt-go.pages.dev/  302

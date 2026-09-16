@@ -1,7 +1,7 @@
 # UMRT Software — Tech Downloads Hub
 
 **Repo:** [`crashdummy88/umrt-software`](https://github.com/crashdummy88/umrt-software) (public)  
-**Live:** https://umrt-software.pages.dev/  
+**Live:** https://software.unitedmobilerv.com/  
 **Formerly:** `umrt-verticals` (same repository)
 
 Field hub for **firmware, software, and app links** used on United Mobile RV installs (RV · camper · Class A · light truck; connectivity-first).
@@ -12,7 +12,7 @@ Field hub for **firmware, software, and app links** used on United Mobile RV ins
 | **Vendor firmware / apps** | **Link only** to official portals / app stores |
 
 ## Prefer Text
-**(616) 606-5277** · Book service: https://book.unitedmobilerv.com/ · Sales site: https://unitedmobilerv.com/
+**(616) 606-5277** · Book service: https://united-mobile-rv-llc.square.site/ · Sales site: https://unitedmobilerv.com/
 
 ## Structure
 - Brand pages: `/victron` `/peplink` `/weboost` `/starlink` `/winegard` `/king` `/surecall` `/celfi` `/glinet` `/teltonika` `/dometic` `/foss`
