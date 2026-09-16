@@ -1,6 +1,7 @@
 # Cloudflare Pages — umrt-software
 
-**Live:** https://umrt-software.pages.dev/
+**Live:** https://software.unitedmobilerv.com/ (Pages project: https://umrt-software.pages.dev/)
+# P0 2026-09-16 public-host guide scrub + Square Book
 
 - Repo: `crashdummy88/umrt-software`
 - Production branch: `main`
