@@ -6,7 +6,7 @@
 
   function render(entries) {
     if (!entries.length) {
-      root.innerHTML = "<p class=\"lede\">No matches — Text Now <a href=\"sms:+16166065277\">(616) 606-5277</a> if you need a link.</p>";
+      root.innerHTML = "<p class=\"lede\">No matches — Prefer Text <a href=\"sms:+16166065277\">(616) 606-5277</a> if you need a link.</p>";
       return;
     }
     root.innerHTML = entries.map(function (e) {
@@ -52,7 +52,7 @@
       apply();
     })
     .catch(function () {
-      root.innerHTML = "<p class=\"lede\">Catalog failed to load. Text Now <a href=\"sms:+16166065277\">(616) 606-5277</a>.</p>";
+      root.innerHTML = "<p class=\"lede\">Catalog failed to load. Prefer Text <a href=\"sms:+16166065277\">(616) 606-5277</a>.</p>";
     });
 
   document.addEventListener("click", function (ev) {
