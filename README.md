@@ -11,7 +11,7 @@ Field hub for **firmware, software, and app links** used on United Mobile RV ins
 | **Open source** | May **mirror** when license allows — see `POLICY.md` + `mirrors/README.md` |
 | **Vendor firmware / apps** | **Link only** to official portals / app stores |
 
-## Text Now
+## Text Now / Message us
 **sms:+16166065277** · **(616) 606-5277** · Number (older clients): `tel:+16166065277` · Book: https://united-mobile-rv-llc.square.site/ · Sales site: https://unitedmobilerv.com/
 
 ## Structure
