@@ -1,7 +1,7 @@
 # Soft Pages → live/sibling convert ONLY (never whole hub / never /*)
-# Wave 3 Funnel — Book → live book-service
-/go/book       https://unitedmobilerv.com/book-service/  302
-/go/book/      https://unitedmobilerv.com/book-service/  302
+# Wave 3 Funnel — Book → live book suite (safety net only)
+/go/book       https://book.unitedmobilerv.com/  302
+/go/book/      https://book.unitedmobilerv.com/  302
 /go/victron    https://unitedmobilerv.com/victron/  302
 /go/victron/   https://unitedmobilerv.com/victron/  302
 /go/wireless   https://unitedmobilerv.com/wireless/  302
