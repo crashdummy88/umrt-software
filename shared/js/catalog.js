@@ -26,7 +26,7 @@
         "<p>" + (e.summary || "") + "</p>" + lic + pageHint +
         "<p style=\"margin-top:0.75rem\">" + links + "</p>" +
         "<p class=\"card-share\"><button type=\"button\" class=\"share-mini\" data-share-text=\"" +
-          (e.title || "UMRT Software") + " — official links: https://umrt-software.pages.dev/\">Copy share line</button></p>" +
+          (e.title || "UMRT Software") + " — official links: https://software.unitedmobilerv.com/\">Copy share line</button></p>" +
         "</article>"
       );
     }).join("");
@@ -59,7 +59,7 @@
     var btn = ev.target.closest("[data-share-url], .share-mini, .share-btn");
     if (!btn) return;
     ev.preventDefault();
-    var text = btn.getAttribute("data-share-text") || btn.getAttribute("data-share-url") || "https://umrt-software.pages.dev/";
+    var text = btn.getAttribute("data-share-text") || btn.getAttribute("data-share-url") || "https://software.unitedmobilerv.com/";
     var url = btn.getAttribute("data-share-url");
     var payload = url ? (text + " " + url) : text;
     function done(ok) {
