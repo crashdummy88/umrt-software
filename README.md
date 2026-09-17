@@ -12,7 +12,7 @@ Field hub for **firmware, software, and app links** used on United Mobile RV ins
 | **Vendor firmware / apps** | **Link only** to official portals / app stores |
 
 ## Convert
-**Call (616) 606-5277** → `tel:+16166065277` · **Text Now** (gold) → `sms:+16166065277` · **Book** → https://united-mobile-rv-llc.square.site/ · Sales site: https://unitedmobilerv.com/
+**Call (616) 606-5277** → `tel:+16166065277` · **Text Now** (gold) → `sms:+16166065277` · **Book** → https://book.unitedmobilerv.com/ · Sales site: https://unitedmobilerv.com/
 
 ## Structure
 - Brand pages: `/victron` `/peplink` `/weboost` `/starlink` `/winegard` `/king` `/surecall` `/celfi` `/glinet` `/teltonika` `/dometic` `/foss`
