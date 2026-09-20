@@ -1,6 +1,6 @@
 {
-  "version": 17,
-  "updated": "2026-09-10",
+  "version": 18,
+  "updated": "2026-09-20",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV · camper · Class A · light truck connectivity-first; light marine FOSS OK.",
   "entries": [
@@ -306,11 +306,11 @@
       "title": "Mobile Mark antennas",
       "kind": "docs",
       "policy": "link",
-      "summary": "Cellular/mobile antennas — official support + cellular category. No invented cert.",
+      "summary": "Cellular/mobile vehicle antennas — official contact + current mobile category. No invented cert.",
       "links": {
         "site": "https://www.mobilemark.com/",
-        "support": "https://www.mobilemark.com/support/",
-        "cellular": "https://www.mobilemark.com/product-category/cellular-antennas/"
+        "contact": "https://www.mobilemark.com/contact-us/",
+        "mobile": "https://www.mobilemark.com/product-category/cellular-iot-m2m/mobile/"
       }
     },
     {
@@ -354,13 +354,13 @@
     {
       "id": "laird-rf-antennas",
       "brand": "Laird Connectivity",
-      "title": "Laird RF antennas",
+      "title": "Ezurio (formerly Laird) antennas",
       "kind": "docs",
       "policy": "link",
-      "summary": "RF antenna catalog — official Laird Connectivity links only.",
+      "summary": "Laird Connectivity rebranded to Ezurio. Public catalog is now official Ezurio connectivity / internal-antenna pages — not a vehicle RF PLP. No invented cert.",
       "links": {
-        "site": "https://www.lairdconnect.com/",
-        "rf_antennas": "https://www.lairdconnect.com/rf-antennas"
+        "site": "https://www.ezurio.com/",
+        "connectivity": "https://www.ezurio.com/products/connectivity"
       }
     },
     {

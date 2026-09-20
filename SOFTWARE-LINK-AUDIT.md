@@ -1,313 +1,265 @@
-# SOFTWARE link audit
+# SOFTWARE link audit — Stage-4
 
-**Live:** https://software.unitedmobilerv.com/
-**Repo:** https://github.com/crashdummy88/umrt-software
-**Audited:** 2026-09-20
-**Scope:** Hub + every brand page + catalog `index.json` outbound http(s) links (download / manufacturer / app-store / support). Internal `/` paths, `tel:`, and `sms:` excluded from the outbound table.
+**Live:** https://software.unitedmobilerv.com/  
+**Repo:** https://github.com/crashdummy88/umrt-software  
+**Audited:** 2026-09-20 (Apps lane, this PR)  
+**Scope:** Every firmware / app / store / manufacturer-download URL on hub HTML, brand HTML, troubleshoot HTML, and `catalog/index.json`. Chrome mesh (Home / Services / Shop / Book / Forum / Software / Docs) excluded from the outbound table. Internal `/` paths, `tel:`, and `sms:` excluded.
 
 ## Verdict
 
-Manufacturer / app-store / firmware links are **mostly good**. No dead official Victron, Peplink, weBoost, Starlink, Winegard, SureCall, Cel-Fi/Nextivity, GL.iNet, Teltonika, Dometic, OpenWrt, Cradlepoint, Sierra/Semtech, Node-RED, or FOSS download destinations were found.
+Manufacturer / app-store / firmware links are **mostly good**. This Stage-4 pass extracted **198 unique** download/app/store URLs from **repo + live HTML**.
 
-**Broken outbound manufacturer 404s to replace:** none.
+**Fixed in this PR (were FAIL on live):**
 
-Wire-only fixes kept from #65:
+1. **Mobile Mark** ` /product-category/cellular-antennas/` and `/support/` → official 404 page. Replaced with [`/product-category/cellular-iot-m2m/mobile/`](https://www.mobilemark.com/product-category/cellular-iot-m2m/mobile/) and [`/contact-us/`](https://www.mobilemark.com/contact-us/).
+2. **Laird** `lairdconnect.com/rf-antennas` hops to Ezurio **internal** antennas (wrong product). Replaced with official [`ezurio.com`](https://www.ezurio.com/) + [`/products/connectivity`](https://www.ezurio.com/products/connectivity). Honesty: Ezurio’s public catalog is now modules / internal antennas, not a vehicle RF PLP.
 
-1. **`/sierra/` catalog was empty.** Page filter was `data-brand="Sierra"` but catalog brand is `Sierra Wireless`, so the AirLink cards never rendered. Filter aligned. Hardcoded Source / Support / ALMS links were already correct.
-2. **`/gl-inet/` 404.** Brands card already uses `/glinet/`. Added a 302 hyphen alias so the typed slug works.
+**Left FAIL for Matt (uncertain official replacement):**
 
-**Lock 2026-09-20:** Book chrome goes **straight to Square** — not `book.unitedmobilerv.com`. Platform bar Book, footer mesh Book, and `/go/book` are `https://united-mobile-rv-llc.square.site/`. Convert Book buttons stay Square. `#65` briefly pointed chrome at `book.*`; that retarget is reverted.
+- Parsec `parsec-t.com/products/` and `/support/` — HTTP 200 but both render the marketing homepage (soft-404). No clear official product/support index found.
 
-## Method
+**Not failures:** App Store `429` rate-limits, npm/Taoglas/Cel-Fi Zendesk datacenter `403` bot-walls, Tycon TLS handshake quirk from this client (WebFetch: official). Victron Professional firmware remains an official login/Dropbox gate. KING `kingconnect.com` is a live liquidation/placeholder — honesty copy already says do not sell new.
 
-- Extracted **803** outbound occurrences / **213** unique URLs from hub HTML, brand HTML, troubleshoot HTML, and `catalog/index.json`.
-- Probed each unique URL with GET + redirect follow (browser UA).
-- Re-checked Cloudflare/bot-walled and TLS-quirk hosts in a real browser and/or WebFetch.
-- Clicked primary manufacturer/download/app-store links on hub + brand pages (Victron, Peplink, weBoost, Starlink, Winegard, GL.iNet, KING, SureCall, Cel-Fi; remaining brand start-here URLs via WebFetch).
-- UMRT mesh (`unitedmobilerv.com`, Shop, Book, Forum, Docs) verified in browser.
+**QGPS:** no customer page. `/qgps` is an explicit HTTP 404 (`_redirects`). No firmware/app URLs to audit.
 
-Datacenter curl often sees `403 cf-mitigated: challenge` on UMRT, Nextivity, npm, Taoglas, Airgain, Poynting. Those are **not** user-facing 404s.
+## Chrome / convert locks (this tip)
 
-## Book chrome
-
-**Lock (current):** chrome + `/go/book` → Square. `#65` book.* retarget reverted.
-
-| Location | Current |
+| Check | Result |
 |---|---|
-| Platform bar Book | `https://united-mobile-rv-llc.square.site/` |
-| Footer mesh Book | `https://united-mobile-rv-llc.square.site/` |
-| `/go/book` | Square 302 |
-| Convert Book buttons (hero / deepen hubs) | Square (unchanged) |
-| `book.unitedmobilerv.com` | Live UMRT landing exists; chrome must **not** use it |
+| `book.unitedmobilerv.com` in `*.html` / `*.js` / `*.json` | **0** |
+| `MAIN HUB` / `Main Hub` | **0** |
+| Book customer href | `https://united-mobile-rv-llc.square.site/` only |
+| `united-mobile-rv.pages.dev` in HTML | **0** |
+| Convert CTAs | Call `tel:+16166065277` · Text Now `sms:+16166065277` · Book Square · Troubleshoot `/troubleshoot/` |
+| Prefer Text | **0** |
+| Portal / Status in customer chrome | **0** |
+| Credentials (stacked footer) | Victron Professional Certified Installer · weBoost Authorized · Peplink Certified Associate · Starlink installs only (never Certified) |
+| NAP | St. Ignace not present as a customer claim here; no Alpine WY / Royal Oak |
 
-## Findings that are not link replacements
+## Old drafts harvested (not merged)
 
-| Item | Status | Notes |
-|---|---|---|
-| KING `kingconnect.com` | 200 · liquidation | Live storefront is FINAL LIQUIDATION. Hub copy already says do not sell new / placeholder / migrate weBoost RV. Left as official brand URL. |
-| Laird `lairdconnect.com` → `ezurio.com` | 200 rebrand | `/rf-antennas` now lands on Ezurio **internal** antennas. Wrong *category*, not a 404. Left (broken-link-only rule). |
-| Cradlepoint → `cradlepoint.ericsson.com` | 200 official hop | Ericsson rebrand. Old URLs still work. |
-| SureCall `/rv-boosters/fusion2go-rv/` | 200 legacy slug | Renders Fusion2Go **3.0** RV product. |
-| Parsec `/support/` | 200 soft | Marketing homepage content on the support path. |
-| weBoost `/collections/antennas` | 200 | Accessories / parts shelf, not a dedicated antenna PLP. |
-| weBoost Drive Reach RV-2 / RV35 / RV50 | 200 correct SKUs | RV-2 page now brands as RV20 (formerly RV II). |
-| Wilson install PDF | 200 CDN hop | `assets.wilsonelectronics.com` → `cdn.amplifi.pattern.com`. |
-| Starlink `www` → apex | 200 | Canonical `starlink.com`. Specs URL ends at `/specifications/4`. |
-| Peplink firmware on Starlink catalog card | 200 | Intentional bypass-mode pairing, not a wrong-brand product. |
-| `/gl-inet/` | was 404 | Hyphen alias added. |
-| Convert Book still Square | lock | Chrome + convert Book all Square after 2026-09-20 lock flip. |
-| OpenWrt catalog brands | rough edge | `/openwrt/` filters `OpenWrt`; the older `openwrt` catalog row is brand `FOSS`, so it only shows on FOSS/hub. |
-| Dometic apps | honesty | Store search only — no guessed App Store IDs (correct). |
-| Professional Victron firmware | 200 | Login/Dropbox gate for some files — official portal, not a dead link. |
-| InControl `incontrol.peplink.com` | 200 | Hops to `incontrol2.peplink.com`. |
-| `support.weboost.com` | 200 | Hops to `weboost.com/support`. |
+| PR | Keep / drop |
+|---|---|
+| #64 hero fluff | DROP Book→`book.*`. Hero CTA strip already on main as Call / Text Now / Book / Troubleshoot. |
+| #62 Call/Text/Book/Troubleshoot + substance | DROP Book→`book.*`. Kept convert-set direction (Square) on brand pages that lacked it. |
+| #61 firmware/apps by brand | **KEEP direction.** Rebased substance onto current chrome (Home · Services · Shop · Book Square · Forum · Software · Docs). Sierra catalog filter stays `Sierra Wireless` (#65). |
+| #55 Prefer Text + Square | DROP Prefer Text (main is Text Now). Square / public-host guides already on main. |
+| #54 Text Now lock | Already on main. |
+| #53 pages.dev guide scrub | Already on main (`rg` = 0). |
+| #49 Book→`book.*` | **DROP** (wrong Book destination). |
 
-## Brand pages crawled
+## Unique outbound firmware / app / store / download URLs
 
-| Page | Primary OEM start-here | Click / fetch result |
-|---|---|---|
-| `/` hub | catalog + brand cards | Catalog cards load official Victron/Peplink/weBoost/Starlink rows. Book chrome was Square. |
-| `/victron/` | victronenergy.com software hub | Official downloads. VictronConnect / VRM / Toolkit store IDs match. |
-| `/peplink/` | peplink.com firmware | Official Firmware Downloads. InControl2 live. |
-| `/weboost/` | weboost.com/support | Official support. App + RV SKUs live. |
-| `/starlink/` | starlink.com/support | Official Help Center. Spec PDFs live. |
-| `/winegard/` | winegard.com/support | Official support. ConnecT 2.0 4G + RV Halo live. |
-| `/king/` | kingconnect.com | Liquidation storefront. Honesty copy already correct. |
-| `/surecall/` | surecall.com/support | Official support + manuals. |
-| `/celfi/` | nextivityinc.com/support | Official Nextivity support. cel-fi.com is Nextivity corporate. |
-| `/glinet/` | dl.gl-inet.com | Official firmware CDN. `/gl-inet/` was 404. |
-| `/teltonika/` | wiki.teltonika-networks.com | Official wiki + Downloads page. |
-| `/dometic/` | dometic.com + en-us/support | Official support. Play search only. |
-| `/openwrt/` | openwrt.org + firmware-selector | Official selector + downloads. |
-| `/cradlepoint/` | cradlepoint.com/support | 200 → Ericsson NetCloud support. |
-| `/sierra/` | source.sierrawireless.com | Official Source + ALMS + support. Catalog cards were empty until filter fix. |
-| `/nodered/` + `/node-red/` | nodered.org | Official docs/GitHub/npm. |
-| `/foss/` | signalk.org / openwrt.org / nodered.org | Official FOSS start-here links. |
+Status is the HTTP code after redirect follow (browser UA). Pass/Fail is user-facing: official manufacturer / app-store page = Pass; 404 / soft-404 / wrong product / customer pages.dev = Fail. Bot-walls and App Store rate-limits on official hosts = Pass with a note.
 
-## Unique outbound URLs
-
-Status is the user-facing result after reconciliation (browser/WebFetch override of bot-walls). `final` is the last URL after hops when known.
-
-| Verdict | HTTP | Requested | Final | Brand(s) | Notes |
+<!-- MATRIX_BEGIN -->
+| Brand | Label | URL | Status | Pass/Fail | Notes |
 |---|---|---|---|---|---|
-| redirect-weird | 200 | https://www.lairdconnect.com/ | https://www.ezurio.com/ | Laird Connectivity | host change www.lairdconnect.com -> www.ezurio.com Rebrand: Laird Connectivity → Ezurio. /rf-antennas lands on ezurio.com/internal-antennas (embedded, not vehicle RF). |
-| redirect-weird | 200 | https://www.lairdconnect.com/rf-antennas | https://www.ezurio.com/internal-antennas | Laird Connectivity | host change www.lairdconnect.com -> www.ezurio.com Rebrand: Laird Connectivity → Ezurio. /rf-antennas lands on ezurio.com/internal-antennas (embedded, not vehicle RF). |
-| ok-legacy | 200 | https://kingconnect.com/ | same | KING | LIVE 200 but FINAL LIQUIDATION storefront. Catalog already says do-not-sell-new / placeholder. |
-| ok-redirect | 200 | https://cradlepoint.com/products/netcloud-service/ | https://cradlepoint.ericsson.com/products/netcloud/netcloud-service/ | Cradlepoint | host change cradlepoint.com -> cradlepoint.ericsson.com Official Ericsson rebrand host cradlepoint.ericsson.com. Old URL still 200-redirects. |
-| ok-redirect | 200 | https://cradlepoint.com/support/ | https://cradlepoint.ericsson.com/support/ | Cradlepoint | host change cradlepoint.com -> cradlepoint.ericsson.com Official Ericsson rebrand host cradlepoint.ericsson.com. Old URL still 200-redirects. |
-| ok | 200 | https://api.starlink.com/public-files/Starlink%20Product%20Specifications_HighPerformance.pdf | same | Starlink |  |
-| ok | 200 | https://api.starlink.com/public-files/specification_sheet_flat_high_performance.pdf | same | Starlink |  |
-| ok | 200 | https://apps.apple.com/us/app/cel-fi-mywave/id1560705133 | same | Cel-Fi |  |
-| ok | 200 | https://apps.apple.com/us/app/cel-fi-wave/id980050278 | same | Cel-Fi |  |
-| ok | 200 | https://apps.apple.com/us/app/rv-halo/id1563032659 | same | Winegard |  |
-| ok | 200 | https://apps.apple.com/us/app/starlink/id1537177988 | same | Starlink |  |
-| ok | 200 | https://apps.apple.com/us/app/surecall/id6449509462 | same | SureCall |  |
-| ok | 200 | https://apps.apple.com/us/app/victron-toolkit/id791585341 | same | Victron |  |
-| ok | 200 | https://apps.apple.com/us/app/victronconnect/id943840744 | same | Victron |  |
-| ok | 200 | https://apps.apple.com/us/app/vrm-victron-remote-management/id658834560 | same | Victron | App Store 429 rate-limit on this run; sibling Victron iOS IDs returned 200. |
-| ok | 200 | https://apps.apple.com/us/app/weboost/id1611974453 | same | weBoost |  |
-| ok | 200 | https://assets.wilsonelectronics.com/m/700bdbf86910493c/original/Drive-Reach-RV-Installation-Guide.pdf | https://cdn.amplifi.pattern.com/233ee3b7-5241-4399-b668-8724309a2a47 | weBoost | host change assets.wilsonelectronics.com -> cdn.amplifi.pattern.com OEM PDF CDN hop to cdn.amplifi.pattern.com — still the Drive Reach RV install guide. |
-| ok | 200 | https://cel-fi.com/ | same | Cel-Fi | CF/bot 403 from datacenter curl; WebFetch/browser: Nextivity/Cel-Fi corporate site. |
-| ok | 200 | https://community.victronenergy.com/ | same | Victron |  |
-| ok | 200 | https://dl.gl-inet.com/ | same | GL.iNet |  |
-| ok | 200 | https://docs.cradlepoint.com/ | same | Cradlepoint |  |
-| ok | 200 | https://docs.gl-inet.com/router/en/4/ | same | GL.iNet |  |
-| ok | 200 | https://docs.gl-inet.com/router/en/4/interface_guide/upgrade/ | same | GL.iNet |  |
-| ok | 200 | https://docs.unitedmobilerv.com/ | same |  | CF challenge on datacenter curl; live Field Docs in browser. |
-| ok | 200 | https://downloads.openwrt.org/ | same | FOSS |  |
-| ok | 200 | https://firmware-selector.openwrt.org/ | same | OpenWrt |  |
-| ok | 200 | https://firmware.gl-inet.com/ | same | GL.iNet |  |
-| ok | 200 | https://flows.nodered.org/ | same | FOSS |  |
-| ok | 200 | https://forum.peplink.com/ | same | Peplink |  |
-| ok | 200 | https://forum.unitedmobilerv.com/ | same |  | CF challenge on datacenter curl; live Community Forum in browser. |
-| ok | 200 | https://github.com/FlowFuse/node-red-dashboard | same | FOSS |  |
-| ok | 200 | https://github.com/SignalK/signalk-node-red | same | FOSS |  |
-| ok | 200 | https://github.com/SignalK/signalk-server | same | FOSS |  |
-| ok | 200 | https://github.com/crashdummy88/umrt-software | same |  |  |
-| ok | 200 | https://github.com/node-red/node-red | same | FOSS |  |
-| ok | 200 | https://github.com/node-red/node-red-dashboard | same | FOSS |  |
-| ok | 200 | https://github.com/openwrt/openwrt | same | FOSS |  |
-| ok | 200 | https://github.com/victronenergy/venus | same | Victron |  |
-| ok | 200 | https://incontrol.peplink.com/ | https://incontrol2.peplink.com:443/ |  | host change incontrol.peplink.com -> incontrol2.peplink.com:443 |
-| ok | 200 | https://incontrol2.peplink.com/ | same | Peplink |  |
-| ok | 200 | https://nextivityinc.com/ | same | Cel-Fi | Bot wall on curl; official Nextivity site via WebFetch/browser. |
-| ok | 200 | https://nextivityinc.com/go-g32/ | same | Cel-Fi | Bot wall on curl; official GO G32 product. |
-| ok | 200 | https://nextivityinc.com/go-g32/mobile-solutions/ | same | Cel-Fi | Bot wall on curl; official GO G32 mobile kits. |
-| ok | 200 | https://nextivityinc.com/products/roam-r41/ | same | Cel-Fi | Bot wall on curl; official ROAM R41. |
-| ok | 200 | https://nextivityinc.com/software/ | same | Cel-Fi | Bot wall on curl; official software hub. |
-| ok | 200 | https://nextivityinc.com/software/wave/ | same | Cel-Fi | Bot wall on curl; WAVE software path. |
-| ok | 200 | https://nextivityinc.com/software/wavefieldtool/ | same | Cel-Fi | Bot wall on curl; WAVE Field Tool path. |
-| ok | 200 | https://nextivityinc.com/support/ | same | Cel-Fi | Official Nextivity Technical Support (clicked from /celfi/). |
-| ok | 200 | https://nodered.org/ | same | FOSS |  |
-| ok | 200 | https://nodered.org/about/license/ | same | FOSS |  |
-| ok | 200 | https://nodered.org/docs/ | same | FOSS |  |
-| ok | 200 | https://nodered.org/docs/getting-started/ | same | FOSS |  |
-| ok | 200 | https://nodered.org/docs/user-guide/ | same | FOSS |  |
-| ok | 200 | https://nodered.org/docs/user-guide/runtime/securing-node-red | same | FOSS |  |
-| ok | 200 | https://openwrt.org/ | same | FOSS, OpenWrt |  |
-| ok | 200 | https://openwrt.org/docs/guide-user/installation/generic.overview | same |  |  |
-| ok | 200 | https://openwrt.org/docs/guide-user/installation/generic.sysupgrade | same |  |  |
-| ok | 200 | https://openwrt.org/downloads | same | OpenWrt |  |
-| ok | 200 | https://openwrt.org/releases/start | same |  |  |
-| ok | 200 | https://openwrt.org/toh/start | same |  |  |
-| ok | 200 | https://parsec-t.com/ | same | Parsec |  |
-| ok | 200 | https://parsec-t.com/products/ | https://parsec-t.com/ | Parsec |  |
-| ok | 200 | https://parsec-t.com/support/ | https://parsec-t.com/ | Parsec | WebFetch rendered marketing homepage content at /support/ (SPA/CMS). Not a 404. |
-| ok | 200 | https://play.google.com/store/apps/details?id=com.NxtyWave | same | Cel-Fi |  |
-| ok | 200 | https://play.google.com/store/apps/details?id=com.nextivityinc.MyWave | same | Cel-Fi |  |
-| ok | 200 | https://play.google.com/store/apps/details?id=com.starlink.mobile | same | Starlink |  |
-| ok | 200 | https://play.google.com/store/apps/details?id=com.surecall.surecall | same | SureCall |  |
-| ok | 200 | https://play.google.com/store/apps/details?id=com.victronenergy.victronconnect | same | Victron |  |
-| ok | 200 | https://play.google.com/store/apps/details?id=com.wilsonelectronics.weboost | same | weBoost |  |
-| ok | 200 | https://play.google.com/store/apps/details?id=com.winegard.halo | same | Winegard |  |
-| ok | 200 | https://play.google.com/store/apps/details?id=nl.victronenergy | same | Victron |  |
-| ok | 200 | https://play.google.com/store/apps/details?id=nl.victronenergy.victronledapp | same | Victron |  |
-| ok | 200 | https://play.google.com/store/search?q=Dometic&c=apps | same | Dometic |  |
-| ok | 200 | https://poynting.tech/ | same | Poynting | Bot wall on curl; official Poynting site. |
-| ok | 200 | https://poynting.tech/contact/ | same | Poynting | Bot wall on curl; official contact. |
-| ok | 200 | https://poynting.tech/downloads/ | same | Poynting | WebFetch: official Downloads - POYNTING Antenna Solutions. |
-| ok | 200 | https://professional.victronenergy.com/downloads/firmware/ | same | Victron |  |
-| ok | 200 | https://rms.teltonika-networks.com/ | same | Teltonika |  |
-| ok | 200 | https://rvhalo.com/ | same | Winegard |  |
-| ok | 200 | https://shop.unitedmobilerv.com/ | same |  | CF challenge on datacenter curl; live Shop in browser. |
-| ok | 200 | https://signalk.org/ | same | FOSS |  |
-| ok | 200 | https://source.sierrawireless.com/ | same | Sierra Wireless |  |
-| ok | 200 | https://starlink.com/public-files/accessories_guide_flat_high_performance.pdf | same | Starlink |  |
-| ok | 200 | https://starlink.com/public-files/installation_guide_flat_high_performance_kit.pdf | same | Starlink |  |
-| ok | 200 | https://starlink.com/public-files/specification_sheet_mini.pdf | same | Starlink |  |
-| ok | 200 | https://starlink.com/sl/roam | same | Starlink |  |
-| ok | 200 | https://support.cel-fi.com/hc/en-us | same | Cel-Fi | Zendesk often 403s bots; official Cel-Fi support host. |
-| ok | 200 | https://support.cel-fi.com/hc/en-us/articles/14324851714971-WAVE-App-Overview | same | Cel-Fi | Zendesk article; bot wall on curl. |
-| ok | 200 | https://support.weboost.com/ | https://www.weboost.com/support | weBoost | host change support.weboost.com -> www.weboost.com |
-| ok | 200 | https://surecall.com/ | same | SureCall |  |
-| ok | 200 | https://surecall.com/car-boosters/ | https://surecall.com/vehicle-cell-signal-boosters/ | SureCall |  |
-| ok | 200 | https://surecall.com/car-boosters/fusion2go-xr/ | same | SureCall |  |
-| ok | 200 | https://surecall.com/rv-boosters/fusion2go-rv/ | same | SureCall | Path still 200; page title is Fusion2Go 3.0 RV (legacy slug). |
-| ok | 200 | https://surecall.com/rv-cell-phone-boosters/ | same | SureCall |  |
-| ok | 200 | https://surecall.com/rv-cell-phone-boosters/fusion2go-xr-rv-cell-phone-signal-booster/ | same | SureCall |  |
-| ok | 200 | https://surecall.com/signal-booster-for-trucks/fusion2go-ultra/ | same | SureCall |  |
-| ok | 200 | https://surecall.com/support/ | same | SureCall |  |
-| ok | 200 | https://surecall.com/user-manuals/ | same | SureCall |  |
-| ok | 200 | https://surecall.com/vehicle-cell-signal-boosters/ | same | SureCall |  |
-| ok | 200 | https://teltonika-networks.com/ | https://www.teltonika-networks.com/ | Teltonika | host change teltonika-networks.com -> www.teltonika-networks.com |
-| ok | 200 | https://tyconpower.com/ | same | Tycon | Python TLS handshake failed; WebFetch: official Tycon Power catalog. |
-| ok | 200 | https://tyconpower.com/products/ | same | Tycon | Same TLS client quirk; site live via WebFetch. |
-| ok | 200 | https://united-mobile-rv-llc.square.site/ | same |  |  |
-| ok | 200 | https://unitedmobilerv.com/ | same |  | CF challenge on datacenter curl; live WP hub in browser. |
-| ok | 200 | https://unitedmobilerv.com/guide/peplink-multi-wan-guide/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/guide/starlink-rv-guide/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/guide/weboost-install-guide/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/troubleshoot/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/troubleshoot/generator-wont-start/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/troubleshoot/no-power/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/troubleshoot/no-water/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/troubleshoot/peplink-wan-flapping/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/troubleshoot/roof-leak/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/troubleshoot/starlink-offline/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/troubleshoot/weboost-no-boost/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/victron/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://unitedmobilerv.com/wireless/ | same |  | CF challenge on datacenter curl; same-host WP paths as live unitedmobilerv.com. |
-| ok | 200 | https://updates.victronenergy.com/feeds/venus/release/images/ | same | Victron |  |
-| ok | 200 | https://vrm.victronenergy.com/ | same | Victron |  |
-| ok | 200 | https://wave.nextivityinc.com/ | same | Cel-Fi |  |
-| ok | 200 | https://wiki.teltonika-networks.com/ | https://wiki.teltonika-networks.com/view/Main_Page | Teltonika |  |
-| ok | 200 | https://wiki.teltonika-networks.com/view/Downloads | same | Teltonika |  |
-| ok | 200 | https://winegard.com/ | same | Winegard |  |
-| ok | 200 | https://winegard.com/connect | same | Winegard |  |
-| ok | 200 | https://winegard.com/connect-2-4g/ | same | Winegard |  |
-| ok | 200 | https://winegard.com/connect-5g | https://winegard.com/connect-5g/ | Winegard |  |
-| ok | 200 | https://winegard.com/product-registration | same | Winegard |  |
-| ok | 200 | https://winegard.com/smart/rv-halo | same | Winegard |  |
-| ok | 200 | https://winegard.com/smart/rv-halo/compatible-devices | same | Winegard |  |
-| ok | 200 | https://winegard.com/support/ | same | Winegard |  |
-| ok | 200 | https://www.airgain.com/ | same | Airgain | Bot wall on curl; official Airgain. |
-| ok | 200 | https://www.airgain.com/products/ | same | Airgain | WebFetch: Wireless Connectivity Products - Airgain. |
-| ok | 200 | https://www.cradlepointecm.com/ | https://accounts.cradlepointecm.com/ |  | host change www.cradlepointecm.com -> accounts.cradlepointecm.com |
-| ok | 200 | https://www.dometic.com/ | https://www.dometic.com/en-us | Dometic |  |
-| ok | 200 | https://www.dometic.com/en-us/support | same | Dometic |  |
-| ok | 200 | https://www.gl-inet.com/ | https://www.gl-inet.com/en-us | GL.iNet |  |
-| ok | 200 | https://www.gl-inet.com/support/ | https://www.gl-inet.com/en-us/blogs/support | GL.iNet |  |
-| ok | 200 | https://www.mobilemark.com/ | same | Mobile Mark |  |
-| ok | 200 | https://www.mobilemark.com/product-category/cellular-antennas/ | https://www.mobilemark.com/error-404/ | Mobile Mark |  |
-| ok | 200 | https://www.mobilemark.com/support/ | https://www.mobilemark.com/error-404/ | Mobile Mark |  |
-| ok | 200 | https://www.npmjs.com/package/@flowfuse/node-red-dashboard | same | FOSS | npm CF challenge; official package. |
-| ok | 200 | https://www.npmjs.com/package/@signalk/node-red | same | FOSS | npm CF challenge; official package. |
-| ok | 200 | https://www.npmjs.com/package/node-red | same | FOSS | npm CF challenge on automated clients; official package. |
-| ok | 200 | https://www.npmjs.com/package/node-red-dashboard | same | FOSS | npm CF challenge; official package. |
-| ok | 200 | https://www.peplink.com/products/antennas/ | https://www.peplink.com/products/accessories/#Antennas | Peplink |  |
-| ok | 200 | https://www.peplink.com/products/mobile-routers/ | same |  |  |
-| ok | 200 | https://www.peplink.com/support/ | same | Peplink |  |
-| ok | 200 | https://www.peplink.com/support/downloads/firmware/ | same | Peplink, Starlink | Also cited from Starlink bypass-mode catalog entry (Peplink pairing). Not a wrong-brand product page. |
-| ok | 200 | https://www.peplink.com/technology/speedfusion-vpn/ | same |  |  |
-| ok | 200 | https://www.sierrawireless.com/products-and-solutions/routers-gateways/ | https://www.sierrawireless.com/router-solutions/ |  |  |
-| ok | 200 | https://www.sierrawireless.com/router-solutions/alms/ | same | Sierra Wireless |  |
-| ok | 200 | https://www.sierrawireless.com/support/ | same | Sierra Wireless |  |
-| ok | 200 | https://www.starlink.com/accessories | https://starlink.com/accessories | Starlink | host change www.starlink.com -> starlink.com |
-| ok | 200 | https://www.starlink.com/bypass-mode | https://starlink.com/bypass-mode | Starlink | host change www.starlink.com -> starlink.com |
-| ok | 200 | https://www.starlink.com/map | https://starlink.com/map | Starlink | host change www.starlink.com -> starlink.com |
-| ok | 200 | https://www.starlink.com/residential | https://starlink.com/residential | Starlink | host change www.starlink.com -> starlink.com |
-| ok | 200 | https://www.starlink.com/roam | https://starlink.com/roam | Starlink | host change www.starlink.com -> starlink.com |
-| ok | 200 | https://www.starlink.com/service-plans | https://starlink.com/service-plans | Starlink | host change www.starlink.com -> starlink.com |
-| ok | 200 | https://www.starlink.com/shop | https://starlink.com/shop | Starlink | host change www.starlink.com -> starlink.com |
-| ok | 200 | https://www.starlink.com/specifications | https://starlink.com/specifications/4 | Starlink | host change www.starlink.com -> starlink.com |
-| ok | 200 | https://www.starlink.com/support | https://starlink.com/support | Starlink | host change www.starlink.com -> starlink.com |
-| ok | 200 | https://www.starlink.com/updates | https://starlink.com/updates | Starlink | host change www.starlink.com -> starlink.com |
-| ok | 200 | https://www.taoglas.com/ | same | Taoglas | Bot wall on curl; official Taoglas. |
-| ok | 200 | https://www.taoglas.com/product-category/external-antennas/cellular-external-antennas/ | same | Taoglas | Bot wall on curl; official cellular external category. |
-| ok | 200 | https://www.taoglas.com/support/ | same | Taoglas | WebFetch: Taoglas Customer Support and Resource Library. |
-| ok | 200 | https://www.teltonika-networks.com/ | same | Teltonika |  |
-| ok | 200 | https://www.tyconsystems.com/ | same | Tycon |  |
-| ok | 200 | https://www.victronenergy.com/accessories/interface-mk3-usb | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/battery-monitors | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/battery-monitors/smart-battery-shunt | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/dc-dc-converters | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/dc-dc-converters/orion-tr-smart | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/dc-distribution-systems | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/dc-distribution-systems/lynx-distributor | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/inverters-chargers | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/inverters-chargers/multiplus-ii | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/inverters-chargers/quattro | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/assistants:start | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/battery_compatibility:start | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/battery_compatibility:victron_lithium_batteries | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/ccgx:ccgx_ve_power_setup | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/ccgx:firmware_updating | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/ccgx:start | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/start | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/ve.bus:start | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/ve.bus:veconfigure_manual | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/ve.can:start | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/venus-os:start | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/victronconnect:start | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/live/vrm_portal:start | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/media/pg/Cerbo_GX/en/firmware-updates.html | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/media/pg/VEConfigure_Manual/en/index-en.html | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/panel-systems-remote-monitoring/cerbo-gx | https://www.victronenergy.com/communication-centres/cerbo-gx | Victron |  |
-| ok | 200 | https://www.victronenergy.com/solar-charge-controllers | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/support-and-downloads/manuals | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/support-and-downloads/software | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/support-and-downloads/technical-information | same | Victron |  |
-| ok | 200 | https://www.victronenergy.com/victronconnectapp/victronconnect/downloads | same | Victron |  |
-| ok | 200 | https://www.weboost.com/ | same | weBoost |  |
-| ok | 200 | https://www.weboost.com/app | same | weBoost |  |
-| ok | 200 | https://www.weboost.com/boosters/vehicle-rv | same | KING, weBoost |  |
-| ok | 200 | https://www.weboost.com/collections/antennas | https://www.weboost.com/accessories | weBoost |  |
-| ok | 200 | https://www.weboost.com/products/destination-rv | same | weBoost |  |
-| ok | 200 | https://www.weboost.com/products/drive-reach-overland | same | weBoost |  |
-| ok | 200 | https://www.weboost.com/products/drive-reach-rv | same | weBoost |  |
-| ok | 200 | https://www.weboost.com/products/drive-reach-rv-2 | same | weBoost |  |
-| ok | 200 | https://www.weboost.com/products/weboost-rv-35 | same | weBoost |  |
-| ok | 200 | https://www.weboost.com/products/weboost-rv-50 | same | weBoost |  |
-| ok | 200 | https://www.weboost.com/support | same | weBoost |  |
-| ok | 200 | https://www.wilsonamplifiers.com/ | same | Wilson Amplifiers |  |
-| ok | 200 | https://www.wilsonamplifiers.com/antennas/ | https://www.wilsonamplifiers.com/antennas | Wilson Amplifiers |  |
-| ok | 200 | https://www.wilsonamplifiers.com/resources/ | same | Wilson Amplifiers, weBoost |  |
-| ok | 200 | https://www.wilsonconnectivity.com/ | same | weBoost |  |
+| Laird Connectivity | Laird RF antennas · rf_antennas | https://www.lairdconnect.com/rf-antennas | 200 | Fail | LIVE leftover hops to ezurio.com/internal-antennas (wrong product). This PR retargets to ezurio.com + /products/connectivity; present on live catalog/HTML only |
+| Mobile Mark | Mobile Mark antennas · cellular | https://www.mobilemark.com/product-category/cellular-antennas/ | 200 | Fail | LIVE leftover 404 (`/error-404/`). This PR retargets catalog to `/product-category/cellular-iot-m2m/mobile/`; present on live catalog/HTML only |
+| Mobile Mark | Mobile Mark antennas · support | https://www.mobilemark.com/support/ | 200 | Fail | LIVE leftover 404 (`/error-404/`). This PR retargets catalog to `/contact-us/`; present on live catalog/HTML only |
+| Parsec | Parsec antennas · products | https://parsec-t.com/products/ | 200 | Fail | FAIL for Matt: /products/ is a soft homepage, not a product index |
+| Parsec | Parsec antennas · support | https://parsec-t.com/support/ | 200 | Fail | FAIL for Matt: /support/ is a soft homepage, not a support desk |
+| Airgain | Airgain antennas · site | https://www.airgain.com/ | 200 | Pass | final https://airgain.com/ |
+| Airgain | Airgain antennas · products | https://www.airgain.com/products/ | 200 | Pass | final https://airgain.com/products/ |
+| Cel-Fi | Cel-Fi / Nextivity support · cel_fi_site | https://cel-fi.com/ | 200 | Pass | final https://nextivityinc.com/ |
+| Cel-Fi | Cel-Fi / Nextivity support · site | https://nextivityinc.com/ | 200 | Pass |  |
+| Cel-Fi | Cel-Fi GO / ROAM mobile lines · go_g32 | https://nextivityinc.com/go-g32/ | 200 | Pass |  |
+| Cel-Fi | Cel-Fi GO / ROAM mobile lines · go_g32_mobile | https://nextivityinc.com/go-g32/mobile-solutions/ | 200 | Pass |  |
+| Cel-Fi | Cel-Fi GO / ROAM mobile lines · roam_r41 | https://nextivityinc.com/products/roam-r41/ | 200 | Pass |  |
+| Cel-Fi | CEL-FI WAVE app · wavefieldtool | https://nextivityinc.com/software/wavefieldtool/ | 200 | Pass |  |
+| Cel-Fi | Cel-Fi / Nextivity support · cel_fi_support | https://support.cel-fi.com/hc/en-us | 403 | Pass | datacenter 403 / bot-wall; official manufacturer or registry host |
+| Cel-Fi | CEL-FI WAVE app · overview | https://support.cel-fi.com/hc/en-us/articles/14324851714971-WAVE-App-Overview | 403 | Pass | datacenter 403 / bot-wall; official manufacturer or registry host |
+| celfi | App Store id1560705133 | https://apps.apple.com/us/app/cel-fi-mywave/id1560705133 | 429 | Pass | App Store 429 rate-limit this run; official store listing (WebFetch confirmed sibling IDs) |
+| celfi | App Store id980050278 | https://apps.apple.com/us/app/cel-fi-wave/id980050278 | 200 | Pass |  |
+| celfi | nextivityinc.com/software | https://nextivityinc.com/software/ | 200 | Pass |  |
+| celfi | WAVE | https://nextivityinc.com/software/wave/ | 200 | Pass |  |
+| celfi | nextivityinc.com/support | https://nextivityinc.com/support/ | 200 | Pass |  |
+| celfi | Play com.NxtyWave | https://play.google.com/store/apps/details?id=com.NxtyWave | 200 | Pass |  |
+| celfi | Play com.nextivityinc.MyWave | https://play.google.com/store/apps/details?id=com.nextivityinc.MyWave | 200 | Pass |  |
+| celfi | wave.nextivityinc.com | https://wave.nextivityinc.com/ | 200 | Pass |  |
+| cradlepoint | NetCloud Service | https://cradlepoint.com/products/netcloud-service/ | 200 | Pass | final https://cradlepoint.ericsson.com/products/netcloud/netcloud-service/ |
+| cradlepoint | cradlepoint.com/support | https://cradlepoint.com/support/ | 200 | Pass | final https://cradlepoint.ericsson.com/support/ |
+| cradlepoint | docs.cradlepoint.com | https://docs.cradlepoint.com/ | 200 | Pass |  |
+| cradlepoint | cradlepointecm.com | https://www.cradlepointecm.com/ | 200 | Pass | final https://accounts.cradlepointecm.com/ |
+| dometic | Play “Dometic” | https://play.google.com/store/search?q=Dometic&c=apps | 200 | Pass |  |
+| dometic | dometic.com | https://www.dometic.com/ | 200 | Pass | final https://www.dometic.com/en-us |
+| dometic | dometic.com/en-us/support | https://www.dometic.com/en-us/support | 200 | Pass |  |
+| FOSS | FlowFuse Node-RED Dashboard 2.0 · github | https://github.com/FlowFuse/node-red-dashboard | 200 | Pass |  |
+| foss | SignalK/signalk-node-red | https://github.com/SignalK/signalk-node-red | 200 | Pass |  |
+| FOSS | Node-RED · user_guide | https://nodered.org/docs/user-guide/ | 200 | Pass |  |
+| FOSS | Node-RED · securing | https://nodered.org/docs/user-guide/runtime/securing-node-red | 200 | Pass |  |
+| FOSS | FlowFuse Node-RED Dashboard 2.0 · npm | https://www.npmjs.com/package/@flowfuse/node-red-dashboard | 403 | Pass | datacenter 403 / bot-wall; official manufacturer or registry host |
+| FOSS | Node-RED flows library · npm_signalk | https://www.npmjs.com/package/@signalk/node-red | 403 | Pass | datacenter 403 / bot-wall; official manufacturer or registry host |
+| FOSS | Node-RED Dashboard (classic) · npm | https://www.npmjs.com/package/node-red-dashboard | 403 | Pass | datacenter 403 / bot-wall; official manufacturer or registry host |
+| GL.iNet | GL.iNet router docs · site | https://www.gl-inet.com/ | 200 | Pass |  |
+| glinet | dl.gl-inet.com | https://dl.gl-inet.com/ | 200 | Pass |  |
+| glinet | docs.gl-inet.com/router/en/4 | https://docs.gl-inet.com/router/en/4/ | 200 | Pass |  |
+| glinet | upgrade | https://docs.gl-inet.com/router/en/4/interface_guide/upgrade/ | 200 | Pass |  |
+| glinet | firmware.gl-inet.com | https://firmware.gl-inet.com/ | 200 | Pass |  |
+| glinet | gl-inet.com/support | https://www.gl-inet.com/support/ | 200 | Pass | final https://www.gl-inet.com/blogs/support |
+| king | kingconnect.com | https://kingconnect.com/ | 200 | Pass | official KING host; liquidation / placeholder storefront |
+| Laird Connectivity | Ezurio (formerly Laird) antennas · site | https://www.ezurio.com/ | 200 | Pass |  |
+| Laird Connectivity | Ezurio (formerly Laird) antennas · connectivity | https://www.ezurio.com/products/connectivity | 200 | Pass |  |
+| Laird Connectivity | Laird RF antennas · site | https://www.lairdconnect.com/ | 200 | Pass | final https://www.ezurio.com/; present on live catalog/HTML only |
+| Mobile Mark | Mobile Mark antennas · site | https://www.mobilemark.com/ | 200 | Pass |  |
+| Mobile Mark | Mobile Mark antennas · contact | https://www.mobilemark.com/contact-us/ | 200 | Pass |  |
+| Mobile Mark | Mobile Mark antennas · mobile | https://www.mobilemark.com/product-category/cellular-iot-m2m/mobile/ | 200 | Pass |  |
+| nodered | flows.nodered.org | https://flows.nodered.org/ | 200 | Pass |  |
+| nodered | SignalK/signalk-server | https://github.com/SignalK/signalk-server | 200 | Pass |  |
+| nodered | node-red/node-red | https://github.com/node-red/node-red | 200 | Pass |  |
+| nodered | node-red/node-red-dashboard | https://github.com/node-red/node-red-dashboard | 200 | Pass |  |
+| nodered | nodered.org | https://nodered.org/ | 200 | Pass |  |
+| nodered | Apache-2.0 | https://nodered.org/about/license/ | 200 | Pass |  |
+| nodered | nodered.org/docs | https://nodered.org/docs/ | 200 | Pass |  |
+| nodered | nodered.org/docs/getting-started | https://nodered.org/docs/getting-started/ | 200 | Pass |  |
+| nodered | signalk.org | https://signalk.org/ | 200 | Pass |  |
+| nodered | node-red | https://www.npmjs.com/package/node-red | 403 | Pass | datacenter 403 / bot-wall; official manufacturer or registry host |
+| openwrt | downloads.openwrt.org | https://downloads.openwrt.org/ | 200 | Pass |  |
+| openwrt | firmware-selector.openwrt.org | https://firmware-selector.openwrt.org/ | 200 | Pass |  |
+| openwrt | github.com/openwrt/openwrt | https://github.com/openwrt/openwrt | 200 | Pass |  |
+| openwrt | openwrt.org | https://openwrt.org/ | 200 | Pass |  |
+| openwrt | generic.overview | https://openwrt.org/docs/guide-user/installation/generic.overview | 200 | Pass |  |
+| openwrt | generic.sysupgrade | https://openwrt.org/docs/guide-user/installation/generic.sysupgrade | 200 | Pass |  |
+| openwrt | openwrt.org/downloads | https://openwrt.org/downloads | 200 | Pass |  |
+| openwrt | openwrt.org/releases/start | https://openwrt.org/releases/start | 200 | Pass |  |
+| openwrt | openwrt.org/toh/start | https://openwrt.org/toh/start | 200 | Pass |  |
+| Parsec | Parsec antennas · site | https://parsec-t.com/ | 200 | Pass |  |
+| peplink | incontrol2.peplink.com | https://incontrol2.peplink.com/ | 200 | Pass |  |
+| Peplink | Peplink antennas · antennas | https://www.peplink.com/products/antennas/ | 200 | Pass | final https://www.peplink.com/products/accessories/#Antennas |
+| peplink | peplink.com/products/mobile-routers | https://www.peplink.com/products/mobile-routers/ | 200 | Pass |  |
+| peplink | peplink.com/support | https://www.peplink.com/support/ | 200 | Pass |  |
+| peplink | peplink.com/support/downloads/firmware | https://www.peplink.com/support/downloads/firmware/ | 200 | Pass |  |
+| peplink | peplink.com/technology/speedfusion-vpn | https://www.peplink.com/technology/speedfusion-vpn/ | 200 | Pass |  |
+| Poynting | Poynting antennas · site | https://poynting.tech/ | 200 | Pass |  |
+| Poynting | Poynting antennas · contact | https://poynting.tech/contact/ | 200 | Pass | final https://poynting.tech/contact-us/ |
+| Poynting | Poynting antennas · downloads | https://poynting.tech/downloads/ | 200 | Pass |  |
+| sierra | source.sierrawireless.com | https://source.sierrawireless.com/ | 200 | Pass |  |
+| sierra | routers & gateways | https://www.sierrawireless.com/products-and-solutions/routers-gateways/ | 200 | Pass | final https://www.sierrawireless.com/router-solutions/ |
+| sierra | ALMS | https://www.sierrawireless.com/router-solutions/alms/ | 200 | Pass |  |
+| sierra | sierrawireless.com/support | https://www.sierrawireless.com/support/ | 200 | Pass |  |
+| Starlink | Starlink hardware specs (official PDFs) · hp_pdf | https://api.starlink.com/public-files/Starlink%20Product%20Specifications_HighPerformance.pdf | 200 | Pass |  |
+| Starlink | Starlink hardware specs (official PDFs) · flat_hp_pdf | https://api.starlink.com/public-files/specification_sheet_flat_high_performance.pdf | 200 | Pass |  |
+| starlink | App Store id1537177988 | https://apps.apple.com/us/app/starlink/id1537177988 | 429 | Pass | App Store 429 rate-limit this run; official store listing (WebFetch confirmed sibling IDs) |
+| starlink | Play com.starlink.mobile | https://play.google.com/store/apps/details?id=com.starlink.mobile | 200 | Pass |  |
+| Starlink | Starlink hardware specs (official PDFs) · flat_hp_accessories_pdf | https://starlink.com/public-files/accessories_guide_flat_high_performance.pdf | 200 | Pass |  |
+| Starlink | Starlink hardware specs (official PDFs) · flat_hp_install_pdf | https://starlink.com/public-files/installation_guide_flat_high_performance_kit.pdf | 200 | Pass |  |
+| Starlink | Starlink hardware specs (official PDFs) · mini_pdf | https://starlink.com/public-files/specification_sheet_mini.pdf | 200 | Pass |  |
+| Starlink | Starlink plans (Residential vs Roam) · roam_alt | https://starlink.com/sl/roam | 200 | Pass |  |
+| starlink | official mounts/cables | https://www.starlink.com/accessories | 200 | Pass | final https://starlink.com/accessories |
+| starlink | bypass mode | https://www.starlink.com/bypass-mode | 200 | Pass | final https://starlink.com/bypass-mode |
+| Starlink | Starlink support · map | https://www.starlink.com/map | 200 | Pass | final https://starlink.com/map |
+| starlink | Residential | https://www.starlink.com/residential | 200 | Pass | final https://starlink.com/residential |
+| starlink | Roam | https://www.starlink.com/roam | 200 | Pass | final https://starlink.com/roam |
+| starlink | service-plans | https://www.starlink.com/service-plans | 200 | Pass | final https://starlink.com/service-plans |
+| Starlink | Starlink accessories & shop · shop | https://www.starlink.com/shop | 200 | Pass | final https://starlink.com/shop |
+| starlink | specifications | https://www.starlink.com/specifications | 200 | Pass | final https://starlink.com/specifications/4 |
+| starlink | starlink.com/support | https://www.starlink.com/support | 200 | Pass | final https://starlink.com/support |
+| Starlink | Starlink support · updates | https://www.starlink.com/updates | 200 | Pass | final https://starlink.com/updates |
+| surecall | App Store id6449509462 | https://apps.apple.com/us/app/surecall/id6449509462 | 429 | Pass | App Store 429 rate-limit this run; official store listing (WebFetch confirmed sibling IDs) |
+| surecall | Play com.surecall.surecall | https://play.google.com/store/apps/details?id=com.surecall.surecall | 200 | Pass |  |
+| SureCall | SureCall support & manuals · site | https://surecall.com/ | 200 | Pass |  |
+| SureCall | SureCall support & manuals · vehicle | https://surecall.com/car-boosters/ | 200 | Pass | final https://surecall.com/vehicle-cell-signal-boosters/ |
+| SureCall | SureCall RV / vehicle product lines · fusion2go_xr | https://surecall.com/car-boosters/fusion2go-xr/ | 200 | Pass |  |
+| SureCall | SureCall RV / vehicle product lines · fusion2go_rv | https://surecall.com/rv-boosters/fusion2go-rv/ | 200 | Pass |  |
+| surecall | surecall.com/rv-cell-phone-boosters | https://surecall.com/rv-cell-phone-boosters/ | 200 | Pass |  |
+| SureCall | SureCall RV / vehicle product lines · fusion2go_xr_rv | https://surecall.com/rv-cell-phone-boosters/fusion2go-xr-rv-cell-phone-signal-booster/ | 200 | Pass |  |
+| SureCall | SureCall RV / vehicle product lines · fusion2go_ultra | https://surecall.com/signal-booster-for-trucks/fusion2go-ultra/ | 200 | Pass |  |
+| surecall | surecall.com/support | https://surecall.com/support/ | 200 | Pass |  |
+| surecall | surecall.com/user-manuals | https://surecall.com/user-manuals/ | 200 | Pass |  |
+| SureCall | SureCall RV / vehicle product lines · vehicle_category | https://surecall.com/vehicle-cell-signal-boosters/ | 200 | Pass |  |
+| Taoglas | Taoglas cellular antennas · site | https://www.taoglas.com/ | 403 | Pass | datacenter 403 / bot-wall; official manufacturer or registry host |
+| Taoglas | Taoglas cellular antennas · cellular_external | https://www.taoglas.com/product-category/external-antennas/cellular-external-antennas/ | 403 | Pass | datacenter 403 / bot-wall; official manufacturer or registry host |
+| Taoglas | Taoglas cellular antennas · support | https://www.taoglas.com/support/ | 403 | Pass | datacenter 403 / bot-wall; official manufacturer or registry host |
+| teltonika | rms.teltonika-networks.com | https://rms.teltonika-networks.com/ | 200 | Pass |  |
+| Teltonika | Teltonika firmware wiki downloads · site | https://teltonika-networks.com/ | 200 | Pass | final https://www.teltonika-networks.com/ |
+| teltonika | wiki.teltonika-networks.com | https://wiki.teltonika-networks.com/ | 200 | Pass | final https://wiki.teltonika-networks.com/view/Main_Page |
+| teltonika | wiki … /Downloads | https://wiki.teltonika-networks.com/view/Downloads | 200 | Pass |  |
+| teltonika | teltonika-networks.com | https://www.teltonika-networks.com/ | 200 | Pass |  |
+| troubleshoot | Forum | https://forum.peplink.com/ | 200 | Pass |  |
+| troubleshoot | InControl | https://incontrol.peplink.com/ | 200 | Pass | final https://incontrol2.peplink.com:443/ |
+| Tycon | Tycon PoE / power · tyconpower | https://tyconpower.com/ | 000 | Pass | TLS handshake failed from this client; WebFetch: official Tycon Power catalog |
+| Tycon | Tycon PoE / power · products | https://tyconpower.com/products/ | 000 | Pass | TLS handshake failed from this client; WebFetch: official Tycon Power catalog |
+| Tycon | Tycon PoE / power · site | https://www.tyconsystems.com/ | 200 | Pass |  |
+| victron | iOS id791585341 | https://apps.apple.com/us/app/victron-toolkit/id791585341 | 429 | Pass | App Store 429 rate-limit this run; official store listing (WebFetch confirmed sibling IDs) |
+| victron | App Store | https://apps.apple.com/us/app/victronconnect/id943840744 | 429 | Pass | App Store 429 rate-limit this run; official store listing (WebFetch confirmed sibling IDs) |
+| victron | iOS id658834560 | https://apps.apple.com/us/app/vrm-victron-remote-management/id658834560 | 429 | Pass | App Store 429 rate-limit this run; official store listing (WebFetch confirmed sibling IDs) |
+| victron | Community | https://community.victronenergy.com/ | 200 | Pass |  |
+| victron | victronenergy/venus on GitHub | https://github.com/victronenergy/venus | 200 | Pass |  |
+| victron | Google Play | https://play.google.com/store/apps/details?id=com.victronenergy.victronconnect | 200 | Pass |  |
+| victron | Android nl.victronenergy | https://play.google.com/store/apps/details?id=nl.victronenergy | 200 | Pass |  |
+| victron | Android nl.victronenergy.victronledapp | https://play.google.com/store/apps/details?id=nl.victronenergy.victronledapp | 200 | Pass |  |
+| victron | Professional firmware | https://professional.victronenergy.com/downloads/firmware/ | 200 | Pass | official Professional portal (login/Dropbox gate for some files) |
+| victron | Venus release images feed | https://updates.victronenergy.com/feeds/venus/release/images/ | 200 | Pass |  |
+| victron | VRM portal | https://vrm.victronenergy.com/ | 200 | Pass |  |
+| Victron | MK3-USB (VE.Bus interface) · product | https://www.victronenergy.com/accessories/interface-mk3-usb | 200 | Pass |  |
+| Victron | SmartShunt / battery monitors · family | https://www.victronenergy.com/battery-monitors | 200 | Pass |  |
+| Victron | SmartShunt / battery monitors · smartshunt | https://www.victronenergy.com/battery-monitors/smart-battery-shunt | 200 | Pass |  |
+| Victron | Orion-class DC-DC (e.g. Orion-Tr Smart) · family | https://www.victronenergy.com/dc-dc-converters | 200 | Pass |  |
+| Victron | Orion-class DC-DC (e.g. Orion-Tr Smart) · orion_tr_smart | https://www.victronenergy.com/dc-dc-converters/orion-tr-smart | 200 | Pass |  |
+| Victron | Lynx DC distribution · family | https://www.victronenergy.com/dc-distribution-systems | 200 | Pass |  |
+| Victron | Lynx DC distribution · lynx_distributor | https://www.victronenergy.com/dc-distribution-systems/lynx-distributor | 200 | Pass |  |
+| Victron | MultiPlus / MultiPlus-II · family | https://www.victronenergy.com/inverters-chargers | 200 | Pass |  |
+| Victron | MultiPlus / MultiPlus-II · multiplus_ii | https://www.victronenergy.com/inverters-chargers/multiplus-ii | 200 | Pass |  |
+| Victron | Quattro inverter-chargers · product | https://www.victronenergy.com/inverters-chargers/quattro | 200 | Pass |  |
+| victron | Assistants | https://www.victronenergy.com/live/assistants:start | 200 | Pass |  |
+| Victron | Battery compatibility (LiFePO4) · compatibility | https://www.victronenergy.com/live/battery_compatibility:start | 200 | Pass |  |
+| Victron | Battery compatibility (LiFePO4) · victron_lithium | https://www.victronenergy.com/live/battery_compatibility:victron_lithium_batteries | 200 | Pass |  |
+| victron | VE Power Setup | https://www.victronenergy.com/live/ccgx:ccgx_ve_power_setup | 200 | Pass |  |
+| victron | Firmware updating | https://www.victronenergy.com/live/ccgx:firmware_updating | 200 | Pass |  |
+| victron | Venus / GX docs | https://www.victronenergy.com/live/ccgx:start | 200 | Pass |  |
+| victron | Live wiki | https://www.victronenergy.com/live/start | 200 | Pass |  |
+| Victron | MultiPlus / MultiPlus-II · ve_bus | https://www.victronenergy.com/live/ve.bus:start | 200 | Pass |  |
+| victron | VEConfigure live docs | https://www.victronenergy.com/live/ve.bus:veconfigure_manual | 200 | Pass |  |
+| Victron | Lynx DC distribution · ve_can | https://www.victronenergy.com/live/ve.can:start | 200 | Pass |  |
+| Victron | Cerbo GX / GX devices · venus_os | https://www.victronenergy.com/live/venus-os:start | 200 | Pass |  |
+| victron | VictronConnect docs | https://www.victronenergy.com/live/victronconnect:start | 200 | Pass |  |
+| victron | VRM docs | https://www.victronenergy.com/live/vrm_portal:start | 200 | Pass |  |
+| victron | Cerbo GX firmware updates manual | https://www.victronenergy.com/media/pg/Cerbo_GX/en/firmware-updates.html | 200 | Pass |  |
+| victron | VEConfigure manual | https://www.victronenergy.com/media/pg/VEConfigure_Manual/en/index-en.html | 200 | Pass |  |
+| Victron | Cerbo GX / GX devices · product | https://www.victronenergy.com/panel-systems-remote-monitoring/cerbo-gx | 200 | Pass | final https://www.victronenergy.com/communication-centres/cerbo-gx |
+| Victron | SmartSolar / BlueSolar MPPT · family | https://www.victronenergy.com/solar-charge-controllers | 200 | Pass |  |
+| victron | Manuals | https://www.victronenergy.com/support-and-downloads/manuals | 200 | Pass |  |
+| victron | victronenergy.com/support-and-downloads/software | https://www.victronenergy.com/support-and-downloads/software | 200 | Pass |  |
+| victron | Technical information | https://www.victronenergy.com/support-and-downloads/technical-information | 200 | Pass |  |
+| victron | Downloads | https://www.victronenergy.com/victronconnectapp/victronconnect/downloads | 200 | Pass |  |
+| weboost | App Store id1611974453 | https://apps.apple.com/us/app/weboost/id1611974453 | 429 | Pass | App Store 429 rate-limit this run; official store listing (WebFetch confirmed sibling IDs) |
+| weBoost | weBoost RV / vehicle product lines · install_guide_pdf | https://assets.wilsonelectronics.com/m/700bdbf86910493c/original/Drive-Reach-RV-Installation-Guide.pdf | 200 | Pass | final https://cdn.amplifi.pattern.com/233ee3b7-5241-4399-b668-8724309a2a47 |
+| weboost | Play com.wilsonelectronics.weboost | https://play.google.com/store/apps/details?id=com.wilsonelectronics.weboost | 200 | Pass |  |
+| weboost | support.weboost.com | https://support.weboost.com/ | 200 | Pass | final https://www.weboost.com/support |
+| weboost | weboost.com | https://www.weboost.com/ | 200 | Pass |  |
+| weboost | weboost.com/app | https://www.weboost.com/app | 200 | Pass |  |
+| weboost | weboost.com/boosters/vehicle-rv | https://www.weboost.com/boosters/vehicle-rv | 200 | Pass |  |
+| weBoost | weBoost antennas & accessories · antennas | https://www.weboost.com/collections/antennas | 200 | Pass | final https://www.weboost.com/accessories |
+| weBoost | weBoost RV / vehicle product lines · destination_rv | https://www.weboost.com/products/destination-rv | 200 | Pass |  |
+| weBoost | weBoost RV / vehicle product lines · drive_reach_overland | https://www.weboost.com/products/drive-reach-overland | 200 | Pass |  |
+| weBoost | weBoost RV / vehicle product lines · drive_reach_rv | https://www.weboost.com/products/drive-reach-rv | 200 | Pass |  |
+| weBoost | weBoost RV / vehicle product lines · rv20 | https://www.weboost.com/products/drive-reach-rv-2 | 200 | Pass |  |
+| weBoost | weBoost RV / vehicle product lines · rv35 | https://www.weboost.com/products/weboost-rv-35 | 200 | Pass |  |
+| weBoost | weBoost RV / vehicle product lines · rv50 | https://www.weboost.com/products/weboost-rv-50 | 200 | Pass |  |
+| weboost | weboost.com/support | https://www.weboost.com/support | 200 | Pass |  |
+| weboost | wilsonamplifiers.com/resources | https://www.wilsonamplifiers.com/resources/ | 200 | Pass |  |
+| weBoost | weBoost support · parent | https://www.wilsonconnectivity.com/ | 200 | Pass |  |
+| Wilson Amplifiers | Wilson Amplifiers antennas · site | https://www.wilsonamplifiers.com/ | 200 | Pass |  |
+| Wilson Amplifiers | Wilson Amplifiers antennas · antennas | https://www.wilsonamplifiers.com/antennas/ | 200 | Pass |  |
+| winegard | App Store id1563032659 | https://apps.apple.com/us/app/rv-halo/id1563032659 | 429 | Pass | App Store 429 rate-limit this run; official store listing (WebFetch confirmed sibling IDs) |
+| winegard | Play com.winegard.halo | https://play.google.com/store/apps/details?id=com.winegard.halo | 200 | Pass |  |
+| Winegard | Winegard RV Halo app · rvhalo_alias | https://rvhalo.com/ | 200 | Pass |  |
+| Winegard | Winegard support · site | https://winegard.com/ | 200 | Pass |  |
+| Winegard | Winegard support · connect | https://winegard.com/connect | 200 | Pass |  |
+| winegard | winegard.com/connect-2-4g | https://winegard.com/connect-2-4g/ | 200 | Pass |  |
+| winegard | winegard.com/connect-5g | https://winegard.com/connect-5g | 200 | Pass |  |
+| Winegard | Winegard support · registration | https://winegard.com/product-registration | 200 | Pass |  |
+| winegard | winegard.com/smart/rv-halo | https://winegard.com/smart/rv-halo | 200 | Pass |  |
+| Winegard | Winegard RV Halo app · compatible_devices | https://winegard.com/smart/rv-halo/compatible-devices | 200 | Pass |  |
+| winegard | winegard.com/support | https://winegard.com/support/ | 200 | Pass |  |
+<!-- MATRIX_END -->
+---
 
 ## What this PR did **not** do
 
-- No visual redesign, no CTA restyle, no new brand pages.
-- Did not retarget convert Book buttons off Square.
-- Did not replace KING, Laird, or Cradlepoint URLs (they resolve; honesty/rebrand notes only).
+- Did not merge old drafts #49 / #53 / #54 / #55 / #61 / #62 / #64.
+- Did not retarget Book off Square.
 - Did not invent Dometic App Store IDs.
-
+- Did not replace Parsec `/products/` or `/support/` (soft homepage — Matt).
+- Did not revive Portal / Status / MAIN HUB / Prefer Text / book.*.
