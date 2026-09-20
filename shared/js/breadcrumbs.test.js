@@ -25,16 +25,25 @@ test("normalizePath canonicalizes index and trailing slashes", () => {
   assert.equal(normalizePath("/troubleshoot/roof-leak?x=1"), "/troubleshoot/roof-leak/");
 });
 
-test("home skips BreadcrumbList", () => {
+test("home is United Mobile RV → Software with WebSite + Organization", () => {
   assert.equal(isHomePath("/"), true);
-  assert.deepEqual(crumbsFor("/"), []);
-  assert.deepEqual(crumbsFor("/index.html"), []);
+  assert.deepEqual(
+    crumbsFor("/").map((c) => [c.name, c.item]),
+    [
+      ["United Mobile RV", PUBLISHER_URL],
+      ["Software", SOFTWARE_HOME],
+    ]
+  );
+  assert.deepEqual(crumbsFor("/index.html").map((c) => c.name), ["United Mobile RV", "Software"]);
   const html = schemaScriptsFor("/");
   assert.match(html, /"@type":"WebSite"/);
   assert.match(html, /"@type":"Organization"/);
-  assert.doesNotMatch(html, /BreadcrumbList/);
+  assert.match(html, /BreadcrumbList/);
   assert.equal(websiteGraph().publisher.url, PUBLISHER_URL);
-  assert.equal(visibleNavHtml("/"), "");
+  const visible = visibleNavHtml("/");
+  assert.match(visible, /aria-label="Breadcrumb"/);
+  assert.match(visible, /United Mobile RV/);
+  assert.match(visible, /aria-current="page">Software/);
 });
 
 test("dometic trail is United Mobile RV → Software → Dometic", () => {
@@ -94,15 +103,16 @@ test("visible nav is subtle and does not rewrite Book / downloads", () => {
   assert.doesNotMatch(html, /square\.site/);
   assert.doesNotMatch(html, /victronenergy|dometic\.com\/en-us/);
   assert.match(html, /aria-current="page"/);
+  const home = visibleNavHtml("/");
+  assert.doesNotMatch(home, /square\.site/);
+  assert.match(home, /href="https:\/\/unitedmobilerv\.com\/"/);
 });
 
 test("every mapped product path has a UTF-8 name", () => {
   for (const [path, name] of Object.entries(PAGE_NAMES)) {
     assert.equal(hasHtmlEntity(name), false, path);
-    if (path !== "/") {
-      const last = crumbsFor(path).at(-1);
-      assert.equal(last.name, name);
-      assert.equal(last.item, absoluteUrl(path));
-    }
+    const last = crumbsFor(path).at(-1);
+    assert.equal(last.name, name);
+    assert.equal(last.item, absoluteUrl(path));
   }
 });

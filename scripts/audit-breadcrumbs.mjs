@@ -75,11 +75,18 @@ for (const file of files) {
   if (isNotFoundPath(pathname)) {
     assert.equal(row.has_BreadcrumbList, false, pathname);
   } else if (isHomePath(pathname)) {
-    assert.equal(row.has_BreadcrumbList, false, "home must skip BreadcrumbList");
+    assert.equal(row.has_BreadcrumbList, true, "home BreadcrumbList");
     assert.ok(row.schema_types.includes("WebSite"), "home WebSite");
     assert.ok(row.schema_types.includes("Organization"), "home Organization");
     const org = ld.find((g) => g["@type"] === "Organization") || ld.find((g) => g.publisher)?.publisher;
     assert.equal(org?.url, PUBLISHER_URL, "publisher slash");
+    assert.deepEqual(items, [
+      ["United Mobile RV", "https://unitedmobilerv.com/"],
+      ["Software", "https://software.unitedmobilerv.com/"],
+    ]);
+    assert.equal(row.entities_in_crumbs, false, "home UTF-8 crumbs");
+    assert.ok(row.book_square > 0, "home Book chrome");
+    assert.equal(row.visible_crumbs, true, "home visible crumbs");
   } else {
     assert.equal(row.has_BreadcrumbList, true, `${pathname} BreadcrumbList`);
     assert.equal(items[0][0], "United Mobile RV");
@@ -107,5 +114,5 @@ if (process.argv.includes("--json")) {
 }
 const nested = report.filter((row) => row.path !== "/" && row.path !== "/404.html");
 console.log(
-  `audited ${report.length} HTML files · home WebSite/Organization · ${nested.length} nested BreadcrumbList · no HTML entities`
+  `audited ${report.length} HTML files · home WebSite/Organization/BreadcrumbList · ${nested.length} nested BreadcrumbList · no HTML entities`
 );

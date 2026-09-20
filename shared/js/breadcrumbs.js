@@ -114,17 +114,25 @@ export function absoluteUrl(pathname) {
 }
 
 /**
- * Nested trail: United Mobile RV → Software → [Troubleshoot] → Page.
- * Home and 404 return [] so callers can skip BreadcrumbList.
+ * Trail: United Mobile RV → Software → [Troubleshoot] → Page.
+ * Software home is Home → Software (same pattern as docs/shop/forum/book).
+ * 404 returns [] so callers can skip BreadcrumbList.
  */
 export function crumbsFor(pathname) {
   const path = normalizePath(pathname);
-  if (isHomePath(path) || isNotFoundPath(path)) return [];
+  if (isNotFoundPath(path)) return [];
 
   const crumbs = [
     { name: CRUMB_HOME_NAME, item: PUBLISHER_URL },
     { name: CRUMB_SOFTWARE_NAME, item: SOFTWARE_HOME },
   ];
+
+  if (isHomePath(path)) {
+    return crumbs.map((crumb) => ({
+      name: utf8Name(crumb.name),
+      item: crumb.item,
+    }));
+  }
 
   if (path.startsWith("/troubleshoot/") && path !== "/troubleshoot/") {
     crumbs.push({ name: "Troubleshoot", item: absoluteUrl("/troubleshoot/") });
@@ -203,7 +211,12 @@ export function schemaScriptsFor(pathname, page = {}) {
   if (isNotFoundPath(path)) return "";
 
   if (isHomePath(path)) {
-    return `${jsonLdScript(websiteGraph())}\n  ${jsonLdScript(organizationGraph())}`;
+    const crumbs = crumbsFor(path);
+    return [
+      jsonLdScript(websiteGraph()),
+      jsonLdScript(organizationGraph()),
+      jsonLdScript(breadcrumbGraph(crumbs)),
+    ].join("\n  ");
   }
 
   const crumbs = crumbsFor(path);

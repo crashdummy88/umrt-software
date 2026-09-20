@@ -65,6 +65,17 @@ function applyFile(file) {
     if (!html.includes('"@type":"WebSite"')) {
       html = html.replace("</head>", `  ${schemaScriptsFor("/")}\n</head>`);
     }
+    const crumbs = crumbsFor("/");
+    const crumbScript = `  ${jsonLdScript(breadcrumbGraph(crumbs))}\n`;
+    if (BREADCRUMB_RE.test(html)) {
+      html = html.replace(BREADCRUMB_RE, crumbScript);
+    } else {
+      html = html.replace("</head>", `${crumbScript}</head>`);
+    }
+    const visible = visibleNavHtml("/");
+    if (visible && !html.includes('class="umrt-breadcrumbs"')) {
+      html = html.replace(/<main\b/, `${visible}\n  <main`);
+    }
   } else {
     const crumbs = crumbsFor(pathname);
     if (crumbs.length) {

@@ -4,7 +4,7 @@
  * Breadcrumbs: /shared/js/breadcrumbs.js
  * Does not rewrite Book chrome, download links, or page bodies.
  */
-import { isHomePath, isNotFoundPath, visibleNavHtml } from "../shared/js/breadcrumbs.js";
+import { isNotFoundPath, visibleNavHtml } from "../shared/js/breadcrumbs.js";
 
 const CLARITY_SNIPPET = `<script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -54,7 +54,7 @@ export async function onRequest(context) {
   const seen = { hasCrumbs: false };
   rewriter.on(".umrt-breadcrumbs", new ExistingCrumbMarker(seen));
 
-  if (!isHomePath(url.pathname) && !isNotFoundPath(url.pathname)) {
+  if (!isNotFoundPath(url.pathname)) {
     const crumbs = visibleNavHtml(url.pathname);
     if (crumbs) {
       rewriter.on("main#main", new VisibleBreadcrumbInjector(crumbs, seen));
