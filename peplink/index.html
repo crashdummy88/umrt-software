@@ -28,7 +28,13 @@
   <main id="main" class="wrap hero">
     <p class="eyebrow">Peplink</p>
     <h1>Peplink — Official Links</h1>
-    <p class="lede">Firmware and InControl from Peplink only (includes Pepwave under the same Peplink support tree). Peplink Certified Associate field work uses <strong>bonding and/or failover (SpeedFusion)</strong> — name the mode: <strong>Hot Failover ≠ Bonding ≠ Smoothing ≠ local outbound-only failover</strong>. Entry chassis may need PrimeCare or a feature pack before SpeedFusion modes unlock — verify the SKU invoice. No “bonding-only” marketing when the coach only needs clean failover.</p>
+    <p class="lede">Firmware and InControl from Peplink only (includes Pepwave under the same Peplink support tree). Field credential: <strong>Peplink Certified Associate</strong>. Field work uses <strong>bonding and/or failover (SpeedFusion)</strong> — name the mode: <strong>Hot Failover ≠ Bonding ≠ Smoothing ≠ local outbound-only failover</strong>. Entry chassis may need PrimeCare or a feature pack before SpeedFusion modes unlock — verify the SKU invoice. No “bonding-only” marketing when the coach only needs clean failover.</p>
+    <div class="btn-row">
+      <a class="btn btn-convert" href="tel:+16166065277">Call (616) 606-5277</a>
+      <a class="btn btn-convert" href="sms:+16166065277">Text Now (616) 606-5277</a>
+      <a class="btn btn-convert" href="https://book.unitedmobilerv.com/">Book</a>
+      <a class="btn btn-convert" href="/troubleshoot/">Troubleshoot</a>
+    </div>
 
     <h2>Start here (manufacturer only)</h2>
     <ul class="fine" style="margin:1rem 0 0; padding-left:1.25rem; line-height:1.7">
@@ -49,11 +55,13 @@
     <p class="fine">“Bonding not bonding” in the field is usually missing peer, missing Care/feature pack, or outbound-policy-only config — not a random firmware mirror.</p>
 
     <h2>Field notes (link shelf, not a how-to dump)</h2>
+    <p class="fine">This page is the official firmware / InControl shelf. Install speak — fused DC, antenna placement, Starlink-as-WAN — lives on the sales-site connectivity page. We do not invent watts, fuse sizes, dBi tables, or prices here.</p>
     <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
-      <li>WAN Health Check flaps — fix power/RF and diversify targets before chasing firmware.</li>
-      <li>Starlink as WAN — official Ethernet adapter or Starlink router LAN → Peplink WAN; keep PoE brownout-aware (measure on site).</li>
+      <li>WAN Health Check flaps — fix power/RF and diversify targets before chasing firmware. A flapping WAN is usually brownout, bad SIM path, or one health-check target — not a random <code>.bin</code>.</li>
+      <li>Starlink as WAN — official Ethernet adapter or Starlink router LAN → Peplink WAN; keep PoE brownout-aware (measure on site). Bypass mode notes on <a href="/starlink/">/starlink/</a>.</li>
       <li>Cellular modem on the same chassis fused DC as the router — not a cigarette-lighter tap. Starlink PoE on its own fused path.</li>
-      <li>No invented watts / fuse / dBi matrices on this hub — quote after measurement.</li>
+      <li>Name the SpeedFusion mode on the invoice and in InControl. “Bonding not bonding” is usually missing peer, missing Care/feature pack, or outbound-policy-only config.</li>
+      <li>No invented Starlink Certified title. Starlink on this shop is <strong>installs only (never Certified)</strong>.</li>
     </ul>
 
     <h2>Never</h2>
@@ -66,13 +74,22 @@
     <p class="fine">Policy: manufacturer / store links only for proprietary software. FOSS mirrors require a clear license — see <a href="/policy.html">Policy</a>.</p>
     <div class="cards" data-catalog data-brand="Peplink" style="margin-top:1.5rem"></div>
 
-    <p class="fine" style="margin-top:1.25rem">Mothership guide: <a href="https://unitedmobilerv.com/guide/peplink-multi-wan-guide/">Peplink multi-WAN</a> · Troubleshoot: <a href="/troubleshoot/peplink-wan-flapping/">WAN flapping</a> · <a href="https://unitedmobilerv.com/troubleshoot/peplink-wan-flapping/">sales-site twin</a></p>
+    <h2>Sales-site guides</h2>
+    <p class="fine">In-page WordPress bridges — not a MESH Field Guides button. The dedicated multi-WAN <code>/guide/</code> slug is not live; use the connectivity page.</p>
+    <div class="cards">
+      <a class="card" href="https://unitedmobilerv.com/wireless/"><h3>Connectivity / wireless</h3><p>Peplink + Starlink + weBoost install path on the sales site. Peplink Certified Associate.</p></a>
+      <a class="card" href="/troubleshoot/peplink-wan-flapping/"><h3>WAN flapping</h3><p>Health-check flaps — power/RF first, then official firmware / InControl.</p></a>
+      <a class="card" href="https://unitedmobilerv.com/guide/starlink-rv-guide/"><h3>Starlink RV guide</h3><p>Clear-sky + power when Starlink is a Peplink WAN. Installs only — never Certified.</p></a>
+      <a class="card" href="https://unitedmobilerv.com/guide/weboost-install-guide/"><h3>weBoost install guide</h3><p>Cellular donor path next to a Peplink modem — outdoor RF / AGC honesty.</p></a>
+    </div>
 
     <p style="margin-top:1.5rem" class="btn-row">
-<a class="btn btn-ghost" href="https://unitedmobilerv.com/wireless/">Wireless service</a>
-      <a class="btn btn-ghost" href="https://unitedmobilerv.com/">United Mobile RV sales site</a>
+      <a class="btn btn-convert" href="tel:+16166065277">Call (616) 606-5277</a>
+      <a class="btn btn-convert" href="sms:+16166065277">Text Now (616) 606-5277</a>
+      <a class="btn btn-convert" href="https://book.unitedmobilerv.com/">Book</a>
+      <a class="btn btn-convert" href="/troubleshoot/">Troubleshoot</a>
     </p>
-    <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented Starlink cert).</p>
+    <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized · Peplink Certified Associate · Starlink installs only (never Certified).</p>
   </main>
   <footer class="site-footer"><div class="wrap">
     <p>United Mobile RV LLC · Official links shelf — convert on <a href="/">home</a></p>

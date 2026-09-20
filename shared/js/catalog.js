@@ -25,8 +25,6 @@
         "<h3>" + e.title + "</h3>" +
         "<p>" + (e.summary || "") + "</p>" + lic + pageHint +
         "<p style=\"margin-top:0.75rem\">" + links + "</p>" +
-        "<p class=\"card-share\"><button type=\"button\" class=\"share-mini\" data-share-text=\"" +
-          (e.title || "UMRT Software") + " — official links: https://software.unitedmobilerv.com/\">Copy share line</button></p>" +
         "</article>"
       );
     }).join("");
@@ -54,27 +52,4 @@
     .catch(function () {
       root.innerHTML = "<p class=\"lede\">Catalog failed to load. Text Now <a href=\"sms:+16166065277\">(616) 606-5277</a>.</p>";
     });
-
-  document.addEventListener("click", function (ev) {
-    var btn = ev.target.closest("[data-share-url], .share-mini, .share-btn");
-    if (!btn) return;
-    ev.preventDefault();
-    var text = btn.getAttribute("data-share-text") || btn.getAttribute("data-share-url") || "https://software.unitedmobilerv.com/";
-    var url = btn.getAttribute("data-share-url");
-    var payload = url ? (text + " " + url) : text;
-    function done(ok) {
-      var status = document.querySelector(".share-status");
-      if (status) status.textContent = ok ? "Copied — paste anywhere." : "Copy failed — select the URL manually.";
-      if (btn.classList.contains("share-mini")) {
-        var prev = btn.textContent;
-        btn.textContent = ok ? "Copied" : "Failed";
-        setTimeout(function () { btn.textContent = prev; }, 1500);
-      }
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(payload).then(function () { done(true); }).catch(function () { done(false); });
-    } else {
-      done(false);
-    }
-  });
 })();
