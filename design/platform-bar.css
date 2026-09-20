@@ -1,6 +1,10 @@
 /* UMRT cross-platform bar — tokens sourced from design/theme.json.
    ~600 bytes gzipped, no external requests, no framework. Safe on slow
-   cellular/satellite links (weBoost/Starlink users are the audience). */
+   cellular/satellite links (weBoost/Starlink users are the audience).
+
+   Product nav lock: Home · Shop · Book · Forum · Software · Docs.
+   No corner "United Mobile RV" / UMRT Software wordmark — the bar is the
+   only chrome title. Local software nav stays in .site-header without a logo. */
 
 .umrt-platform-bar {
   background: #0C0C0C;
