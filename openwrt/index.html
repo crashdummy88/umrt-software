@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-platform="software">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,11 +17,30 @@
   <meta name="twitter:title" content="OpenWrt firmware (FOSS) | UMRT Software" />
   <meta name="twitter:description" content="Official OpenWrt Selector + downloads. Exact device; brick-risk if wrong image. Mirror-candidate after pin+SHA256." />
   <link rel="canonical" href="https://software.unitedmobilerv.com/openwrt/" />
+  <link rel="stylesheet" href="/design/platform-bar.css" />
   <link rel="stylesheet" href="/shared/css/umrt.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"OpenWrt firmware (FOSS) | UMRT Software","description":"Official OpenWrt Firmware Selector + downloads. FOSS project \u2014 not a product UMRT certifies. Exact device required; brick-risk if wrong image. Mirror-candidate after pin+SHA256. No proprietary OpenWrt-derived redistrib.","url":"https://software.unitedmobilerv.com/openwrt/","isPartOf":{"@type":"WebSite","name":"UMRT Software","url":"https://software.unitedmobilerv.com/"},"publisher":{"@type":"Organization","name":"United Mobile RV LLC","url":"https://unitedmobilerv.com"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"UMRT Software","item":"https://software.unitedmobilerv.com/"},{"@type":"ListItem","position":2,"name":"OpenWrt \u00b7 FOSS firmware","item":"https://software.unitedmobilerv.com/openwrt/"}]}</script>
 </head>
 <body>
+  <div class="umrt-platform-bar" role="navigation" aria-label="UMRT properties">
+    <div class="umrt-platform-bar-inner">
+      <a href="https://unitedmobilerv.com/" data-platform-link="hub">Home</a>
+      <a href="https://shop.unitedmobilerv.com/" data-platform-link="shop">Shop</a>
+      <a href="https://united-mobile-rv-llc.square.site/" data-platform-link="book">Book</a>
+      <a href="https://forum.unitedmobilerv.com/" data-platform-link="forum">Forum</a>
+      <a href="https://software.unitedmobilerv.com/" data-platform-link="software">Software</a>
+      <a href="https://docs.unitedmobilerv.com/" data-platform-link="docs">Docs</a>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var current = document.documentElement.getAttribute('data-platform');
+      if (!current) return;
+      var link = document.querySelector('.umrt-platform-bar [data-platform-link="' + current + '"]');
+      if (link) { link.setAttribute('aria-current', 'page'); link.classList.add('is-current'); }
+    })();
+  </script>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header"><div class="wrap header-inner">
     <a class="logo" href="/">UMRT <span>Software</span></a>
@@ -102,7 +121,7 @@
       <a href="https://software.unitedmobilerv.com/">Software</a>
       <a href="https://docs.unitedmobilerv.com/">Docs</a>
     </nav>
-  </div></footer>
+</div></footer>
   <script src="/shared/js/catalog.js" defer></script>
 </body>
 </html>

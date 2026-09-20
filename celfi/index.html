@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-platform="software">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,11 +10,30 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://software.unitedmobilerv.com/celfi/" />
   <link rel="canonical" href="https://software.unitedmobilerv.com/celfi/" />
+  <link rel="stylesheet" href="/design/platform-bar.css" />
   <link rel="stylesheet" href="/shared/css/umrt.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Cel-Fi downloads | UMRT Software","description":"Official Cel-Fi firmware / app / support links for United Mobile RV field work. Manufacturer links only \u2014 no proprietary binary redistribution.","url":"https://software.unitedmobilerv.com/celfi/","isPartOf":{"@type":"WebSite","name":"UMRT Software","url":"https://software.unitedmobilerv.com/"},"publisher":{"@type":"Organization","name":"United Mobile RV LLC","url":"https://unitedmobilerv.com"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"UMRT Software","item":"https://software.unitedmobilerv.com/"},{"@type":"ListItem","position":2,"name":"Cel-Fi \u2014 Official Links","item":"https://software.unitedmobilerv.com/celfi/"}]}</script>
 </head>
 <body>
+  <div class="umrt-platform-bar" role="navigation" aria-label="UMRT properties">
+    <div class="umrt-platform-bar-inner">
+      <a href="https://unitedmobilerv.com/" data-platform-link="hub">Home</a>
+      <a href="https://shop.unitedmobilerv.com/" data-platform-link="shop">Shop</a>
+      <a href="https://united-mobile-rv-llc.square.site/" data-platform-link="book">Book</a>
+      <a href="https://forum.unitedmobilerv.com/" data-platform-link="forum">Forum</a>
+      <a href="https://software.unitedmobilerv.com/" data-platform-link="software">Software</a>
+      <a href="https://docs.unitedmobilerv.com/" data-platform-link="docs">Docs</a>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var current = document.documentElement.getAttribute('data-platform');
+      if (!current) return;
+      var link = document.querySelector('.umrt-platform-bar [data-platform-link="' + current + '"]');
+      if (link) { link.setAttribute('aria-current', 'page'); link.classList.add('is-current'); }
+    })();
+  </script>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header"><div class="wrap header-inner">
     <a class="logo" href="/">UMRT <span>Software</span></a>
@@ -35,6 +54,14 @@
   </main>
   <footer class="site-footer"><div class="wrap">
     <p>United Mobile RV LLC · Official links shelf — convert on <a href="/">home</a></p>
+    <nav class="mesh-nav" aria-label="UMRT properties">
+      <a href="https://unitedmobilerv.com/">Home</a>
+      <a href="https://shop.unitedmobilerv.com/">Shop</a>
+      <a href="https://united-mobile-rv-llc.square.site/">Book</a>
+      <a href="https://forum.unitedmobilerv.com/">Forum</a>
+      <a href="https://software.unitedmobilerv.com/">Software</a>
+      <a href="https://docs.unitedmobilerv.com/">Docs</a>
+    </nav>
   </div></footer>
   <script src="/shared/js/catalog.js" defer></script>
 </body>
