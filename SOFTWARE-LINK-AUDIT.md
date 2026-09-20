@@ -11,7 +11,7 @@ Manufacturer / app-store / firmware links are **mostly good**. No dead official 
 
 **Broken outbound manufacturer 404s to replace:** none.
 
-This PR still applies two wire-only fixes found while crawling:
+This PR still applies three wire-only fixes found while crawling:
 
 1. **Book chrome** (platform bar + footer mesh + `/go/book`) now prefers `https://book.unitedmobilerv.com/`. Live mesh Book previously pointed only at Square (`united-mobile-rv-llc.square.site`). `book.unitedmobilerv.com` is a live UMRT booking landing page (not a silent Square hop). Convert **Book** buttons that are not chrome still point at Square — noted below, not redesigned.
 2. **`/sierra/` catalog was empty.** Page filter was `data-brand="Sierra"` but catalog brand is `Sierra Wireless`, so the AirLink cards never rendered. Filter aligned. Hardcoded Source / Support / ALMS links were already correct.
