@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/design/platform-bar.css" />
-  <title>UMRT Software — Official firmware &amp; FOSS links</title>
-  <meta name="description" content="Victron, Peplink, Starlink, weBoost + Node-RED — manufacturer links only. No cracked bins. Built by a Victron Professional Certified Installer who works on coaches." />
+  <title>UMRT Software — Official firmware &amp; apps</title>
+  <meta name="description" content="Official Victron, Peplink, Starlink, and weBoost firmware and app links used on United Mobile RV installs. Manufacturer sources only. Victron Professional Certified Installer." />
   <meta name="theme-color" content="#1A1A1A" />
   <link rel="canonical" href="https://software.unitedmobilerv.com/" />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="UMRT Software — Official firmware &amp; FOSS links" />
-  <meta property="og:description" content="Victron, Peplink, Starlink, weBoost + Node-RED — manufacturer links only. No cracked bins. Built by a Victron Professional Certified Installer who works on coaches." />
+  <meta property="og:title" content="UMRT Software — Official firmware &amp; apps" />
+  <meta property="og:description" content="Official Victron, Peplink, Starlink, and weBoost firmware and app links used on United Mobile RV installs. Manufacturer sources only." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://software.unitedmobilerv.com/" />
   <!-- og-deploy-stamp 20260910T073141Z -->
@@ -19,14 +19,14 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://software.unitedmobilerv.com/assets/og/umrt-software-og-card.png" />
-  <meta name="twitter:title" content="UMRT Software — Official firmware &amp; FOSS links" />
+  <meta name="twitter:title" content="UMRT Software — Official firmware &amp; apps" />
   <link rel="stylesheet" href="/shared/css/umrt.css" />
 <!-- cf-nudge: home OG absolute 2026-09-10 -->
 </head>
 <body>
-  <div class="umrt-platform-bar" role="navigation" aria-label="UMRT properties">
+  <div class="umrt-platform-bar" role="navigation" aria-label="United Mobile RV properties">
     <div class="umrt-platform-bar-inner">
-      <a href="https://unitedmobilerv.com/" data-platform-link="hub">Main Hub</a>
+      <a href="https://unitedmobilerv.com/" data-platform-link="home">Home</a>
       <a href="https://shop.unitedmobilerv.com/" data-platform-link="shop">Shop</a>
       <a href="https://united-mobile-rv-llc.square.site/" data-platform-link="book">Book</a>
       <a href="https://forum.unitedmobilerv.com/" data-platform-link="forum">Forum</a>
@@ -58,18 +58,19 @@
   </header>
   <main id="main">
     <section class="hero wrap" style="padding-bottom:1rem">
-      <p class="eyebrow">Field downloads hub · RV connectivity</p>
-      <h1>Official links. Honest mirrors.</h1>
-      <p class="lede">Firmware and store apps for coaches, campers, Class A, and light trucks — manufacturer / app-store links only. Open-source mirrored only when the license allows. United Mobile RV does <strong>not</strong> redistribute proprietary binaries.</p>
+      <p class="eyebrow">Firmware &amp; apps by brand</p>
+      <h1>Official manufacturer software — mapped by brand.</h1>
+      <p class="lede">This hub is the firmware and app shelf: VictronConnect, Venus / GX, VRM, Peplink firmware, InControl, Starlink app and bypass, weBoost support, plus FOSS (Node-RED, Signal K, OpenWrt). Links go to the manufacturer or project. We do <strong>not</strong> host proprietary binaries.</p>
       <div class="btn-row">
+        <a class="btn btn-ghost" href="#brands">Brands</a>
+        <a class="btn btn-ghost" href="#catalog">Catalog</a>
+        <a class="btn btn-ghost" href="/troubleshoot/">Troubleshoot</a>
         <a class="btn btn-ghost" href="tel:+16166065277" style="color:#C9972C;border-color:#C9972C">Call (616) 606-5277</a>
         <a class="btn btn-convert" href="sms:+16166065277" style="background:#C9972C;color:#1A1A1A">Text Now (616) 606-5277</a>
         <a class="btn btn-ghost" href="https://united-mobile-rv-llc.square.site/" style="color:#C9972C;border-color:#C9972C">Book</a>
-        <a class="btn btn-ghost" href="/troubleshoot/">Troubleshoot directory</a>
-        <a class="btn btn-ghost" href="https://unitedmobilerv.com/">United Mobile RV sales site</a>
       </div>
       <p class="share-strip" id="share-strip">
-        <button type="button" class="btn btn-ghost share-btn" data-share-url="https://software.unitedmobilerv.com/" data-share-text="Official RV firmware &amp; FOSS links — manufacturer only, no cracked bins.">Copy link · share the shelf — not a download dump</button>
+        <button type="button" class="btn btn-ghost share-btn" data-share-url="https://software.unitedmobilerv.com/" data-share-text="Official RV firmware and app links from United Mobile RV — manufacturer sources only.">Copy page link</button>
         <span class="fine share-status" aria-live="polite"></span>
       </p>
     </section>
@@ -78,8 +79,45 @@
       <h2>Catalog</h2>
       <label class="fine catalog-filter-label" for="catalog-filter">Filter catalog</label>
       <input id="catalog-filter" class="catalog-filter" type="search" placeholder="Filter: Victron, Peplink, Node-RED…" autocomplete="off" />
-      <p class="fine">Connectivity-first index — vendor entries are <strong>link</strong> only; FOSS may be <strong>mirror-candidate</strong>. Every URL fact-checked to official sources.</p>
+      <p class="fine">Vendor rows are <strong>link-only</strong> to official manufacturer or store sources. Open-source rows may be <strong>mirror-candidate</strong> after a pinned upstream tag and SHA256. Every URL is checked against the vendor or project, not a third-party dump.</p>
       <div class="cards" data-catalog style="margin-top:0.5rem"></div>
+    </section>
+
+    <section class="wrap band" id="when-to-use">
+      <h2>Which software do you actually need?</h2>
+      <p class="lede">Most coach problems are not “download the newest file.” They are the wrong app for the product, a GX that never joined VRM, a Peplink mode that is failover while someone called it bonding, or a booster app that cannot invent outdoor RF. Start with the tool that matches the hardware.</p>
+      <div class="cards">
+        <article class="card" style="cursor:default">
+          <h3>VictronConnect</h3>
+          <p>Day-to-day configuration over Bluetooth or VE.Direct: MultiPlus-class inverters, SmartSolar MPPT, Orion DC-DC, SmartShunt. Use this at the coach. Use VRM when a GX is already online and you are away from the rig.</p>
+          <p class="fine" style="margin-top:0.75rem"><a href="/victron/">Victron software</a> · <a href="/troubleshoot/victron-connect/">GX / VRM troubleshoot</a></p>
+        </article>
+        <article class="card" style="cursor:default">
+          <h3>Venus OS / GX + VRM</h3>
+          <p>Cerbo, Ekrano, and other GX devices run Venus OS. Update from Victron’s online flow when the GX has internet; otherwise pull images only from Victron Professional or the published release feed. VRM is remote monitoring after the GX is commissioned — not a substitute for VictronConnect at the panel.</p>
+          <p class="fine" style="margin-top:0.75rem"><a href="/victron/">Firmware path</a> · <a href="/troubleshoot/victron-connect/">GX / VRM troubleshoot</a></p>
+        </article>
+        <article class="card" style="cursor:default">
+          <h3>Peplink firmware + InControl</h3>
+          <p>Flash firmware from Peplink only. InControl 2 is the cloud desk. Name the SpeedFusion mode: local outbound failover, Hot Failover, Bonding, or Smoothing are different products. Entry chassis may need PrimeCare before those modes unlock.</p>
+          <p class="fine" style="margin-top:0.75rem"><a href="/peplink/">Peplink software</a> · <a href="/troubleshoot/peplink-wan-flapping/">WAN flapping</a></p>
+        </article>
+        <article class="card" style="cursor:default">
+          <h3>Starlink app</h3>
+          <p>Account, obstruction, stow, and reboot live in the official app. Residential is a fixed address. Roam is travel. Bypass mode is how a Peplink (or other router) takes WAN — not a firmware we host. Clear sky still beats a clever mount under trees.</p>
+          <p class="fine" style="margin-top:0.75rem"><a href="/starlink/">Starlink software</a> · <a href="/troubleshoot/starlink-offline/">Dish offline</a></p>
+        </article>
+        <article class="card" style="cursor:default">
+          <h3>weBoost app + support</h3>
+          <p>The app helps aim and confirm before/after readings. It does not create outdoor RF. Automatic gain control already manages output — we do not sell “tune gain.” If outdoor signal is absent, software will not invent bars.</p>
+          <p class="fine" style="margin-top:0.75rem"><a href="/weboost/">weBoost software</a> · <a href="/troubleshoot/weboost-no-boost/">No boost</a></p>
+        </article>
+        <article class="card" style="cursor:default">
+          <h3>Node-RED · Signal K · OpenWrt</h3>
+          <p>Open-source dashboards and travel-router firmware. We integrate and install; we do not productize unvetted community flows or re-host vendor “OpenWrt-derived” images. Wrong OpenWrt image can brick the router.</p>
+          <p class="fine" style="margin-top:0.75rem"><a href="/nodered/">Node-RED</a> · <a href="/foss/">FOSS</a> · <a href="/openwrt/">OpenWrt</a></p>
+        </article>
+      </div>
     </section>
 
     <section class="wrap band" id="brands">
@@ -90,8 +128,8 @@
         <a class="card" href="/weboost/"><h3>weBoost</h3><p>Authorized Installer — outdoor RF / AGC honesty.</p></a>
         <a class="card" href="/starlink/"><h3>Starlink</h3><p>Official app + support. Clear-sky installs only — not Starlink Certified.</p></a>
         <a class="card" href="/winegard/"><h3>Winegard</h3><p>RV antenna / ConnecT — official support links.</p></a>
-                <a class="card" href="/#catalog"><h3>Antennas / PoE</h3><p>Poynting · Mobile Mark · Parsec · Taoglas · Airgain · Laird · Tycon — official links only.</p></a>
-<a class="card" href="/king/"><h3>KING</h3><p>KING Connect antenna / connectivity hub.</p></a>
+        <a class="card" href="/#catalog"><h3>Antennas / PoE</h3><p>Poynting · Mobile Mark · Parsec · Taoglas · Airgain · Laird · Tycon — official links only.</p></a>
+        <a class="card" href="/king/"><h3>KING</h3><p>KING Connect antenna / connectivity hub.</p></a>
         <a class="card" href="/surecall/"><h3>SureCall</h3><p>Cellular boosters — manufacturer support only.</p></a>
         <a class="card" href="/celfi/"><h3>Cel-Fi</h3><p>Nextivity / Cel-Fi coverage — official support.</p></a>
         <a class="card" href="/glinet/"><h3>GL.iNet</h3><p>Travel router firmware — official CDN only.</p></a>
@@ -103,56 +141,24 @@
         <a class="card" href="/nodered/"><h3>Node-RED</h3><p>FOSS flows · Signal K · official links only.</p></a>
         <a class="card" href="/foss/"><h3>Open source</h3><p>Signal K · OpenWrt · Node-RED dashboards — mirror when license-clear. See /nodered/.</p></a>
         <a class="card" href="/troubleshoot/"><h3>Troubleshoot</h3><p>Symptom starters + app/firmware directory.</p></a>
-</div>
-    </section>
-
-    
-    <section class="wrap band" id="guides">
-      <h2>Sales-site guides</h2>
-      <p class="fine">Deep coach install guides on United Mobile RV (same honesty gates).</p>
-      <div class="cards">
-        <a class="card" href="https://unitedmobilerv.com/guide/starlink-rv-guide/"><h3>Starlink RV guide</h3><p>Clear-sky mounts, power, penetrations — sales-site depth.</p></a>
-        <a class="card" href="https://unitedmobilerv.com/guide/weboost-install-guide/"><h3>weBoost install guide</h3><p>Outdoor RF / AGC honesty — Authorized Installer field notes.</p></a>
-        <a class="card" href="https://unitedmobilerv.com/guide/peplink-multi-wan-guide/"><h3>Peplink multi-WAN guide</h3><p>Bonding and/or failover (SpeedFusion) — official + field speak.</p></a>
       </div>
     </section>
 
     <section class="wrap band">
-      <h2>Honesty gates</h2>
+      <h2>Download policy</h2>
       <ul class="policy-list">
-        <li><strong>Link</strong> — proprietary firmware &amp; apps from official manufacturer / store sources only.</li>
-        <li><strong>Mirror</strong> — FOSS only (see Policy). Checksum + upstream required.</li>
+        <li><strong>Link</strong> — proprietary firmware and apps from official manufacturer or store sources only.</li>
+        <li><strong>Mirror</strong> — FOSS only, after a pinned upstream tag, checksum, and recorded URL. See <a href="/policy.html">Policy</a>.</li>
         <li><strong>Never</strong> — cracked tools, unlocked firmware, or re-hosted vendor <code>.bin</code> / <code>.swu</code> packages.</li>
         <li><strong>Credentials (text only)</strong> — Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented Starlink cert).</li>
       </ul>
     </section>
 
-    <section class="wrap band">
-      <h2>Installs &amp; service</h2>
-      <p class="lede">Need the work done on the coach? United Mobile RV covers Starlink / weBoost / Peplink installs with the same honesty gates.</p>
-      <div class="btn-row">
-        <a class="btn btn-ghost" href="https://unitedmobilerv.com/wireless/">Wireless installs</a>
-        <a class="btn btn-ghost" href="https://united-mobile-rv-llc.square.site/" style="color:#C9972C;border-color:#C9972C">Book</a>
-        <a class="btn btn-ghost" href="https://unitedmobilerv.com/">United Mobile RV sales site</a>
-      </div>
-    </section>
   </main>
-  
-    <section class="wrap band" id="paste-pack">
-      <h2>Share lines</h2>
-      <p class="fine">Official manufacturer links for coach firmware &amp; apps — no cracked bins. Victron · Peplink · Starlink · weBoost · Node-RED.</p>
-      <ul class="policy-list fine">
-        <li>Need VictronConnect / VRM / GX without hunting? Official links only: https://software.unitedmobilerv.com/</li>
-        <li>Peplink firmware + InControl — SpeedFusion as bonding and/or failover. https://software.unitedmobilerv.com/</li>
-        <li>Starlink app + support for coach installs. Clear-sky honesty — we&apos;re not &quot;Starlink Certified.&quot; https://software.unitedmobilerv.com/</li>
-        <li>Node-RED · Signal K · OpenWrt — FOSS only when the license is clear. https://software.unitedmobilerv.com/</li>
-      </ul>
-    </section>
 
-  
     <section class="wrap band" id="text-now" aria-label="Convert">
-      <h2>Need the wrench on the coach?</h2>
-      <p class="lede">Call or Text Now <a href="sms:+16166065277">(616) 606-5277</a> — city/ZIP, rig, what’s failing. Book when you want the form.</p>
+      <h2>Need a manufacturer link or a flash that failed?</h2>
+      <p class="lede">Call or text <a href="sms:+16166065277">(616) 606-5277</a> with the brand, model, and which official app or firmware you were using.</p>
       <p class="btn-row">
         <a class="btn btn-ghost" href="tel:+16166065277" style="color:#C9972C;border-color:#C9972C">Call (616) 606-5277</a>
         <a class="btn btn-convert" href="sms:+16166065277" style="background:#C9972C;color:#1A1A1A">Text Now (616) 606-5277</a>
@@ -163,15 +169,15 @@
     <footer class="site-footer">
     <div class="wrap">
       <p>United Mobile RV LLC · <a href="tel:+16166065277">Call (616) 606-5277</a> · <a href="sms:+16166065277">Text Now</a></p>
-      <nav class="mesh-nav" aria-label="UMRT properties">
-        <a href="https://unitedmobilerv.com/">Main Hub</a>
+      <nav class="mesh-nav" aria-label="United Mobile RV properties">
+        <a href="https://unitedmobilerv.com/">Home</a>
         <a href="https://shop.unitedmobilerv.com/">Shop</a>
         <a href="https://united-mobile-rv-llc.square.site/">Book</a>
         <a href="https://forum.unitedmobilerv.com/">Forum</a>
         <a href="https://software.unitedmobilerv.com/">Software</a>
         <a href="https://docs.unitedmobilerv.com/">Docs</a>
       </nav>
-      <p class="fine">Credentials text-only — no partner logos. Downloads hub — separate from unitedmobilerv.com. No proprietary binary redistribution. Source: <a href="https://github.com/crashdummy88/umrt-software">github.com/crashdummy88/umrt-software</a>.</p>
+      <p class="fine">Credentials in text only — no partner logos. Official firmware and app links — not a binary host. Source: <a href="https://github.com/crashdummy88/umrt-software">github.com/crashdummy88/umrt-software</a>.</p>
     </div>
   </footer>
   <script src="/shared/js/catalog.js" defer></script>
