@@ -10,6 +10,13 @@
 body { margin: 0; font-family: var(--font); background: var(--black); color: var(--white); line-height: 1.5; }
 a { color: var(--gold); }
 .wrap { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; }
+.umrt-breadcrumbs { padding: 0.45rem 0 0; color: #666; font-size: 0.75rem; letter-spacing: 0.01em; }
+.umrt-breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 0.3rem 0.15rem; list-style: none; margin: 0; padding: 0; }
+.umrt-breadcrumbs li { display: inline-flex; align-items: center; }
+.umrt-breadcrumbs li:not(:last-child)::after { content: "→"; margin: 0 0.4rem; color: #444; }
+.umrt-breadcrumbs a { color: #888; text-decoration: none; }
+.umrt-breadcrumbs a:hover { color: var(--gold); }
+.umrt-breadcrumbs [aria-current="page"] { color: #aaa; }
 .skip { position: absolute; left: -999px; }
 .skip:focus { left: 1rem; top: 1rem; background: var(--gold); color: var(--black); padding: 0.5rem; z-index: 99; }
 .site-header { border-bottom: 1px solid #2e2e2e; }
