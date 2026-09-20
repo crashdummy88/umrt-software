@@ -3,8 +3,8 @@
    cellular/satellite links (weBoost/Starlink users are the audience).
 
    Product nav lock: Home · Shop · Book · Forum · Software · Docs.
-   No corner "United Mobile RV" / UMRT Software wordmark — the bar is the
-   only chrome title. Local software nav stays in .site-header without a logo. */
+   Corner brand is the logo mark only. Hide leftover brand TEXT
+   ("United Mobile RV" / UMRT Software / .brand-text) — not the mark. */
 
 .umrt-platform-bar {
   background: #0C0C0C;

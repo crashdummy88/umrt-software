@@ -14,8 +14,14 @@ a { color: var(--gold); }
 .skip:focus { left: 1rem; top: 1rem; background: var(--gold); color: var(--black); padding: 0.5rem; z-index: 99; }
 .site-header { border-bottom: 1px solid #2e2e2e; }
 .header-inner { display: flex; align-items: center; gap: 1rem; padding: 0.85rem 0; flex-wrap: wrap; }
-.logo { color: var(--white); text-decoration: none; font-weight: 700; letter-spacing: 0.02em; }
-.logo span { color: #C9972C; color: var(--gold, #C9972C); }
+.brand { display: inline-flex; align-items: center; flex: 0 0 auto; text-decoration: none; }
+.brand-logo { height: 40px; width: 40px; object-fit: contain; display: block; border-radius: 4px; }
+/* Matt lock: chrome brand is the mark only — hide leftover wordmarks */
+.site-header .brand-text,
+.site-header .logo,
+.umrt-platform-bar .brand-text {
+  display: none !important;
+}
 nav { display: flex; gap: 1rem; flex: 1; }
 nav a { color: #bbb; text-decoration: none; font-size: 0.92rem; }
 nav a:hover { color: #C9972C; color: var(--gold, #C9972C); }
