@@ -1,0 +1,8 @@
+{
+  "name": "umrt-software",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test shared/js/breadcrumbs.test.js && node scripts/audit-breadcrumbs.mjs"
+  }
+}
