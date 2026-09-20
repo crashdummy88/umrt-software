@@ -7,7 +7,15 @@
 
 ## Verdict
 
-Manufacturer / app-store / firmware links are **mostly good**. This Stage-4 pass extracted **198 unique** download/app/store URLs from **repo + live HTML**.
+Manufacturer / app-store / firmware links are **mostly good**. This Stage-4 tip’s matrix is **208 unique** download/app/store URLs (repo HTML + catalog + 3 live leftover FAILs still on production until merge).
+
+**ADMIN QA follow-up (folded into this same draft):**
+
+- `/dometic/` deepened to Victron-class depth: Dometic Power + legacy Mobile Cooling / Climate, official store IDs, in-app firmware honesty, support + documents database.
+- `/troubleshoot/` now has a manufacturer apps/firmware/support outbound list (Victron, Peplink, weBoost, Starlink, Dometic, Winegard, OpenWrt) — not Field Guide essays.
+- New real `/antennas/` page; home card href is `/antennas/` (not `/#catalog`).
+- P2 polish: sticky mobile Call/Text/Book bar, Book `target="_blank" rel="noopener"`, catalog `<noscript>` fallback, `#paste-pack` / `#text-now` moved inside `<main>`.
+- Spot-check still green: Victron software hub, Peplink firmware, weBoost support, Starlink support — HTTP 200 Pass.
 
 **Fixed in this PR (were FAIL on live):**
 
@@ -30,7 +38,7 @@ Manufacturer / app-store / firmware links are **mostly good**. This Stage-4 pass
 | `MAIN HUB` / `Main Hub` | **0** |
 | Book customer href | `https://united-mobile-rv-llc.square.site/` only |
 | `united-mobile-rv.pages.dev` in HTML | **0** |
-| Convert CTAs | Call `tel:+16166065277` · Text Now `sms:+16166065277` · Book Square · Troubleshoot `/troubleshoot/` |
+| Convert CTAs | Call `tel:+16166065277` · Text Now `sms:+16166065277` · Book Square (`target="_blank" rel="noopener"`) · Troubleshoot `/troubleshoot/` · sticky mobile bar |
 | Prefer Text | **0** |
 | Portal / Status in customer chrome | **0** |
 | Credentials (stacked footer) | Victron Professional Certified Installer · weBoost Authorized · Peplink Certified Associate · Starlink installs only (never Certified) |
@@ -83,8 +91,18 @@ Status is the HTTP code after redirect follow (browser UA). Pass/Fail is user-fa
 | cradlepoint | docs.cradlepoint.com | https://docs.cradlepoint.com/ | 200 | Pass |  |
 | cradlepoint | cradlepointecm.com | https://www.cradlepointecm.com/ | 200 | Pass | final https://accounts.cradlepointecm.com/ |
 | dometic | Play “Dometic” | https://play.google.com/store/search?q=Dometic&c=apps | 200 | Pass |  |
+| dometic | Dometic Power App Store | https://apps.apple.com/us/app/dometic-power/id6648772769 | 200 | Pass | official Dometic Group listing (current app) |
+| dometic | Mobile Cooling App Store | https://apps.apple.com/us/app/mobile-cooling/id1495660690 | 200 | Pass | official; still required for CFX2 |
+| dometic | Dometic Climate App Store | https://apps.apple.com/us/app/dometic-climate/id1660906196 | 200 | Pass | official; still required for TwinBoost |
+| Dometic | Dometic Power / official apps · documents | https://documents.dometic.com/search | 202 | Pass | official documents host; datacenter AWS WAF challenge (202) |
+| Dometic | Dometic Power / official apps · power_android | https://play.google.com/store/apps/details?id=com.dometic.app | 200 | Pass |  |
+| Dometic | Dometic Power / official apps · cooling_android | https://play.google.com/store/apps/details?id=com.dometic.cfx3 | 200 | Pass |  |
+| Dometic | Dometic Power / official apps · climate_android | https://play.google.com/store/apps/details?id=com.dometic.outdoor | 200 | Pass |  |
 | dometic | dometic.com | https://www.dometic.com/ | 200 | Pass | final https://www.dometic.com/en-us |
+| Dometic | Dometic support & documents · documents_lp | https://www.dometic.com/en-us/lp/documents-database | 200 | Pass |  |
 | dometic | dometic.com/en-us/support | https://www.dometic.com/en-us/support | 200 | Pass |  |
+| Dometic | Dometic Power / official apps · apps | https://www.dometic.com/en-us/support/apps | 200 | Pass | official apps hub (firmware-in-app start) |
+| Dometic | Dometic Power / official apps · migration | https://www.dometic.com/en-us/support/dometic-app-migration | 200 | Pass |  |
 | FOSS | FlowFuse Node-RED Dashboard 2.0 · github | https://github.com/FlowFuse/node-red-dashboard | 200 | Pass |  |
 | foss | SignalK/signalk-node-red | https://github.com/SignalK/signalk-node-red | 200 | Pass |  |
 | FOSS | Node-RED · user_guide | https://nodered.org/docs/user-guide/ | 200 | Pass |  |
@@ -260,6 +278,6 @@ Status is the HTTP code after redirect follow (browser UA). Pass/Fail is user-fa
 
 - Did not merge old drafts #49 / #53 / #54 / #55 / #61 / #62 / #64.
 - Did not retarget Book off Square.
-- Did not invent Dometic App Store IDs.
+- Did not invent Dometic App Store IDs — Power / Mobile Cooling / Climate IDs are official Dometic Group listings.
 - Did not replace Parsec `/products/` or `/support/` (soft homepage — Matt).
 - Did not revive Portal / Status / MAIN HUB / Prefer Text / book.*.
