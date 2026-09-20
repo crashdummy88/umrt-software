@@ -11,11 +11,12 @@ Manufacturer / app-store / firmware links are **mostly good**. No dead official 
 
 **Broken outbound manufacturer 404s to replace:** none.
 
-This PR still applies three wire-only fixes found while crawling:
+Wire-only fixes kept from #65:
 
-1. **Book chrome** (platform bar + footer mesh + `/go/book`) now prefers `https://book.unitedmobilerv.com/`. Live mesh Book previously pointed only at Square (`united-mobile-rv-llc.square.site`). `book.unitedmobilerv.com` is a live UMRT booking landing page (not a silent Square hop). Convert **Book** buttons that are not chrome still point at Square — noted below, not redesigned.
-2. **`/sierra/` catalog was empty.** Page filter was `data-brand="Sierra"` but catalog brand is `Sierra Wireless`, so the AirLink cards never rendered. Filter aligned. Hardcoded Source / Support / ALMS links were already correct.
-3. **`/gl-inet/` 404.** Brands card already uses `/glinet/`. Added a 302 hyphen alias so the typed slug works.
+1. **`/sierra/` catalog was empty.** Page filter was `data-brand="Sierra"` but catalog brand is `Sierra Wireless`, so the AirLink cards never rendered. Filter aligned. Hardcoded Source / Support / ALMS links were already correct.
+2. **`/gl-inet/` 404.** Brands card already uses `/glinet/`. Added a 302 hyphen alias so the typed slug works.
+
+**Lock 2026-09-20:** Book chrome goes **straight to Square** — not `book.unitedmobilerv.com`. Platform bar Book, footer mesh Book, and `/go/book` are `https://united-mobile-rv-llc.square.site/`. Convert Book buttons stay Square. `#65` briefly pointed chrome at `book.*`; that retarget is reverted.
 
 ## Method
 
@@ -29,13 +30,15 @@ Datacenter curl often sees `403 cf-mitigated: challenge` on UMRT, Nextivity, npm
 
 ## Book chrome
 
-| Location | Before | After / live |
-|---|---|---|
-| Platform bar Book | `https://united-mobile-rv-llc.square.site/` | `https://book.unitedmobilerv.com/` |
-| Footer mesh Book | same Square URL | `https://book.unitedmobilerv.com/` |
-| `/go/book` | Square 302 | `https://book.unitedmobilerv.com/` 302 |
-| Convert Book buttons (hero / deepen hubs) | Square | **unchanged** (not chrome) |
-| `book.unitedmobilerv.com` | — | 200, UMRT “Book a Mobile RV Repair Visit” landing with BOOK ON SQUARE |
+**Lock (current):** chrome + `/go/book` → Square. `#65` book.* retarget reverted.
+
+| Location | Current |
+|---|---|
+| Platform bar Book | `https://united-mobile-rv-llc.square.site/` |
+| Footer mesh Book | `https://united-mobile-rv-llc.square.site/` |
+| `/go/book` | Square 302 |
+| Convert Book buttons (hero / deepen hubs) | Square (unchanged) |
+| `book.unitedmobilerv.com` | Live UMRT landing exists; chrome must **not** use it |
 
 ## Findings that are not link replacements
 
@@ -52,7 +55,7 @@ Datacenter curl often sees `403 cf-mitigated: challenge` on UMRT, Nextivity, npm
 | Starlink `www` → apex | 200 | Canonical `starlink.com`. Specs URL ends at `/specifications/4`. |
 | Peplink firmware on Starlink catalog card | 200 | Intentional bypass-mode pairing, not a wrong-brand product. |
 | `/gl-inet/` | was 404 | Hyphen alias added. |
-| Convert Book still Square | rough edge | Chrome/mesh now book.*; gold/ghost Book CTAs still Square. |
+| Convert Book still Square | lock | Chrome + convert Book all Square after 2026-09-20 lock flip. |
 | OpenWrt catalog brands | rough edge | `/openwrt/` filters `OpenWrt`; the older `openwrt` catalog row is brand `FOSS`, so it only shows on FOSS/hub. |
 | Dometic apps | honesty | Store search only — no guessed App Store IDs (correct). |
 | Professional Victron firmware | 200 | Login/Dropbox gate for some files — official portal, not a dead link. |
