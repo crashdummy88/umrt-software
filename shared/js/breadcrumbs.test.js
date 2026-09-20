@@ -102,7 +102,7 @@ test("every mapped product path has a UTF-8 name", () => {
     if (path !== "/") {
       const last = crumbsFor(path).at(-1);
       assert.equal(last.name, name);
-      assert.equal(last.item.startsWith("https://software.unitedmobilerv.com"), true);
+      assert.equal(last.item, absoluteUrl(path));
     }
   }
 });

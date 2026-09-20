@@ -5,7 +5,13 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import assert from "node:assert/strict";
-import { hasHtmlEntity, isHomePath, isNotFoundPath, normalizePath } from "../shared/js/breadcrumbs.js";
+import {
+  PUBLISHER_URL,
+  hasHtmlEntity,
+  isHomePath,
+  isNotFoundPath,
+  normalizePath,
+} from "../shared/js/breadcrumbs.js";
 
 const ROOT = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
 
@@ -72,7 +78,8 @@ for (const file of files) {
     assert.equal(row.has_BreadcrumbList, false, "home must skip BreadcrumbList");
     assert.ok(row.schema_types.includes("WebSite"), "home WebSite");
     assert.ok(row.schema_types.includes("Organization"), "home Organization");
-    assert.ok(html.includes("https://unitedmobilerv.com/"), "publisher slash");
+    const org = ld.find((g) => g["@type"] === "Organization") || ld.find((g) => g.publisher)?.publisher;
+    assert.equal(org?.url, PUBLISHER_URL, "publisher slash");
   } else {
     assert.equal(row.has_BreadcrumbList, true, `${pathname} BreadcrumbList`);
     assert.equal(items[0][0], "United Mobile RV");
