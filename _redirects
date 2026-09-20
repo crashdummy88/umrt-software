@@ -39,3 +39,6 @@
 # Hyphen slug people type for GL.iNet
 /gl-inet   /glinet/  302
 /gl-inet/  /glinet/  302
+
+# Antenna / PoE shelf (card href /antennas/)
+/antennas  /antennas/  302

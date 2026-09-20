@@ -1,6 +1,6 @@
 {
-  "version": 17,
-  "updated": "2026-09-10",
+  "version": 19,
+  "updated": "2026-09-20",
   "policy": "Mirror FOSS only when license allows. Proprietary firmware/apps = official manufacturer / store links only.",
   "scope": "RV · camper · Class A · light truck connectivity-first; light marine FOSS OK.",
   "entries": [
@@ -306,11 +306,11 @@
       "title": "Mobile Mark antennas",
       "kind": "docs",
       "policy": "link",
-      "summary": "Cellular/mobile antennas — official support + cellular category. No invented cert.",
+      "summary": "Cellular/mobile vehicle antennas — official contact + current mobile category. No invented cert.",
       "links": {
         "site": "https://www.mobilemark.com/",
-        "support": "https://www.mobilemark.com/support/",
-        "cellular": "https://www.mobilemark.com/product-category/cellular-antennas/"
+        "contact": "https://www.mobilemark.com/contact-us/",
+        "mobile": "https://www.mobilemark.com/product-category/cellular-iot-m2m/mobile/"
       }
     },
     {
@@ -354,13 +354,13 @@
     {
       "id": "laird-rf-antennas",
       "brand": "Laird Connectivity",
-      "title": "Laird RF antennas",
+      "title": "Ezurio (formerly Laird) antennas",
       "kind": "docs",
       "policy": "link",
-      "summary": "RF antenna catalog — official Laird Connectivity links only.",
+      "summary": "Laird Connectivity rebranded to Ezurio. Public catalog is now official Ezurio connectivity / internal-antenna pages — not a vehicle RF PLP. No invented cert.",
       "links": {
-        "site": "https://www.lairdconnect.com/",
-        "rf_antennas": "https://www.lairdconnect.com/rf-antennas"
+        "site": "https://www.ezurio.com/",
+        "connectivity": "https://www.ezurio.com/products/connectivity"
       }
     },
     {
@@ -429,13 +429,19 @@
     {
       "id": "dometic-app",
       "brand": "Dometic",
-      "title": "Dometic mobile apps",
+      "title": "Dometic Power / official apps",
       "kind": "app",
       "policy": "link",
-      "summary": "Official Dometic apps — store search / manufacturer site only (no guessed App Store IDs).",
+      "summary": "Current Dometic Power app plus official apps hub and migration note. Firmware upgrades are in-app — no public .bin shelf. Legacy Mobile Cooling (CFX2) and Climate (TwinBoost) stay on official store listings only.",
       "links": {
-        "site": "https://www.dometic.com/",
-        "play_search": "https://play.google.com/store/search?q=Dometic&c=apps"
+        "apps": "https://www.dometic.com/en-us/support/apps",
+        "migration": "https://www.dometic.com/en-us/support/dometic-app-migration",
+        "power_ios": "https://apps.apple.com/us/app/dometic-power/id6648772769",
+        "power_android": "https://play.google.com/store/apps/details?id=com.dometic.app",
+        "cooling_ios": "https://apps.apple.com/us/app/mobile-cooling/id1495660690",
+        "cooling_android": "https://play.google.com/store/apps/details?id=com.dometic.cfx3",
+        "climate_ios": "https://apps.apple.com/us/app/dometic-climate/id1660906196",
+        "climate_android": "https://play.google.com/store/apps/details?id=com.dometic.outdoor"
       }
     },
     {
@@ -629,12 +635,14 @@
     {
       "id": "dometic-docs",
       "brand": "Dometic",
-      "title": "Dometic support",
+      "title": "Dometic support & documents",
       "kind": "docs",
       "policy": "link",
-      "summary": "Official Dometic support portal + store app search. Link only.",
+      "summary": "Official Dometic support portal + documents database (manuals / service). Link only — no redistributed binaries.",
       "links": {
         "support": "https://www.dometic.com/en-us/support",
+        "documents": "https://documents.dometic.com/search",
+        "documents_lp": "https://www.dometic.com/en-us/lp/documents-database",
         "site": "https://www.dometic.com/",
         "play_search": "https://play.google.com/store/search?q=Dometic&c=apps"
       }

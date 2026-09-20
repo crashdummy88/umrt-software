@@ -21,7 +21,7 @@
       <a href="https://unitedmobilerv.com/" data-platform-link="home">Home</a>
       <a href="https://unitedmobilerv.com/service/" data-platform-link="services">Services</a>
       <a href="https://shop.unitedmobilerv.com/" data-platform-link="shop">Shop</a>
-      <a href="https://united-mobile-rv-llc.square.site/" data-platform-link="book">Book</a>
+      <a href="https://united-mobile-rv-llc.square.site/" data-platform-link="book" target="_blank" rel="noopener">Book</a>
       <a href="https://forum.unitedmobilerv.com/" data-platform-link="forum">Forum</a>
       <a href="https://software.unitedmobilerv.com/" data-platform-link="software">Software</a>
       <a href="https://docs.unitedmobilerv.com/" data-platform-link="docs">Docs</a>
@@ -39,26 +39,78 @@
   <header class="site-header"><div class="wrap header-inner">
     <nav aria-label="Primary"><a href="/#catalog">Catalog</a><a href="/policy.html">Policy</a></nav>
 </div></header>
-  <main id="main" class="wrap hero">
-    <p class="eyebrow">GL.iNet</p>
-    <h1>GL.iNet — Official Links</h1>
-    <p class="lede">Travel / 4G–5G routers common on coaches — official firmware CDN only. Not a FOSS redistrib of proprietary images.</p>
-    <p class="fine">Start at the manufacturer portal: <a href="https://dl.gl-inet.com/" rel="noopener noreferrer" target="_blank">dl.gl-inet.com</a></p>
-    <p class="fine">Policy: manufacturer / store links only for proprietary software. FOSS mirrors require a clear license — see <a href="/policy.html">Policy</a>.</p>
-    <div class="cards" data-catalog data-brand="GL.iNet" style="margin-top:1.5rem"></div>
-<p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented Starlink cert).</p>
+    <main id="main">
+    <section class="wrap hero">
+      <p class="eyebrow">GL.iNet · travel routers</p>
+      <h1>Official GL.iNet firmware — vendor CDN only</h1>
+      <p class="lede">GL.iNet travel routers show up on coaches as a compact 4G/5G or WAN box. We are not a GL.iNet partner. Firmware comes from <strong>dl.gl-inet.com</strong> for that exact model. Vendor OpenWrt-based images are <em>not</em> the same support path as flashing upstream OpenWrt from openwrt.org.</p>
+      <p class="fine">Manufacturer start: <a href="https://dl.gl-inet.com/" rel="noopener noreferrer" target="_blank">dl.gl-inet.com</a></p>
+      <p class="btn-row">
+        <a class="btn btn-ghost" href="tel:+16166065277">Call (616) 606-5277</a>
+        <a class="btn btn-convert" href="sms:+16166065277">Text Now (616) 606-5277</a>
+        <a class="btn btn-ghost" href="https://united-mobile-rv-llc.square.site/" target="_blank" rel="noopener">Book</a>
+        <a class="btn btn-ghost" href="/troubleshoot/">Troubleshoot</a>
+      </p>
+    </section>
+    <section class="wrap band">
+      <h2>When to use GL.iNet’s image vs something else</h2>
+      <div class="cards">
+        <article class="card" style="cursor:default">
+          <h3>Stay on vendor firmware</h3>
+          <p>If the router is doing its job and you need a published fix, use GL.iNet’s CDN and app for that SKU. Confirm model and revision on the label. Wrong image bricks the unit.</p>
+        </article>
+        <article class="card" style="cursor:default">
+          <h3>Do not call it Peplink</h3>
+          <p>GL.iNet multi-WAN is not Hot Failover, Bonding, or Smoothing. When a coach needs a named SpeedFusion mode and InControl, that is a <a href="/peplink/">Peplink</a> conversation.</p>
+        </article>
+        <article class="card" style="cursor:default">
+          <h3>Upstream OpenWrt is a different job</h3>
+          <p>Replacing vendor firmware with <a href="/openwrt/">upstream OpenWrt</a> is a brick-risk and a warranty path of its own. We do not redistribute proprietary “OpenWrt-derived” vendor binaries.</p>
+        </article>
+      </div>
+    </section>
+    <section class="wrap band">
+      <h2>Start here (official only)</h2>
+      <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
+        <li>Firmware CDN: <a href="https://dl.gl-inet.com/" rel="noopener noreferrer" target="_blank">dl.gl-inet.com</a></li>
+        <li>Firmware selector: <a href="https://firmware.gl-inet.com/" rel="noopener noreferrer" target="_blank">firmware.gl-inet.com</a></li>
+        <li>Docs: <a href="https://docs.gl-inet.com/router/en/4/" rel="noopener noreferrer" target="_blank">docs.gl-inet.com/router/en/4</a></li>
+        <li>Upgrade guide: <a href="https://docs.gl-inet.com/router/en/4/interface_guide/upgrade/" rel="noopener noreferrer" target="_blank">upgrade</a></li>
+        <li>Support: <a href="https://www.gl-inet.com/support/" rel="noopener noreferrer" target="_blank">gl-inet.com/support</a></li>
+      </ul>
+    </section>
+    <section class="wrap band">
+      <h2>Related software</h2>
+      <div class="cards">
+        <a class="card" href="/peplink/"><h3>Peplink software</h3><p>When the owner actually needs InControl and a licensed SpeedFusion mode.</p></a>
+        <a class="card" href="/openwrt/"><h3>OpenWrt (upstream)</h3><p>Firmware Selector, checksums, exact device. FOSS project — not a UMRT certification.</p></a>
+        <a class="card" href="/foss/"><h3>FOSS</h3><p>Signal K and Node-RED often sit on the LAN behind a travel router.</p></a>
+      </div>
+    </section>
+    <section class="wrap band">
+      <h2>Official catalog</h2>
+      <p class="fine">Link-only. See <a href="/policy.html">Policy</a>.</p>
+      <div class="cards" data-catalog data-brand="GL.iNet" style="margin-top:1rem"></div>
+      <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized · Peplink Certified Associate · Starlink installs only (never Certified).</p>
+    </section>
   </main>
+
   <footer class="site-footer"><div class="wrap">
     <p>United Mobile RV LLC · Official links shelf — convert on <a href="/">home</a></p>
     <nav class="mesh-nav" aria-label="UMRT properties"><a href="https://unitedmobilerv.com/">Home</a>
       <a href="https://unitedmobilerv.com/service/">Services</a>
       <a href="https://shop.unitedmobilerv.com/">Shop</a>
-      <a href="https://united-mobile-rv-llc.square.site/">Book</a>
+      <a href="https://united-mobile-rv-llc.square.site/" target="_blank" rel="noopener">Book</a>
       <a href="https://forum.unitedmobilerv.com/">Forum</a>
       <a href="https://software.unitedmobilerv.com/">Software</a>
       <a href="https://docs.unitedmobilerv.com/">Docs</a>
     </nav>
   </div></footer>
   <script src="/shared/js/catalog.js" defer></script>
+  <nav class="umrt-sticky-convert" aria-label="Call, Text Now, or Book">
+    <a href="tel:+16166065277">Call</a>
+    <a href="sms:+16166065277">Text Now</a>
+    <a href="https://united-mobile-rv-llc.square.site/" target="_blank" rel="noopener">Book</a>
+  </nav>
 </body>
 </html>

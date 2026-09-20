@@ -21,7 +21,7 @@
       <a href="https://unitedmobilerv.com/" data-platform-link="home">Home</a>
       <a href="https://unitedmobilerv.com/service/" data-platform-link="services">Services</a>
       <a href="https://shop.unitedmobilerv.com/" data-platform-link="shop">Shop</a>
-      <a href="https://united-mobile-rv-llc.square.site/" data-platform-link="book">Book</a>
+      <a href="https://united-mobile-rv-llc.square.site/" data-platform-link="book" target="_blank" rel="noopener">Book</a>
       <a href="https://forum.unitedmobilerv.com/" data-platform-link="forum">Forum</a>
       <a href="https://software.unitedmobilerv.com/" data-platform-link="software">Software</a>
       <a href="https://docs.unitedmobilerv.com/" data-platform-link="docs">Docs</a>
@@ -39,26 +39,77 @@
   <header class="site-header"><div class="wrap header-inner">
     <nav aria-label="Primary"><a href="/#catalog">Catalog</a><a href="/policy.html">Policy</a></nav>
 </div></header>
-  <main id="main" class="wrap hero">
-    <p class="eyebrow">Teltonika</p>
-    <h1>Teltonika — Official Links</h1>
-    <p class="lede">Industrial / fleet cellular routers used on RVs and light trucks — official wiki + site only.</p>
-    <p class="fine">Start at the manufacturer portal: <a href="https://wiki.teltonika-networks.com/" rel="noopener noreferrer" target="_blank">wiki.teltonika-networks.com</a></p>
-    <p class="fine">Policy: manufacturer / store links only for proprietary software. FOSS mirrors require a clear license — see <a href="/policy.html">Policy</a>.</p>
-    <div class="cards" data-catalog data-brand="Teltonika" style="margin-top:1.5rem"></div>
-<p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized Installer · Peplink Certified Associate · Dometic Professional Certified · Starlink install capability (no invented Starlink cert).</p>
+    <main id="main">
+    <section class="wrap hero">
+      <p class="eyebrow">Teltonika Networks</p>
+      <h1>Official wiki and firmware for fleet / industrial routers</h1>
+      <p class="lede">RUT/TCR-class Teltonika routers appear on light trucks and a few coaches. United Mobile RV is not a Teltonika partner. Firmware from Teltonika only — no forum dumps. Our certified multi-WAN path is <a href="/peplink/">Peplink</a>.</p>
+      <p class="fine">Manufacturer start: <a href="https://wiki.teltonika-networks.com/" rel="noopener noreferrer" target="_blank">wiki.teltonika-networks.com</a></p>
+      <p class="btn-row">
+        <a class="btn btn-ghost" href="tel:+16166065277">Call (616) 606-5277</a>
+        <a class="btn btn-convert" href="sms:+16166065277">Text Now (616) 606-5277</a>
+        <a class="btn btn-ghost" href="https://united-mobile-rv-llc.square.site/" target="_blank" rel="noopener">Book</a>
+        <a class="btn btn-ghost" href="/troubleshoot/">Troubleshoot</a>
+      </p>
+    </section>
+    <section class="wrap band">
+      <h2>When to use the wiki vs a service call</h2>
+      <div class="cards">
+        <article class="card" style="cursor:default">
+          <h3>Firmware &amp; RMS</h3>
+          <p>Use the wiki page for your exact RUT/TCR SKU. Remote Management System (RMS) is Teltonika’s cloud — not InControl, not NetCloud, not ALMS.</p>
+        </article>
+        <article class="card" style="cursor:default">
+          <h3>WAN failover is not SpeedFusion</h3>
+          <p>Teltonika can fail over. That is not Peplink Hot Failover / Bonding / Smoothing. Do not promise bonding from a Teltonika chassis we did not spec.</p>
+        </article>
+        <article class="card" style="cursor:default">
+          <h3>Power and RF still win</h3>
+          <p>Most “router dead” calls are cigarette-lighter power, a brownout on Starlink PoE, or a SIM that never registered. Confirm fused DC and the SIM before chasing a firmware dump.</p>
+        </article>
+      </div>
+    </section>
+    <section class="wrap band">
+      <h2>Start here (official only)</h2>
+      <ul class="fine" style="padding-left:1.25rem; line-height:1.7">
+        <li>Wiki: <a href="https://wiki.teltonika-networks.com/" rel="noopener noreferrer" target="_blank">wiki.teltonika-networks.com</a></li>
+        <li>Firmware downloads: <a href="https://wiki.teltonika-networks.com/view/Downloads" rel="noopener noreferrer" target="_blank">wiki … /Downloads</a></li>
+        <li>RMS: <a href="https://rms.teltonika-networks.com/" rel="noopener noreferrer" target="_blank">rms.teltonika-networks.com</a></li>
+        <li>Site: <a href="https://www.teltonika-networks.com/" rel="noopener noreferrer" target="_blank">teltonika-networks.com</a></li>
+      </ul>
+    </section>
+    <section class="wrap band">
+      <h2>Related software</h2>
+      <div class="cards">
+        <a class="card" href="/peplink/"><h3>Peplink software</h3><p>The multi-WAN stack we certify. InControl plus named SpeedFusion modes.</p></a>
+        <a class="card" href="/glinet/"><h3>GL.iNet</h3><p>Another travel-router tree. Same rule: vendor firmware for that label, not a cross-flash.</p></a>
+        <a class="card" href="/cradlepoint/"><h3>Cradlepoint / NetCloud</h3><p>Fleet cloud is not RMS and not InControl. OEM only.</p></a>
+      </div>
+    </section>
+    <section class="wrap band">
+      <h2>Official catalog</h2>
+      <p class="fine">Link-only. See <a href="/policy.html">Policy</a>.</p>
+      <div class="cards" data-catalog data-brand="Teltonika" style="margin-top:1rem"></div>
+      <p class="fine" style="margin-top:2rem">Credentials (text only): Victron Professional Certified Installer · weBoost Authorized · Peplink Certified Associate · Starlink installs only (never Certified).</p>
+    </section>
   </main>
+
   <footer class="site-footer"><div class="wrap">
     <p>United Mobile RV LLC · Official links shelf — convert on <a href="/">home</a></p>
     <nav class="mesh-nav" aria-label="UMRT properties"><a href="https://unitedmobilerv.com/">Home</a>
       <a href="https://unitedmobilerv.com/service/">Services</a>
       <a href="https://shop.unitedmobilerv.com/">Shop</a>
-      <a href="https://united-mobile-rv-llc.square.site/">Book</a>
+      <a href="https://united-mobile-rv-llc.square.site/" target="_blank" rel="noopener">Book</a>
       <a href="https://forum.unitedmobilerv.com/">Forum</a>
       <a href="https://software.unitedmobilerv.com/">Software</a>
       <a href="https://docs.unitedmobilerv.com/">Docs</a>
     </nav>
   </div></footer>
   <script src="/shared/js/catalog.js" defer></script>
+  <nav class="umrt-sticky-convert" aria-label="Call, Text Now, or Book">
+    <a href="tel:+16166065277">Call</a>
+    <a href="sms:+16166065277">Text Now</a>
+    <a href="https://united-mobile-rv-llc.square.site/" target="_blank" rel="noopener">Book</a>
+  </nav>
 </body>
 </html>
