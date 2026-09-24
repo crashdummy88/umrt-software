@@ -129,12 +129,13 @@ code { font-size: 0.9em; background: #222; padding: 0.1em 0.35em; border-radius:
   .card:hover { transform: none; }
 }
 
-/* Sticky mobile convert bar — Call / Text Now / Book (Square) parity with shop/docs */
+/* Sticky mobile convert bar — Call / Text Now / Book (Square) / Forum */
 .umrt-sticky-convert { display: none; }
 @media (max-width: 720px) {
-  body { padding-bottom: 4.25rem; }
+  body { padding-bottom: 4.75rem; }
   .umrt-sticky-convert {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.05fr) minmax(0, 0.78fr) minmax(0, 1.85fr);
     position: fixed;
     left: 0;
     right: 0;
@@ -142,22 +143,23 @@ code { font-size: 0.9em; background: #222; padding: 0.1em 0.35em; border-radius:
     z-index: 40;
     background: #0C0C0C;
     border-top: 1px solid rgba(201, 151, 44, 0.45);
-    justify-content: space-around;
-    gap: 0.35rem;
-    padding: 0.45rem 0.5rem calc(0.45rem + env(safe-area-inset-bottom, 0px));
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: 0.35rem 0.35rem calc(0.35rem + env(safe-area-inset-bottom, 0px));
   }
   .umrt-sticky-convert a {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 0;
     min-height: 44px;
     text-align: center;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
+    line-height: 1.15;
     border-radius: 4px;
-    padding: 0.55rem 0.35rem;
+    padding: 0.4rem 0.2rem;
     background: transparent;
     color: var(--gold);
     border: 1px solid var(--gold);
