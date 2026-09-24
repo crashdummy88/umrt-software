@@ -129,10 +129,10 @@ code { font-size: 0.9em; background: #222; padding: 0.1em 0.35em; border-radius:
   .card:hover { transform: none; }
 }
 
-/* Sticky mobile convert bar — Call / Text Now / Book (Square) parity with shop/docs */
+/* Sticky mobile convert bar — quiet text links, phone only */
 .umrt-sticky-convert { display: none; }
 @media (max-width: 720px) {
-  body { padding-bottom: 4.25rem; }
+  body { padding-bottom: calc(2.85rem + env(safe-area-inset-bottom, 0px)); }
   .umrt-sticky-convert {
     display: flex;
     position: fixed;
@@ -140,31 +140,40 @@ code { font-size: 0.9em; background: #222; padding: 0.1em 0.35em; border-radius:
     right: 0;
     bottom: 0;
     z-index: 40;
-    background: #0C0C0C;
-    border-top: 1px solid rgba(201, 151, 44, 0.45);
-    justify-content: space-around;
-    gap: 0.35rem;
-    padding: 0.45rem 0.5rem calc(0.45rem + env(safe-area-inset-bottom, 0px));
+    align-items: stretch;
+    justify-content: space-evenly;
+    gap: 0.7rem;
+    background: rgba(26, 26, 26, 0.96);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 0.65rem calc(env(safe-area-inset-bottom, 0px));
   }
   .umrt-sticky-convert a {
-    flex: 1;
+    flex: 0 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 0;
     min-height: 44px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.85rem;
-    border-radius: 4px;
-    padding: 0.55rem 0.35rem;
-    background: transparent;
+    margin: 0;
+    padding: 0.55rem 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
     color: var(--gold);
-    border: 1px solid var(--gold);
+    font-weight: 500;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
   }
-  .umrt-sticky-convert a[href^="sms:"] {
-    background: var(--gold);
-    color: var(--black);
-    border-color: var(--gold);
+  .umrt-sticky-convert a:hover {
+    color: var(--white);
+  }
+  .umrt-sticky-convert a:focus-visible {
+    outline: 1px solid rgba(201, 151, 44, 0.7);
+    outline-offset: 2px;
   }
 }
