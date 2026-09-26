@@ -12,9 +12,10 @@ import {
   webpageGraph,
   utf8Name,
   visibleNavHtml,
-} from "../shared/js/breadcrumbs.js";
+} from "../public/shared/js/breadcrumbs.js";
 
 const ROOT = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
+const SITE = join(ROOT, "public");
 const BREADCRUMB_RE =
   /[ \t]*<script type="application\/ld\+json">\{"@context":"https:\/\/schema\.org","@type":"BreadcrumbList"[\s\S]*?<\/script>\n?/;
 const WEBPAGE_RE =
@@ -34,7 +35,7 @@ function walk(dir, out = []) {
 }
 
 function pathFromFile(file) {
-  const rel = file.slice(ROOT.length).replace(/\\/g, "/");
+  const rel = file.slice(SITE.length).replace(/\\/g, "/");
   if (rel === "/index.html") return "/";
   if (rel.endsWith("/index.html")) return rel.slice(0, -"index.html".length);
   return rel;
@@ -114,7 +115,7 @@ function applyFile(file) {
   return false;
 }
 
-const files = walk(ROOT);
+const files = walk(SITE);
 const changed = files.filter(applyFile);
 console.log(`Updated ${changed.length} HTML files`);
-changed.forEach((f) => console.log(" ", f.slice(ROOT.length)));
+changed.forEach((f) => console.log(" ", f.slice(SITE.length)));

@@ -4,9 +4,11 @@
 
 - Repo: `crashdummy88/umrt-software`
 - Production branch: `main`
-- Build command: *(empty)*
-- Output: `/`
+- Build command: *(empty — leave empty)*
+- Output: `public` (`pages_build_output_dir` in `wrangler.toml`)
 - Framework preset: **None**
+
+The dashboard Build output directory was `/` (the repository root). Set it to `public`, or leave it blank so `wrangler.toml` wins. `functions/` stays at the repository root; Pages does not read it from the output directory.
 
 No Functions required for v1 (static catalog JSON).
 

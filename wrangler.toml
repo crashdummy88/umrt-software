@@ -1,0 +1,6 @@
+# Publish the site folder only. Repo files stay at the project root.
+# Dashboard check (do not guess): umrt-software → Settings → Builds.
+# Build output directory must be public, or blank so this file wins.
+# Build command stays empty. This file does not set bindings or a compatibility date.
+name = "umrt-software"
+pages_build_output_dir = "public"

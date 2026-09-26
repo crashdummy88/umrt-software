@@ -1,10 +1,10 @@
 /**
  * Site-wide <head> injection for static HTML (no layout engine).
  * Canonical snippet: /shared/partials/head.html
- * Breadcrumbs: /shared/js/breadcrumbs.js
+ * Breadcrumbs: /shared/js/breadcrumbs.js (source: public/shared/js/breadcrumbs.js)
  * Does not rewrite Book chrome, download links, or page bodies.
  */
-import { isHomePath, isNotFoundPath, visibleNavHtml } from "../shared/js/breadcrumbs.js";
+import { isHomePath, isNotFoundPath, visibleNavHtml } from "../public/shared/js/breadcrumbs.js";
 
 const CLARITY_SNIPPET = `<script type="text/javascript">
     (function(c,l,a,r,i,t,y){
