@@ -177,3 +177,96 @@ code { font-size: 0.9em; background: #222; padding: 0.1em 0.35em; border-radius:
     outline-offset: 2px;
   }
 }
+
+/* Brand: cards, buttons, contrast. Platform bar and hero CTA markup stay as-is. */
+body {
+  background: #1A1A1A;
+  color: #D6D6D6;
+}
+.site-header,
+.site-footer,
+.band,
+.hero {
+  background: #1A1A1A;
+}
+h1, h2, h3, h4 {
+  color: #FFFFFF;
+}
+.lede,
+.fine,
+.policy-list,
+.site-footer,
+.umrt-breadcrumbs,
+.umrt-breadcrumbs a,
+.umrt-breadcrumbs [aria-current="page"] {
+  color: #D6D6D6;
+}
+.umrt-breadcrumbs a:hover,
+header nav a:hover,
+.mesh-nav a:hover {
+  color: #E0B04A;
+}
+header nav a,
+.mesh-nav a {
+  color: #D6D6D6;
+}
+.btn,
+.btn-ghost,
+.btn-convert,
+.share-btn,
+.share-mini {
+  background: #C9972C;
+  color: #1A1A1A;
+  border: 1px solid #C9972C;
+  border-radius: 10px;
+}
+.btn:hover,
+.btn-ghost:hover,
+.btn-convert:hover,
+.share-btn:hover,
+.share-mini:hover {
+  background: #E0B04A;
+  color: #1A1A1A;
+  border-color: #E0B04A;
+}
+.btn:focus-visible,
+.btn-ghost:focus-visible,
+.btn-convert:focus-visible,
+.share-btn:focus-visible,
+.share-mini:focus-visible {
+  outline: 2px solid #E0B04A;
+  outline-offset: 2px;
+}
+.card {
+  background: #0C0C0C;
+  color: #D6D6D6;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 2px solid #C9972C;
+  border-radius: 10px;
+}
+.card h3 {
+  color: #FFFFFF;
+}
+.card p,
+.card .fine {
+  color: #D6D6D6;
+}
+.card:hover {
+  background: #1A1A1A;
+  border-color: #C9972C;
+  color: #D6D6D6;
+}
+.catalog-filter {
+  background: #0C0C0C;
+  color: #D6D6D6;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+}
+.catalog-filter::placeholder {
+  color: #D6D6D6;
+}
+code {
+  background: #0C0C0C;
+  color: #D6D6D6;
+  border-radius: 10px;
+}
