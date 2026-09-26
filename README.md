@@ -20,7 +20,7 @@ Field hub for **firmware, software, and app links** used on United Mobile RV ins
 - FOSS mirrors folder: `/mirrors/` (artifacts added only when license-clear)
 
 ## Cloudflare Pages
-See `CF_PAGES.md`. Funnel attaches the Pages project (static, no build).
+See `CF_PAGES.md`. Funnel attaches the Pages project (static, no build). Published files live in `public/`.
 
 ## Not this repo
 Live WordPress (`unitedmobilerv.com`) · sales staging `united-mobile-rv` (primary craft lane)

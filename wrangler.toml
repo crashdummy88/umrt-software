@@ -1,0 +1,15 @@
+# Publish the site folder only. Repo files stay at the project root.
+# Dashboard: umrt-software → Settings → Builds.
+# Build output directory must be public, or blank so this file wins.
+# Build command stays empty. This file does not set one.
+#
+# compatibility_date is 2026-09-10, the day this repo and functions/qgps.js
+# first shipped. functions/ exists (HTMLRewriter middleware and the qgps 404s).
+# Those files do not use Node.js APIs. No published compatibility flag defaults
+# on between 2026-09-10 and 2026-09-26, so this date does not opt into a newer
+# runtime than the project has been eligible for since it was created.
+# Node.js compatibility already defaults on for any date on or after 2026-08-04.
+# No KV, D1, R2, or vars bindings are declared.
+name = "umrt-software"
+pages_build_output_dir = "public"
+compatibility_date = "2026-09-10"

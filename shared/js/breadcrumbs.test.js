@@ -15,7 +15,7 @@ import {
   utf8Name,
   visibleNavHtml,
   websiteGraph,
-} from "./breadcrumbs.js";
+} from "../../public/shared/js/breadcrumbs.js";
 
 test("normalizePath canonicalizes index and trailing slashes", () => {
   assert.equal(normalizePath("/"), "/");

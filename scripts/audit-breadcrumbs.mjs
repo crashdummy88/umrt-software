@@ -2,7 +2,7 @@
  * Static audit: home has WebSite/Organization; nested pages have BreadcrumbList;
  * names are UTF-8; Book stays Square; manufacturer hrefs untouched vs git if provided.
  */
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import assert from "node:assert/strict";
 import {
@@ -11,9 +11,10 @@ import {
   isHomePath,
   isNotFoundPath,
   normalizePath,
-} from "../shared/js/breadcrumbs.js";
+} from "../public/shared/js/breadcrumbs.js";
 
 const ROOT = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
+const SITE = join(ROOT, "public");
 
 function walk(dir, out = []) {
   for (const name of readdirSync(dir)) {
@@ -26,7 +27,7 @@ function walk(dir, out = []) {
 }
 
 function pathFromFile(file) {
-  const rel = file.slice(ROOT.length).replace(/\\/g, "/");
+  const rel = file.slice(SITE.length).replace(/\\/g, "/");
   if (rel === "/index.html") return "/";
   if (rel.endsWith("/index.html")) return rel.slice(0, -"index.html".length);
   return rel;
@@ -51,7 +52,41 @@ function types(list) {
   return [...set].sort();
 }
 
-const files = walk(ROOT);
+const REPO_ONLY = [
+  "package.json",
+  "README.md",
+  "CF_PAGES.md",
+  ".gitignore",
+  "SECURITY.md",
+  "POLICY.md",
+  "SOFTWARE-LINK-AUDIT.md",
+  "wrangler.toml",
+];
+for (const name of REPO_ONLY) {
+  assert.equal(existsSync(join(ROOT, name)), true, `${name} stays at repo root`);
+  assert.equal(existsSync(join(SITE, name)), false, `${name} must not be published`);
+}
+assert.equal(existsSync(join(SITE, "index.html")), true, "home is published");
+assert.equal(existsSync(join(SITE, "_headers")), true, "_headers is published");
+assert.equal(existsSync(join(ROOT, "functions/_middleware.js")), true, "functions stay at repo root");
+assert.equal(existsSync(join(SITE, "functions")), false, "functions are not copied into the output");
+assert.equal(
+  existsSync(join(SITE, "shared/js/breadcrumbs.test.js")),
+  false,
+  "breadcrumb tests are not published"
+);
+const wrangler = readFileSync(join(ROOT, "wrangler.toml"), "utf8");
+assert.match(wrangler, /compatibility_date = "2026-09-10"/);
+assert.doesNotMatch(wrangler, /kv_namespaces|d1_databases|r2_buckets|\[vars\]/);
+
+const headers = readFileSync(join(SITE, "_headers"), "utf8");
+assert.match(headers, /Strict-Transport-Security: max-age=31536000; includeSubDomains/);
+assert.match(headers, /X-Content-Type-Options: nosniff/);
+assert.match(headers, /Referrer-Policy: strict-origin-when-cross-origin/);
+assert.match(headers, /X-Frame-Options: SAMEORIGIN/);
+assert.doesNotMatch(headers, /Content-Security-Policy:/);
+
+const files = walk(SITE);
 const report = [];
 
 for (const file of files) {
