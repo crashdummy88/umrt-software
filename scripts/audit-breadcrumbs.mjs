@@ -75,6 +75,10 @@ assert.equal(
   false,
   "breadcrumb tests are not published"
 );
+const wrangler = readFileSync(join(ROOT, "wrangler.toml"), "utf8");
+assert.match(wrangler, /compatibility_date = "2026-09-10"/);
+assert.doesNotMatch(wrangler, /kv_namespaces|d1_databases|r2_buckets|\[vars\]/);
+
 const headers = readFileSync(join(SITE, "_headers"), "utf8");
 assert.match(headers, /Strict-Transport-Security: max-age=31536000; includeSubDomains/);
 assert.match(headers, /X-Content-Type-Options: nosniff/);
